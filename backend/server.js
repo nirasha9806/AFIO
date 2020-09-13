@@ -9,6 +9,9 @@ app.use(cors());
 //BodyParser Middleware
 app.use(bodyParser.json());
 
+//'/api/delivery' location
+app.use('/api/delivery', require('./routes/delivery'));
+
 //DB config
 const db = require('./config/keys').mongoURI;
 
