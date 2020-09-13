@@ -1,7 +1,11 @@
 import React from 'react'
 import logo from '../../Images/logo.png';
 import { Link } from 'react-router-dom';
+
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+
+
+
 function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-blue bg-dark">

@@ -9,7 +9,12 @@ app.use(cors());
 //BodyParser Middleware
 app.use(bodyParser.json());
 
+
 app.use('/api/payment',require('./routes/payment'))
+
+//'/api/delivery' location
+app.use('/api/delivery', require('./routes/delivery'));
+
 
 //DB config
 const db = require('./config/keys').mongoURI;
