@@ -9,6 +9,9 @@ app.use(cors());
 //BodyParser Middleware
 app.use(bodyParser.json());
 
+
+
+
 app.use('/api/payment',require('./routes/payment'))
 
 //DB config
