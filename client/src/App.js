@@ -16,6 +16,7 @@ import ProductsList from './Components/Product/products-list.component'
 import DeliveryForm from './Components/Delivery/DeliveryDetailsInsert'
 import Details from './Components/Cart/Pdetails';
 import Products from './Components/Cart/ProductDisplay';
+import CreateVoucher from "./Components/Voucher/create-voucher.component";
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
        
         <Route path="/product" component={Products}/>
         <Route path="/detail/:id" component={Details}/>
+
+        <Route path="/voucher" component={CreateVoucher} />
 
       </Router>
 
