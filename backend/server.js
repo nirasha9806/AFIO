@@ -23,6 +23,7 @@ app.use('/api/categories', require('./routes/categories'));
 
 
 
+app.use('/api/Cart', require('./routes/Cart'));
 //DB config
 const db = require('./config/keys').mongoURI;
 

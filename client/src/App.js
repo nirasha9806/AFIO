@@ -9,6 +9,14 @@ import ProductsList from './Components/Product/products-list.component'
 
 
 
+
+
+
+
+import DeliveryForm from './Components/Delivery/DeliveryDetailsInsert'
+import Details from './Components/Cart/Pdetails';
+import Products from './Components/Cart/ProductDisplay';
+
 function App() {
   return (
     <Router>
@@ -17,7 +25,12 @@ function App() {
       <Route exact path ="/" component={DeliveryForm}/>
       <Route path="/createProduct" component={CreateProduct} />
       <Route path="/productList" exact component={ProductsList} />
-        
+
+
+       
+        <Route path="/product" component={Products}/>
+        <Route path="/detail/:id" component={Details}/>
+
       </Router>
 
   );
