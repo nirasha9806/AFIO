@@ -15,9 +15,9 @@ app.use('/api/payment',require('./routes/payment'))
 //'/api/delivery' location
 app.use('/api/delivery', require('./routes/delivery'));
 
+app.use('/api/LoyaltyCard', require('./routes/LoyaltyCard'));
 
-<<<<<<< Updated upstream
-=======
+
 //'/api/voucher' location
 app.use('/api/voucher', require('./routes/voucher'));
 
@@ -26,6 +26,7 @@ app.use('/api/products', require('./routes/products'));
 
 //'/api/product' location
 app.use('/api/categories', require('./routes/categories'));
+
 
 app.use('/api/category/', require('./routes/category'));
 
@@ -38,7 +39,8 @@ app.use('/api/Cart', require('./routes/Cart'));
 //https://stackoverflow.com/questions/48914987/send-image-path-from-node-js-express-server-to-react-client
 app.use('/uploads', express.static('uploads'));
 
->>>>>>> Stashed changes
+
+
 //DB config
 const db = require('./config/keys').mongoURI;
 
