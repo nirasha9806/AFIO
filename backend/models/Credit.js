@@ -38,4 +38,5 @@ const creditSchema = mongoose.Schema({
 
 const Credit = mongoose.model('Credit', creditSchema);
 
-module.exports = {Credit} 
+module.exports = {Credit}
+

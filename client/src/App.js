@@ -1,11 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-
-<<<<<<< Updated upstream
-import DeliveryForm from './Components/Delivery/DeliveryDetailsInsert'
-=======
 
 
 import Auth from "./hoc/auth";
@@ -32,21 +27,18 @@ import Details from './Components/Cart/Pdetails';
 import Products from './Components/Cart/ProductDisplay';
 import CreateVoucher from "./Components/Voucher/create-voucher.component";
 
+
 import DisplayDeliveryDetails from './Components/Delivery/DisplayDeliveryDetails'
 import Deliveries from './Components/Delivery/DeliveriesAdmin'
 import UpdateStatus from './Components/Delivery/UpdateStatus'
 import StatusRequests from './Components/Delivery/OrderStatusRequests'
 import OrderHistory from './Components/Delivery/OrderHistory'
 
->>>>>>> Stashed changes
 
 function App() {
   return (
     <Router>
-<<<<<<< Updated upstream
-        <Route exact path ="/" component={DeliveryForm}/>
-        
-=======
+
 
       
       <Route path="/cardPay" component={CardPay} />
@@ -74,8 +66,8 @@ function App() {
       <Route path="/checkRequests" component={StatusRequests}/>
       <Route path="/orderHistory" component={OrderHistory}/>
 
->>>>>>> Stashed changes
       </Router>
+
   );
 }
 
