@@ -2,7 +2,7 @@ const express = require('express');
 //const { default: Product } = require('../../src/components/Product');
 const router = express.Router();
 
-const {Product} = require("../models/Product");
+let Product = require("../models/product.model");
 
 const {Cart} = require("../models/Cart");
 const { deleteModel } = require('mongoose');

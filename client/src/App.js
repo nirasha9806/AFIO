@@ -37,7 +37,7 @@ function App() {
       <Route path="/cardPay" component={CardPay} />
       <Route path ="/delivery" component={DeliveryForm}/>
       <Route path="/createProduct" component={CreateProduct} />
-      <Route path="/productList" exact component={ProductsList} />
+      <Route path="/productList" component={ProductsList} />
       <Route path="/product" component={Products}/>
       <Route path="/detail/:id" component={Details}/>
         <Route path="/cardReq" component={LoyaltyForm}/>
