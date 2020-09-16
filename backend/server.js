@@ -15,6 +15,7 @@ app.use('/api/payment',require('./routes/payment'))
 //'/api/delivery' location
 app.use('/api/delivery', require('./routes/delivery'));
 
+app.use('/api/LoyaltyCard', require('./routes/LoyaltyCard'));
 
 //DB config
 const db = require('./config/keys').mongoURI;
