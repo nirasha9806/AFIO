@@ -1,5 +1,7 @@
 const router = require('express').Router();
+
 let Category = require('../models/category.model');
+
 
 router.route('/').get((req, res) => {
   Category.find()
