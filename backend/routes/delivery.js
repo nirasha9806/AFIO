@@ -3,8 +3,8 @@ const { Router } = require("express");
 const express = require('express');
 const router = express.Router();
 const {Delivery} = require("../models/Delivery");
-//const {RequestStatus} = require("../models/RequestStatus");
-//const {OrderHistory} = require("../models/OrderHistory");
+const {RequestStatus} = require("../models/RequestStatus");
+const {OrderHistory} = require("../models/OrderHistory");
 
 //post method to save data
 router.post("/insertDelivery/:id", (req, res) => {
@@ -18,7 +18,7 @@ router.post("/insertDelivery/:id", (req, res) => {
         })
 });
 
-/*
+
 //get method to fetch data from deliveries
 router.get('/display/:id', function(req,res){
     console.log('get requests for all deliveries');
@@ -152,6 +152,6 @@ router.get('/displayHistory', function(req,res){
             res.json(orderhistories);
         }
     });
-  });*/
+  });
 
 module.exports = router;
