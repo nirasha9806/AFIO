@@ -41,7 +41,8 @@ componentDidMount(){
 
     {this.state.user.map( user =>
     <ul>
-      <li><button><Link to={'/product/'+user._id}>Product</Link></button></li>
+      <li><button><Link to={'/product/'+user._id}>Product</Link></button></li><br></br>
+      <li><button><Link to={'/displayDelivery/'+user._id}>Delivery Details</Link></button></li>
     </ul>
       
       )}
