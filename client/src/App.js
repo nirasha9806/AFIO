@@ -1,21 +1,73 @@
 import React from 'react';
 import {BrowserRouter as Router,Route} from 'react-router-dom';
 import './App.css';
+<<<<<<< Updated upstream
 
 import CardPay from './Components/Payment/CardPay.js';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
+=======
+
+import Auth from "./hoc/auth";
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+
+import CardPay from './Components/Payment/CardPay.js';
+import CreateProduct from './Components/Product/create-product.component'
+import ProductsList from './Components/Product/products-list.component'
+
+
+
+
+
+>>>>>>> Stashed changes
 
 import DeliveryForm from './Components/Delivery/DeliveryDetailsInsert'
 
 
+import HomePage from "./Components/LandingPage/HomePage";
+import LandingPage from "./Components/LandingPage/LandingPage.js";
+import LoginPage from "./Components/LoginPage/LoginPage.js";
+import RegisterPage from "./Components/RegisterPage/RegisterPage.js";
+
+import UploadCategoryPage from './Components/Category/UploadCategoryPage';
+import viewDetails from './Components/AdminProfilePage/viewDetails';
+import UserDetails from './Components/UserProfilePage/UserDetails';
+import Viewcategory from './Components/Category/viewAllCategory';
+import EditFormPage from './Components/Category/EditFormPage';
+
 function App() {
   return (
     <Router>
+<<<<<<< Updated upstream
+=======
+      
+      <Route path="/cardPay" component={CardPay} />
+      <Route path ="/delivery" component={DeliveryForm}/>
+      <Route path="/createProduct" component={CreateProduct} />
+      <Route path="/productList" exact component={ProductsList} />
+
+       
+        <Route path="/product" component={Products}/>
+        <Route path="/detail/:id" component={Details}/>
+>>>>>>> Stashed changes
 
        <Route exact path="/" component={CardPay} />
 
+<<<<<<< Updated upstream
         <Route exact path ="/" component={DeliveryForm}/>
         
+=======
+
+        <Route path="/home/:email/:password" component= {Auth(HomePage, null)} />
+          <Route exact path="/" component={Auth(LandingPage, null)} />
+          <Route path="/login" component={Auth(LoginPage, false)} />
+          <Route path="/register" component={Auth(RegisterPage, false)} />
+          <Route path="/category/upload" component={Auth(UploadCategoryPage, true)} />
+          <Route path="/admin/profile/:id" component={viewDetails} />
+          <Route path="/user/profile/:email/:password" component={UserDetails} />
+          <Route exact path="/user/table" component={Viewcategory} />
+          <Route exact path="/edit/:id" component={EditFormPage} />
+
+>>>>>>> Stashed changes
       </Router>
 
   );
