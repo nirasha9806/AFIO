@@ -35,11 +35,13 @@ import StatusRequests from './Components/Delivery/OrderStatusRequests'
 import OrderHistory from './Components/Delivery/OrderHistory'
 
 
+import Admin from "./Components/Feedback/Admin";
+import Comments from './Components/Feedback/Comments';
+
+
 function App() {
   return (
     <Router>
-
-
       
       <Route path="/cardPay" component={CardPay} />
       <Route path="/createProduct" component={CreateProduct} />
@@ -65,6 +67,9 @@ function App() {
       <Route path="/update/:id" component={UpdateStatus}/>
       <Route path="/checkRequests" component={StatusRequests}/>
       <Route path="/orderHistory" component={OrderHistory}/>
+
+      <Route path="/comment/:id" component={Comments} />
+      <Route path="/admin" component={Admin} />
 
       </Router>
 
