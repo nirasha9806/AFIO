@@ -16,7 +16,7 @@ export default class V_Navbar extends Component {
                     <Link to={'/create'} className="nav-link ">Create Voucher</Link>
                     </li>
                     <li className="nav-item">
-                    <Link to={'/edit/:id'} className="nav-link">Edit Voucher</Link>
+                    <Link to={'/EditVoucher/:id'} className="nav-link">Edit Voucher</Link>
                     </li>
                     <li className="nav-item">
                     <Link to={'/list'} className="nav-link">Voucher List</Link>

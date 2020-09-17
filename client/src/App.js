@@ -18,6 +18,7 @@ import LandingPage from "./Components/LandingPage/LandingPage.js";
 import LoginPage from "./Components/LoginPage/LoginPage.js";
 import RegisterPage from "./Components/RegisterPage/RegisterPage.js";
 
+
 import UploadCategoryPage from './Components/Category/UploadCategoryPage';
 import viewDetails from './Components/AdminProfilePage/viewDetails';
 import UserDetails from './Components/UserProfilePage/UserDetails';
@@ -25,7 +26,10 @@ import Viewcategory from './Components/Category/viewAllCategory';
 import EditFormPage from './Components/Category/EditFormPage';
 import Details from './Components/Cart/Pdetails';
 import Products from './Components/Cart/ProductDisplay';
+
 import CreateVoucher from "./Components/Voucher/create-voucher.component";
+import ListVoucher from "./Components/Voucher/list-voucher.component";
+import EditVoucher from "./Components/Voucher/edit-voucher.component";
 
 
 import DisplayDeliveryDetails from './Components/Delivery/DisplayDeliveryDetails'
@@ -58,6 +62,8 @@ function App() {
       <Route path="/user/profile/:email/:password" component={UserDetails} />
       <Route exact path="/user/table" component={Viewcategory} />
       <Route exact path="/edit/:id" component={EditFormPage} />
+      <Route path="/EditVoucher/:id" component={EditVoucher} />
+      <Route path="/list" component={ListVoucher} />
       <Route path="/voucher" component={CreateVoucher} />
       <Route path ="/deliveryInsert/:id" component={DeliveryForm}/>
       <Route path ="/displayDelivery/:id" component={DisplayDeliveryDetails}/>
