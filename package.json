@@ -22,11 +22,20 @@
   "dependencies": {
     "antd": "^4.6.4",
     "axios": "^0.20.0",
+    "formik": "^2.1.5",
     "mdbreact": "^4.27.0",
+    "react-dom": "^16.13.1",
+    "react-dropzone": "^11.1.0",
     "react-redux": "^7.2.1",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "react-script": "^2.0.5",
+    "redux": "^4.0.5",
+    "redux-promise": "^0.6.0",
+    "redux-thunk": "^2.3.0",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
+    "@ant-design/icons": "^4.2.2",
     "concurrently": "^5.3.0"
   }
 }
