@@ -83,7 +83,7 @@ class DeliveryForm extends Component {
                 if(response.data.success){
                     alert('succeful')
                     
-                //this.props.history.push('/payment/'+this.props.match.params.id);
+                this.props.history.push('/payment/'+this.props.match.params.id);
                 } else {
                     alert('Failed')
                 }
