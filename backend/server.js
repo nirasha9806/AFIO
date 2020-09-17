@@ -12,6 +12,8 @@ app.use(bodyParser.json());
 
 app.use('/api/payment',require('./routes/payment'))
 
+app.use('/api/feedback',require('./routes/feedback'))
+
 //'/api/delivery' location
 app.use('/api/delivery', require('./routes/delivery'));
 
