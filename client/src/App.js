@@ -18,7 +18,6 @@ import LandingPage from "./Components/LandingPage/LandingPage.js";
 import LoginPage from "./Components/LoginPage/LoginPage.js";
 import RegisterPage from "./Components/RegisterPage/RegisterPage.js";
 
-
 import UploadCategoryPage from './Components/Category/UploadCategoryPage';
 import viewDetails from './Components/AdminProfilePage/viewDetails';
 import UserDetails from './Components/UserProfilePage/UserDetails';
@@ -26,10 +25,7 @@ import Viewcategory from './Components/Category/viewAllCategory';
 import EditFormPage from './Components/Category/EditFormPage';
 import Details from './Components/Cart/Pdetails';
 import Products from './Components/Cart/ProductDisplay';
-
 import CreateVoucher from "./Components/Voucher/create-voucher.component";
-import ListVoucher from "./Components/Voucher/list-voucher.component";
-import EditVoucher from "./Components/Voucher/edit-voucher.component";
 
 
 import DisplayDeliveryDetails from './Components/Delivery/DisplayDeliveryDetails'
@@ -37,6 +33,10 @@ import Deliveries from './Components/Delivery/DeliveriesAdmin'
 import UpdateStatus from './Components/Delivery/UpdateStatus'
 import StatusRequests from './Components/Delivery/OrderStatusRequests'
 import OrderHistory from './Components/Delivery/OrderHistory'
+
+
+import Admin from "./Components/Feedback/Admin";
+import Comments from './Components/Feedback/Comments';
 
 
 function App() {
@@ -60,17 +60,19 @@ function App() {
       <Route path="/user/profile/:email/:password" component={UserDetails} />
       <Route exact path="/user/table" component={Viewcategory} />
       <Route exact path="/edit/:id" component={EditFormPage} />
-
+      <Route path="/voucher" component={CreateVoucher} />
       <Route path ="/deliveryInsert/:id" component={DeliveryForm}/>
       <Route path ="/displayDelivery/:id" component={DisplayDeliveryDetails}/>
       <Route path="/deliveryAdmin" component={Deliveries}/>
       <Route path="/update/:id" component={UpdateStatus}/>
       <Route path="/checkRequests" component={StatusRequests}/>
       <Route path="/orderHistory" component={OrderHistory}/>
-
       <Route path="/create" component={CreateVoucher} />
       <Route path="/EditVoucher/:id" component={EditVoucher} />
       <Route path="/list" component={ListVoucher} />
+      <Route path="/comment/:id" component={Comments} />
+      <Route path="/admin" component={Admin} />
+
 
       </Router>
 
