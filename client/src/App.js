@@ -25,7 +25,10 @@ import Viewcategory from './Components/Category/viewAllCategory';
 import EditFormPage from './Components/Category/EditFormPage';
 import Details from './Components/Cart/Pdetails';
 import Products from './Components/Cart/ProductDisplay';
+
 import CreateVoucher from "./Components/Voucher/create-voucher.component";
+import ListVoucher from "./Components/Voucher/list-voucher.component";
+import EditVoucher from "./Components/Voucher/edit-voucher.component";
 
 
 import DisplayDeliveryDetails from './Components/Delivery/DisplayDeliveryDetails'
