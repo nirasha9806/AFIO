@@ -32,6 +32,26 @@ export default class ListVoucher extends Component { //implemented class compone
            this.componentDidMount();
     });
     }
+
+    //search part
+    filterContent(vouchers, searchTerm){
+      const result= vouchers.filter((voucher)=> voucher.searchField.includes(searchTerm));
+      this.setState({ vouchers: result });
+    }
+
+    handleTextSearch=(e)=>{
+
+      console.log(e.currentTarget.value);
+      const searchTerm = e.currentTarget.value;
+      axios.get("/api/voucher")
+      .then(res =>{
+        const vouchers = res.data;
+        this.setState({ vouchers });
+        this.filterContent(vouchers, searchTerm)
+        
+      })
+    }
+
     render() {
         return(
             <div>
@@ -44,6 +64,20 @@ export default class ListVoucher extends Component { //implemented class compone
                         <b>CHECKOUT !</b>
                     </center>
                 </h3>
+
+                <div className ="col-md-5 mt-3 mx-auto">
+
+                  <input 
+                  className="form-control"
+                  type="search"
+                  placeholder="Search your voucher details by Amount"
+                  name="searchTerm"
+                  onChange={this.handleTextSearch}
+                  ></input>
+                  
+                </div>
+
+                <br/>
 
                 <table className="table table-striped">
                 <thead className="table-active">
