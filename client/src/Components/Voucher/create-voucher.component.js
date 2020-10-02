@@ -3,7 +3,6 @@ import axios from 'axios';
 import '../../CSS/myStyle.css'
 import Navbar from '../layouts/Navbar';
 import Footer from '../layouts/Footer';
-import Navbar from '../layouts/V_Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import img1 from '../../Images/1.png';
 import img2 from '../../Images/2.png';

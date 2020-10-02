@@ -1,15 +1,18 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-<<<<<<< Updated upstream
 
-
-
-=======
->>>>>>> Stashed changes
 import Auth from "./hoc/auth";
 
 import CardPay from './Components/Payment/CardPay.js';
+import PaymentForm from './Components/Payment/PaymentForm';
+import PayPal from './Components/Payment/Paypal';
+import CreditDisplay from './Components/Payment/CreditDisplay';
+import PayPalDisplay from './Components/Payment/PayPalDisplay';
+import UpdateCredit from './Components/Payment/UpdateCardPay';
+import UpdatePayPal from './Components/Payment/UpdatePayPal';
+import FinalPage from './Components/Payment/FinalPage';
+
 import CreateProduct from './Components/Product/create-product.component'
 import ProductsList from './Components/Product/products-list.component'
 import DeliveryForm from './Components/Delivery/DeliveryDetailsInsert';
@@ -32,36 +35,48 @@ import Products from './Components/Cart/ProductDisplay';
 import CreateVoucher from "./Components/Voucher/create-voucher.component";
 
 
+import DisplayDeliveryDetails from './Components/Delivery/DisplayDeliveryDetails'
+import Deliveries from './Components/Delivery/DeliveriesAdmin'
+import UpdateStatus from './Components/Delivery/UpdateStatus'
+import StatusRequests from './Components/Delivery/OrderStatusRequests'
+import OrderHistory from './Components/Delivery/OrderHistory'
+
+
+import Admin from "./Components/Feedback/Admin";
+import Comments from './Components/Feedback/Comments';
+
+
 function App() {
   return (
     <Router>
-
       
       <Route path="/cardPay" component={CardPay} />
-      <Route path ="/delivery" component={DeliveryForm}/>
+      <Route exact path="/" component={PaymentForm} />
+        <Route path="/Paypal" component={PayPal} />
+        <Route path="/creditDisplay/:pin" component={CreditDisplay} />
+        <Route path="/update/:id" component={UpdateCredit} />
+        <Route path="/PaypalDisplay/:pwd" component={PayPalDisplay} />
+        <Route path="/update/:id" component={UpdatePayPal} />
+        <Route path="/FinalPage" component={FinalPage} />
       <Route path="/createProduct" component={CreateProduct} />
-      <Route path="/productList" exact component={ProductsList} />
+      <Route path="/productList" component={ProductsList} />
       <Route path="/product" component={Products}/>
       <Route path="/detail/:id" component={Details}/>
-<<<<<<< Updated upstream
-        <Route path="/cardReq" component={LoyaltyForm}/>
-        <Route path="/cardAdd" component={AddLoyaltyCard}/>
-        <Route path="/ListDetails" component={ListDetails}/>
+
 
 
         <Route path="/home/:email/:password" component= {Auth(HomePage, null)} />
           <Route exact path="/" component={Auth(LandingPage, null)} />
           <Route path="/login" component={Auth(LoginPage, false)} />
           <Route path="/register" component={Auth(RegisterPage, false)} />
-          <Route path="/category/upload" component={Auth(UploadCategoryPage, true)} />
+         
           <Route path="/admin/profile/:id" component={viewDetails} />
           <Route path="/user/profile/:email/:password" component={UserDetails} />
           <Route exact path="/user/table" component={Viewcategory} />
           <Route exact path="/edit/:id" component={EditFormPage} />
 
 
-        <Route path="/voucher" component={CreateVoucher} />
-=======
+      
       <Route path="/cardReq" component={LoyaltyForm}/>
       <Route path="/cardAdd" component={AddLoyaltyCard}/>
       <Route path="/ListDetails" component={ListDetails}/>
@@ -82,9 +97,12 @@ function App() {
       <Route path="/checkRequests" component={StatusRequests}/>
       <Route path="/orderHistory" component={OrderHistory}/>
 
+      <Route path="/create" component={CreateVoucher} />
+     {/* <Route path="/EditVoucher/:id" component={EditVoucher} />
+      <Route path="/list" component={ListVoucher} />*/}
       <Route path="/comment/:id" component={Comments} />
       <Route path="/admin" component={Admin} />
->>>>>>> Stashed changes
+
 
       </Router>
 

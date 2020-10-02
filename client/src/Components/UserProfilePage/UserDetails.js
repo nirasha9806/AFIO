@@ -68,8 +68,6 @@ class UserDetails extends Component {
                             </tbody>
                         
                         </table>
-
-                        <a href="#" class="btn btn-dark">Delivery Details</a>
             
             </div></div></center>
        
