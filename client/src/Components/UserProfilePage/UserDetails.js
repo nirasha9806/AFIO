@@ -1,11 +1,12 @@
 import React, { Component, Suspense } from 'react';
 import axios from 'axios';
-import user4 from '../UserProfilePage/UserImg/user4.jpg';
-//import { Menu } from 'antd';
+import afio from '../UserProfilePage/UserImg/afio.png';
+import { Menu } from 'antd';
 import TableRow from './viewUserProfile';
-//import '../NavBarHome/Section/Navbar.css';
-//import NavBarHome from '../NavBarHome/NavBar';
-//const SubMenu = Menu.SubMenu;
+import '../NavBarHome/Section/Navbar.css';
+import NavBarHome from '../NavBarHome/NavBar';
+import Footer from '../layouts/Footer';
+const SubMenu = Menu.SubMenu;
 
 class UserDetails extends Component {
     constructor(props) {
@@ -38,11 +39,11 @@ class UserDetails extends Component {
 
             <>
             <Suspense fallback={(<div>Loading...</div>)}>
-            {/*<NavBarHome />*/}
+            <NavBarHome />
             <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}>
                 
             <center><div class="card" style={{width: '60rem', height: '28rem'}}>
-            <center><img src={user4} alt ="user4" style ={{width:'200px'}}/></center>
+            <center><img src={afio} alt ="afio" style ={{width:'700px'}} /> </center>
             <div class="card-body">
             <h4 class="card-title">USER PROFILE</h4>
 
@@ -74,6 +75,7 @@ class UserDetails extends Component {
 
             </div>
         </Suspense>
+        <Footer/>
          </>
 
          );

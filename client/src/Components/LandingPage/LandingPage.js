@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-//import { Col, Card, Row, Menu } from 'bootstrap';
-//import ImageSlideShow from '../utils/ImageSlideShow';
-//import { Card } from 'antd';
+import React, { useEffect, useState, Suspense } from 'react'
+import Axios from 'axios'
+import { Col, Card, Row, Menu } from 'antd';
+import ImageSlideShow from '../utils/ImageSlideShow';
 import '../NavBar/Sections/Navbar.css';
 import NavBar from '../NavBar/NavBar';
-//const SubMenu = Menu.SubMenu;
+import Footer from '../layouts/Footer';
+const SubMenu = Menu.SubMenu;
 
-//const { Meta } = Card;
+const { Meta } = Card;
 
 //import { FaCode } from "react-icons/fa";
 
@@ -16,7 +16,7 @@ function LandingPage() {
     const [categories, setcategories] = useState([])
 
     useEffect(() => {
-        axios.post ('api/category/getCategory')
+        Axios.post ('api/category/getCategory')
         .then(response => {
             if(response.data.success){
 
@@ -31,29 +31,30 @@ function LandingPage() {
 
     const renderCards = categories.map((category, index ) => {
 
-        return <col lg = {6} md = {8} xs = {24}>
-            {/* <card 
+        return <Col lg = {6} md = {8} xs = {24}>
+            <Card 
                 hoverable = {true}
                 cover = {<ImageSlideShow images = {category.images}/>}
                 // cover = {<a href = {`/category/${category._id}`}><ImageSlideShow images = {category.images}/></a>}
             >
 
-            <meta
+            <Meta
                 description = {category.description}
             />
 
-            </card> */}
-        </col>
+            </Card>
+        </Col>
 
     })
 
 
     return (
 
-        <div>
-        
-       <NavBar />
-        
+        <>
+        <Suspense fallback={(<div>Loading...</div>)}>
+        <NavBar />
+        <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}>
+
         <div style = {{ width: '80%', margin: '5rem auto' }}>
 
         <h1 style={{backgroundColor: "#e8dfdf", textAlign: 'center'}}> <i><b>ADMIN DASHBOARD </b></i></h1>
@@ -72,10 +73,10 @@ function LandingPage() {
 
             <div>
 
-                <row gutter = {[16,16]}>
+                <Row gutter = {[16,16]}>
                     
                     {renderCards}
-                </row>
+                </Row>
 
 
             </div>
@@ -90,7 +91,10 @@ function LandingPage() {
 
             
             </div>
-    </div>
+            </div>
+    </Suspense>
+    <Footer/>
+    </>
 
     )
 }
