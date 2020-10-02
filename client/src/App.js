@@ -6,6 +6,14 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Auth from "./hoc/auth";
 
 import CardPay from './Components/Payment/CardPay.js';
+import PaymentForm from './Components/Payment/PaymentForm';
+import PayPal from './Components/Payment/Paypal';
+import CreditDisplay from './Components/Payment/CreditDisplay';
+import PayPalDisplay from './Components/Payment/PayPalDisplay';
+import UpdateCredit from './Components/Payment/UpdateCardPay';
+import UpdatePayPal from './Components/Payment/UpdatePayPal';
+import FinalPage from './Components/Payment/FinalPage';
+
 import CreateProduct from './Components/Product/create-product.component'
 import ProductsList from './Components/Product/products-list.component'
 import DeliveryForm from './Components/Delivery/DeliveryDetailsInsert';
@@ -35,13 +43,22 @@ import StatusRequests from './Components/Delivery/OrderStatusRequests'
 import OrderHistory from './Components/Delivery/OrderHistory'
 
 
+import Admin from "./Components/Feedback/Admin";
+import Comments from './Components/Feedback/Comments';
+
+
 function App() {
   return (
     <Router>
-
-
       
       <Route path="/cardPay" component={CardPay} />
+      <Route exact path="/" component={PaymentForm} />
+        <Route path="/Paypal" component={PayPal} />
+        <Route path="/creditDisplay/:pin" component={CreditDisplay} />
+        <Route path="/update/:id" component={UpdateCredit} />
+        <Route path="/PaypalDisplay/:pwd" component={PayPalDisplay} />
+        <Route path="/update/:id" component={UpdatePayPal} />
+        <Route path="/FinalPage" component={FinalPage} />
       <Route path="/createProduct" component={CreateProduct} />
       <Route path="/productList" component={ProductsList} />
       <Route path="/product" component={Products}/>
@@ -65,15 +82,11 @@ function App() {
       <Route path="/update/:id" component={UpdateStatus}/>
       <Route path="/checkRequests" component={StatusRequests}/>
       <Route path="/orderHistory" component={OrderHistory}/>
-<<<<<<< Updated upstream
-=======
       <Route path="/create" component={CreateVoucher} />
      {/* <Route path="/EditVoucher/:id" component={EditVoucher} />
       <Route path="/list" component={ListVoucher} />*/}
       <Route path="/comment/:id" component={Comments} />
       <Route path="/admin" component={Admin} />
-
->>>>>>> Stashed changes
 
       </Router>
 
