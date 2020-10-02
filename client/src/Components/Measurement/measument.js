@@ -5,6 +5,7 @@ import axios from 'axios';
 import Navbar from '../layouts/Navbar';
 import Footer from '../layouts/Footer';
 
+
 export default class Measument extends Component { //implemented class component
     
     constructor() {
@@ -149,7 +150,9 @@ export default class Measument extends Component { //implemented class component
     render() {
         return(
             <div className ="App">
+
                 <Navbar/>
+
 
                 <center>
                         <h2 className = 'header2'>New Measurements</h2>
@@ -257,8 +260,8 @@ export default class Measument extends Component { //implemented class component
 
                 </div>
                         
-
                 <Footer/>
+
             </div>
 
         )

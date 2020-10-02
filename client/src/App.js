@@ -76,8 +76,6 @@ function App() {
       <Route path="/list" component={ListVoucher} />
       <Route path="/comment/:id" component={Comments} />
       <Route path="/admin" component={Admin} />
-
-
       <Route path="/measument" component={Measument} />
 
       </Router>
