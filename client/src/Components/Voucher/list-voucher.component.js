@@ -67,7 +67,6 @@ export default class ListVoucher extends Component { //implemented class compone
                     <td>{voucher.note}</td>
 
                     <td>
-                      
                       <button className="btn btn-success"><i className="fas fa-edit"></i><Link to={"/EditVoucher/"+voucher._id}> Edit</Link>
                       
                       </button>

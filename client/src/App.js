@@ -29,6 +29,7 @@ import Products from './Components/Cart/ProductDisplay';
 import CreateVoucher from "./Components/Voucher/create-voucher.component";
 import ListVoucher from "./Components/Voucher/list-voucher.component";
 import EditVoucher from "./Components/Voucher/edit-voucher.component";
+import Measument from './Components/Measurement/measument';
 
 
 import DisplayDeliveryDetails from './Components/Delivery/DisplayDeliveryDetails'
@@ -76,6 +77,8 @@ function App() {
       <Route path="/comment/:id" component={Comments} />
       <Route path="/admin" component={Admin} />
 
+
+      <Route path="/measument" component={Measument} />
 
       </Router>
 
