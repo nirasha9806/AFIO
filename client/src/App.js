@@ -65,6 +65,15 @@ function App() {
       <Route path="/update/:id" component={UpdateStatus}/>
       <Route path="/checkRequests" component={StatusRequests}/>
       <Route path="/orderHistory" component={OrderHistory}/>
+<<<<<<< Updated upstream
+=======
+      <Route path="/create" component={CreateVoucher} />
+     {/* <Route path="/EditVoucher/:id" component={EditVoucher} />
+      <Route path="/list" component={ListVoucher} />*/}
+      <Route path="/comment/:id" component={Comments} />
+      <Route path="/admin" component={Admin} />
+
+>>>>>>> Stashed changes
 
       </Router>
 
