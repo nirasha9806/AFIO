@@ -1,9 +1,10 @@
 import React, {Component, Suspense} from 'react'
-import { Typography, Button, Form, message, Input, Icon, Menu } from 'antd';
+import { Typography, Form, Input, Menu } from 'antd';
 import CatFileUpload from '../utils/CatFileUpload'
 import axios from 'axios';
 import '../NavBar/Sections/Navbar.css';
 import NavBar from '../NavBar/NavBar';
+import Footer from '../layouts/Footer';
 const SubMenu = Menu.SubMenu;
 
 const { Title } = Typography;
@@ -29,7 +30,7 @@ class EditFormPage extends Component {
           categoryName: '',
           categoryType: '',
           description: '',
-          SubCategoryType: [],
+          //SubCategoryType: [],
 
         }
   }
@@ -44,8 +45,11 @@ class EditFormPage extends Component {
             categoryName: response.data.categoryName,
             categoryType:response.data.categoryType,
             description: response.data.description,
-            // subCategoryType: response.data.subCategoryType,
+            // subCategoryType: response.data.subCategoryType,.
+           
           });
+          console.log(this.state.categoryID);
+        
       })
       .catch(function (error) {
           console.log(error);
@@ -73,16 +77,16 @@ class EditFormPage extends Component {
     //   this.setState({ val: [...this.state.val, '']})
     // }
 
-     removeClick = () => {
-      let vals = [...this.state.val];
-      vals.splice(this,1);
-      this.setState({ val: vals });
-    }
+    //  removeClick = () => {
+    //   let vals = [...this.state.val];
+    //   vals.splice(this,1);
+    //   this.setState({ val: vals });
+    // }
 
-     handleSubmit = event => {
-      alert('A name was submitted: ' + this.state.val.join(', '));
-      event.preventDefault();
-    }
+    //  handleSubmit = event => {
+    //   alert('A name was submitted: ' + this.state.val.join(', '));
+    //   event.preventDefault();
+    // }
 
   // const [IdValue, setIdValue] = useState("")
   // const [CatNameValue, setCatNameValue] = useState("")
@@ -124,7 +128,7 @@ class EditFormPage extends Component {
     // }
 
     const obj = {
-      // writer: props.user.userData_id,
+      //writer: props.user.userData_id,
       images: this.state.images,
       categoryID: this.state.categoryID,
       categoryName: this.state.categoryName,
@@ -148,7 +152,7 @@ class EditFormPage extends Component {
           categoryName: '',
           categoryType: '',
           description: '',
-          subCategoryType: []
+          //subCategoryType: []
     });
     window.location.href = "/user/table";
   
@@ -161,6 +165,8 @@ class EditFormPage extends Component {
   
   render(){
   return (
+
+    
 
     <>
      <Suspense fallback={(<div>Loading...</div>)}>
@@ -176,32 +182,33 @@ class EditFormPage extends Component {
         <Form onSubmit = {this.onSubmit}>
         
         {/* DropZone */}
-        <CatFileUpload refreshFunction = {this.updateImages}/><br />
+        <CatFileUpload refreshFunction = {this.updateImages}/>
 
 
-        <Form.Item style={{ marginBottom: 0 }}>
+        <form>
         <Form.Item
           name="ID"
           rules={[{ required: true }]}
           style={{ display: 'inline-block', width: 'calc(50% - 8px)' }}
         >
-          <Input placeholder="Category ID"  onChange = {this.onIdChange}
+           </Form.Item>
+          <Input placeholder="Category ID" type = "name" onChange = {this.onIdChange}
           value = {this.state.categoryID}/>
-        </Form.Item>
-
+       
         <Form.Item
-          name="month"
+          name="Name"
           rules={[{ required: true }]}
           style={{ display: 'inline-block', width: 'calc(50% - 8px)', margin: '0 8px' }}
         >
-          <Input placeholder="Category Name" onChange = {this.onCatNameChange}
+           </Form.Item>
+          <Input placeholder="Category Name" type = "name" onChange = {this.onCatNameChange}
           value = {this.state.categoryName}/>
-         </Form.Item>
-      </Form.Item>
+        
+      </form><br />
 
       <div class="input-field col s12">
         <label> Category Type </label><br />
-        <select style={{ width: 475 , height: 32}}  value={this.state.categoryType} onChange = {this.onContinentsSelectChange}>
+        <select style={{ width: 480 , height: 32}}  value={this.state.categoryType} onChange = {this.onContinentsSelectChange}>
               {Continents.map(item => (
                 <option key = {item.key} key = {item.value}> {item.value}
                 </option>
@@ -249,6 +256,7 @@ class EditFormPage extends Component {
   </div>
 
   </Suspense>
+  <Footer/>
 
     </>
 

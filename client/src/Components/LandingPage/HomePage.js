@@ -2,6 +2,7 @@ import React, { Suspense, Component } from 'react'
 import '../NavBarHome/Section/Navbar.css';
 import NavBarHome from '../NavBarHome/NavBar';
 import { withRouter, Link } from 'react-router-dom';
+import Footer from '../layouts/Footer';
 import axios from 'axios';
 
 class HomePage extends Component{
@@ -30,7 +31,7 @@ componentDidMount(){
 
     <div>
      <Suspense fallback={(<div>Loading...</div>)}>
-    {/*<NavBarHome />*/}
+    <NavBarHome />
     <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}>
     <div style = {{ width: '80%', margin: '5rem auto' }}>
         <h1 style={{backgroundColor: "#e8dfdf", textAlign: 'center'}}><i><b> All Fashion In One (AFIO) </b></i></h1>
@@ -41,11 +42,17 @@ componentDidMount(){
 
     {this.state.user.map( user =>
     <ul>
+<<<<<<< Updated upstream
       <li><button><Link to={'/product/'+user._id}>Product</Link></button></li>
+=======
+      <li><button><Link to={'/product/'+user._id}>Product</Link></button></li><br></br>
+      <li><button><Link to={'/displayDelivery/'+user._id}>Delivery Details</Link></button></li>
+>>>>>>> Stashed changes
     </ul>
       
       )}
     </Suspense>
+    <Footer/>
     </div>
     
   )

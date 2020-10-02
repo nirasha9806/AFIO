@@ -18,7 +18,7 @@ router.get("/auth", auth, (req, res) => {
         firstName: req.user.firstName,
         lastName: req.user.firstName,
         role: req.user.role,
-        // image: req.user.image,
+        //image: req.user.image,
     });
 });
 

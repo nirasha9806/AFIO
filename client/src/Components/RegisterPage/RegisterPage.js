@@ -5,8 +5,8 @@ import { Formik, validateYupSchema} from 'formik';
 import * as Yup from 'yup';
 import { Form, Input, Checkbox, Typography, Menu} from 'antd';
 import { useDispatch } from "react-redux";
-import '../NavBar/Sections/Navbar.css';
-import NavBar from '../NavBar/NavBar';
+import Navbar from '../layouts/Navbar';
+import Footer from '../layouts/Footer';
 const SubMenu = Menu.SubMenu;
 
 const { Title } = Typography;
@@ -18,7 +18,7 @@ function RegisterPage(props) {
 
     <>
     <Suspense fallback={(<div>Loading...</div>)}>
-    <NavBar />
+    <Navbar />
     <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}>
 
     <Formik
@@ -102,12 +102,12 @@ function RegisterPage(props) {
                 <Input
                   id="firstName"
                   placeholder="First name*"
-                  type="text"
+                  type="name"
                   value={values.firstName}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={
-                    errors.firstName && touched.firstName ? 'text-input error' : 'text-input'
+                    errors.firstName && touched.firstName ? 'name-input error' : 'name-input'
                   }
                 />
                 {errors.firstName && touched.firstName && (
@@ -119,12 +119,12 @@ function RegisterPage(props) {
                 <Input
                   id="lastName"
                   placeholder="Last name*"
-                  type="text"
+                  type="name"
                   value={values.lastName}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={
-                    errors.lastName && touched.lastName ? 'text-input error' : 'text-input'
+                    errors.lastName && touched.lastName ? 'name-input error' : 'name-input'
                   }
                 />
                 {errors.lastName && touched.lastName && (
@@ -239,6 +239,7 @@ function RegisterPage(props) {
 
     </div>
     </Suspense>
+    <Footer/>
     </>
 
   );
