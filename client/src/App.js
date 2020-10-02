@@ -83,11 +83,10 @@ function App() {
       <Route path="/checkRequests" component={StatusRequests}/>
       <Route path="/orderHistory" component={OrderHistory}/>
       <Route path="/create" component={CreateVoucher} />
-      <Route path="/EditVoucher/:id" component={EditVoucher} />
-      <Route path="/list" component={ListVoucher} />
+     {/* <Route path="/EditVoucher/:id" component={EditVoucher} />
+      <Route path="/list" component={ListVoucher} />*/}
       <Route path="/comment/:id" component={Comments} />
       <Route path="/admin" component={Admin} />
-
 
       </Router>
 
