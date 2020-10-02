@@ -64,10 +64,10 @@ function LoginPage(props) {
 
                 if(response.payload.userType === "User")
                 {
-                  props.history.push("/home/" + values.email +"/"+ values.password );
+                  props.history.push("/homePage/" + values.email +"/"+ values.password );
                 }
                 else{
-                  props.history.push("/");
+                  props.history.push("/adminDashboard");
                 }
                 
               } else {

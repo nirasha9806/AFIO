@@ -6,31 +6,7 @@ import CustomSlider from '../slider'
 import CustomSliders from '../slider02'
 import Navbar from '../layouts/Navbar';
 import Footer from '../layouts/Footer';
-import {Link} from "react-router-dom";
-import axios from 'axios';
- class HomePage extends Component {
-
-    constructor(props){
-        super(props);
-        this.state = {
-          user : []
-        }
-    }
-    
-    componentDidMount(){
-      axios.get('/api/users/'+this.props.match.params.email)
-          .then(response => {
-    
-              this.setState({ user: response.data });
-              
-          })
-          .catch(function (error) {
-              console.log(error);
-          })
-    }
-
-
-
+ class Home extends Component {
     render() {
         return (
             <div>
@@ -62,25 +38,11 @@ import axios from 'axios';
                    
                     <CustomSliders />
                     <div >
-                    <center>
-    <button type = "button" className="btn btn-secondary btn-lg" ><Link to={"/user/profile/"+this.props.match.params.email+ "/" +this.props.match.params.password}>User Profile</Link></button></center>
+                        <h1>Our Products</h1>
                     </div>
                     <div className="userProfile">
-
-                    {this.state.user.map( user =>
-    <ul>
-
-      <li><button className="btn btn-secondary btn-lg"><Link to={'/product/'+user._id}>Product</Link></button></li><br></br>
-      <li><button className="btn btn-secondary btn-lg"><Link to={'/displayDelivery/'+user._id}>Delivery Details</Link></button></li><br></br>
-
-      <li><button className="btn btn-secondary btn-lg"><Link to={'/comment/'+user._id}>Add Feedbacks</Link></button></li>
-
-
-    </ul>
-      
-      )}
-                    
-                    </div>
+                        <h6>User Profile</h6>
+                        <button className="btn btn-primary mt-5">Send</button></div>
                     </div>
                     <div>
                         <InfoConsumer>
@@ -101,5 +63,5 @@ import axios from 'axios';
          );
     }
 }
-export default HomePage;
+export default Home;
 
