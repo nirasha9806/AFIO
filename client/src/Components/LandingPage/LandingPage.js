@@ -5,11 +5,9 @@ import ImageSlideShow from '../utils/ImageSlideShow';
 import '../NavBar/Sections/Navbar.css';
 import NavBar from '../NavBar/NavBar';
 import Footer from '../layouts/Footer';
+
 const SubMenu = Menu.SubMenu;
-
 const { Meta } = Card;
-
-//import { FaCode } from "react-icons/fa";
 
 function LandingPage() {
 
@@ -35,7 +33,6 @@ function LandingPage() {
             <Card 
                 hoverable = {true}
                 cover = {<ImageSlideShow images = {category.images}/>}
-                // cover = {<a href = {`/category/${category._id}`}><ImageSlideShow images = {category.images}/></a>}
             >
 
             <Meta
@@ -59,11 +56,6 @@ function LandingPage() {
 
         <h1 style={{backgroundColor: "#e8dfdf", textAlign: 'center'}}> <i><b>ADMIN DASHBOARD </b></i></h1>
 
-        {/* <div style = {{ width: '75%', margin: '5rem auto' }}>
-            <div style = {{ textAlign: 'center' }}>
-                <h1> ADMIN DASHBOARD <Icon type = "smile" /></h1> 
-            </div> */}
-
             <h6><i>Category Items</i></h6><br />
 
             {categories.length === 0 ?
@@ -85,11 +77,6 @@ function LandingPage() {
 
         <br /><br />
 
-            {/* <div style = {{ display: 'flex', justifyContent: 'center'}}>
-                <button>Load More</button>
-            </div> */}
-
-            
             </div>
             </div>
     </Suspense>
@@ -100,22 +87,3 @@ function LandingPage() {
 }
 
 export default LandingPage
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* <div className="app"> */}
-            {/* <FaCode style={{ fontSize: '4rem' }} /><br /> */}
-            {/* <span style={{ fontSize: '10rem' }}>AFIO</span>
-            <span style={{ fontSize: '5rem' }}>Admin Dashboard</span> */}
-        {/* </div>
-        <div style={{ float:'right' }}>Welcome to AFIO</div> */}

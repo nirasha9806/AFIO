@@ -30,8 +30,7 @@ class EditFormPage extends Component {
           categoryName: '',
           categoryType: '',
           description: '',
-          //SubCategoryType: [],
-
+          
         }
   }
 
@@ -45,7 +44,6 @@ class EditFormPage extends Component {
             categoryName: response.data.categoryName,
             categoryType:response.data.categoryType,
             description: response.data.description,
-            // subCategoryType: response.data.subCategoryType,.
            
           });
           console.log(this.state.categoryID);
@@ -55,46 +53,6 @@ class EditFormPage extends Component {
           console.log(error);
       })
   }
-
-  //  const [values, setValues] = useState({ val: []});
-
-    // createInputs = () => {
-    //     return this.map((el, i) =>
-    //       <div key={i}>
-    //         <input type="text" value={el||''} style={{ width: 400 , height: 32}} onChange={this.handleChange.bind(i)} />
-    //         <input type='button' value='remove' style={{ width: 100 , height: 32}} onClick={this.removeClick.bind(i)} /><br/>
-    //       </div>
-    //     );
-    //   }
-
-    // handleChange(event) {
-    //   let vals = [...this.state.val];
-    //   vals[this] = event.target.value;
-    //   this.setState({ val: vals });
-    // }
-
-    // addClick = () => {
-    //   this.setState({ val: [...this.state.val, '']})
-    // }
-
-    //  removeClick = () => {
-    //   let vals = [...this.state.val];
-    //   vals.splice(this,1);
-    //   this.setState({ val: vals });
-    // }
-
-    //  handleSubmit = event => {
-    //   alert('A name was submitted: ' + this.state.val.join(', '));
-    //   event.preventDefault();
-    // }
-
-  // const [IdValue, setIdValue] = useState("")
-  // const [CatNameValue, setCatNameValue] = useState("")
-  // const [DescriptionValue, setDescriptionValue] = useState("")
-  // //const [PriceValue, setPriceValue] = useState(0)
-  // const [ContinentValue, setContinentValue] = useState(1)
-
-  // const [Images, setImages] = useState([])
 
   onIdChange = (event) => {
       this.setState({
@@ -111,10 +69,6 @@ class EditFormPage extends Component {
       description: event.currentTarget.value});
   }
 
-  // const onPriceChange = (event) => {
-  //     setPriceValue(event.currentTarget.value)
-  // }
-
    onContinentsSelectChange = (event) => {
     this.setState({
       categoryType: event.currentTarget.value});
@@ -123,12 +77,7 @@ class EditFormPage extends Component {
    onSubmit = (event) => {
     event.preventDefault();
    
-    // if (!IdValue || !CatNameValue || !DescriptionValue || !ContinentValue || !Images){
-    //   return alert ('Fill all the fileds..')
-    // }
-
     const obj = {
-      //writer: props.user.userData_id,
       images: this.state.images,
       categoryID: this.state.categoryID,
       categoryName: this.state.categoryName,
@@ -152,7 +101,6 @@ class EditFormPage extends Component {
           categoryName: '',
           categoryType: '',
           description: '',
-          //subCategoryType: []
     });
     window.location.href = "/user/table";
   
@@ -230,12 +178,6 @@ class EditFormPage extends Component {
         <div style = {{ textAlign: 'left'}}>
             {/* <label> SubCategory Types </label> */}
         </div>
-
-        {/* <form onSubmit={this.handleSubmit}> */}
-          {/* {this.createInputs()} */}
-          {/* <input type='primary' value={this.state.SubCategory} class="btn btn-secondary" style={{ minWidth: '100%', height: 34}} onClick={this.addClick} /> */}
-          {/* <input type="submit" value="Submit" /> */}
-      {/* </form> */}
 
       </div>
     

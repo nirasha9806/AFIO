@@ -1,5 +1,4 @@
 import React, { Suspense } from "react";
-//import { Button,Form } from 'react-bootstrap';
 import { registerUser } from "../../_actions/user_actions";
 import { Formik, validateYupSchema} from 'formik';
 import * as Yup from 'yup';
@@ -96,7 +95,6 @@ function RegisterPage(props) {
             <div className = "w-50 mx-auto shadow p-5">
             <center><Title level={2}>CREATE ACCOUNT</Title></center>
             <form onSubmit={handleSubmit} style={{ width: '430px' }}>
-            {/* <Form style={{ minWidth: '375px' }} {...formItemLayout} onSubmit={handleSubmit} > */}
 
               <Form.Item required>
                 <Input

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class viewAdmProfile extends Component {
@@ -12,7 +11,7 @@ delete(){
     axios.delete('/api/users/delete/' +this.props.obj._id)
     .then(console.log('Deleted'))
     .catch(err => console.log(err));
-    window.location.href = "/";
+    window.location.href = "/adminDashboard";
 }
     
     render() { 

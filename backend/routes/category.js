@@ -59,7 +59,6 @@ router.post("/getCategory", auth, (req, res) => {
      
  });
 
-//  ?id=${categoryId} & type = single
  router.get("/categories_by_id", auth, (req, res) => {
    let type = req.query.type
    let categoryIds = req.query.id 
@@ -77,18 +76,6 @@ router.post("/getCategory", auth, (req, res) => {
     
 });
 
-
-// router.get("/", auth, (req, res) => {
-//     Category.find((err, category) => {
-//         if(err){
-//             console.log(err);
-//         }
-//         else {
-//             res.json(category);
-//         }
-//     });
-//  });
-
  router.route('/').get((req, res) => {
     Category.find()
       .then(category => res.json(category))
@@ -102,7 +89,6 @@ router.post("/getCategory", auth, (req, res) => {
         category.categoryName = req.body.categoryName;
         category.categoryType = req.body.categoryType;
         category.description = req.body.description;
-        // category.subCategoryType = req.body.subCategoryType;
         category.images = req.body.images;
         
 

@@ -21,7 +21,7 @@ const FooterPagePro = () => {
             <h5 className="mb-1">Register for free</h5>
           </li>
           <li className="list-inline-item">
-            <a href="#!" className="btn btn-danger btn-rounded">
+            <a href="/register" className="btn btn-danger btn-rounded">
               Sign up!
             </a>
           </li>

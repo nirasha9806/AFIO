@@ -175,7 +175,6 @@ function UploadCategoryPage(props) {
         <form onSubmit={handleSubmit}>
           {createInputs()}
           <input type='primary' value='Add Sub Category' class="btn btn-secondary" style={{ minWidth: '100%', height: 34}} onClick={addClick} />
-          {/* <input type="submit" value="Submit" /> */}
       </form >
 
       </div>

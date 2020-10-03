@@ -22,7 +22,7 @@ function LeftMenu(props) {
 
     <Menu mode={props.mode}>
 
-        <Menu.Item key="dash"><a href = "/">DASHBOARD</a></Menu.Item>
+        <Menu.Item key="dash"><a href = "/adminDashboard">DASHBOARD</a></Menu.Item>
 
     <SubMenu key="sub1" title={<span><span>CATEGORIES & PRODUCTS</span></span>}>
         <Menu.Item key="setting:1"><a href = "/category/upload"><i>Add Category</i></a></Menu.Item>
