@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button,Form } from 'react-bootstrap';
-import Navbar from '../layouts/Navbar';
+import ANavbar from '../layouts/AdminNavbar';
 import Footer from '../layouts/Footer';
 import axios from 'axios';
 import {Link} from 'react-router-dom'
@@ -56,19 +56,29 @@ import {Link} from 'react-router-dom'
 render() {
     return(
 
-        <div>  
+        <div>
+        <ANavbar />
 
-            <br></br><br></br><br></br>
+    <div className="container">  <br></br>
 
-                        <div class="col-lg-6 col-md-6">
+      <Button variant="dark"><Link class="badge badge-dark" to="ListDetails">View Details</Link></Button> 
 
-                        <Form className="needs-validation" onSubmit={this.onSubmit}>
+      <br></br><br></br>
+      <center>
+        <h1 className="h1 mb-3 font-weight-bold ">Add Card Details</h1>
+      </center></div>
 
-                                <br></br>
-                                <h1 className="h3 mb-3 font-weight-body">Add details!!</h1>
-                                <br></br>
+      <br></br>
 
-                            <div className="form-group">
+
+          <br></br><br></br>
+          
+                    <center>
+                        <table class="table" className="needs-validation" onSubmit={this.onSubmit}>
+                        <tr>
+                               
+
+                            <div className="form-group" >
                                 <lable> Card Type : </lable>
                                 <input name='cardType' className="form-control" type='text' value={this.state.cardType} onChange ={this.handleCardTypeChange}/>
                             </div>
@@ -77,21 +87,30 @@ render() {
                                 <label>Discount : </label>
                                 <input name='discount' className="form-control" type='text' value={this.state.discount} onChange={this.handleDiscountChange}/>
                             </div>
-
+                            </tr>
+                            
                             
 
                             <center>
+<<<<<<< Updated upstream
                                 <Link className="btn btn-primary" onClick={this.onSubmit}> Request</Link>
                             </center> <br></br>
                             
                         </Form>
 
                         </div>
+=======
+                                <Link className="btn btn-primary" onClick={this.onSubmit}> Add</Link>
+                            </center> <br></br></table>
+                            </center>
+                            <Footer/>
+                       
+                        </div> 
+                        
+>>>>>>> Stashed changes
                        
                 
-            <br></br><br></br><br></br>
-
-        </div>
+         
         
     )
 }
