@@ -23,6 +23,13 @@
     "antd": "^4.6.4",
     "axios": "^0.20.0",
     "formik": "^2.1.5",
+<<<<<<< Updated upstream
+=======
+    "infinite-react-carousel": "^1.2.11",
+    "info": "0.0.6-beta.0",
+    "jspdf": "^2.1.1",
+    "jspdf-autotable": "^3.5.13",
+>>>>>>> Stashed changes
     "mdbreact": "^4.27.0",
     "react-dom": "^16.13.1",
     "react-dropzone": "^11.1.0",
