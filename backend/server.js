@@ -10,10 +10,12 @@ app.use(cors());
 app.use(bodyParser.json());
 
 
-app.use('/api/payment',require('./routes/payment'))
+app.use('/api/payment',require('./routes/payment'));
+app.use('/api/paypal', require('./routes/paypal'));
 
 //'/api/delivery' location
 app.use('/api/delivery', require('./routes/delivery'));
+
 
 
 //DB config
