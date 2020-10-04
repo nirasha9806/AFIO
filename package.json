@@ -26,6 +26,8 @@
     "formik": "^2.1.5",
     "infinite-react-carousel": "^1.2.11",
     "info": "0.0.6-beta.0",
+    "jspdf": "^2.1.1",
+    "jspdf-autotable": "^3.5.13",
     "mdbreact": "^4.27.0",
     "react-cookie": "^4.0.3",
     "react-dom": "^16.13.1",
