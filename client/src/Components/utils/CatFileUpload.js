@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Dropzone from 'react-dropzone';
-//import { Icon } from 'antd';
 import Axios from 'axios';
 
 function CatFileUpload(props) {

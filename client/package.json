@@ -11,6 +11,8 @@
     "bootstrap": "^4.5.2",
     "core-js": "^3.6.5",
     "formik": "^2.1.5",
+    "jspdf": "^2.1.1",
+    "jspdf-autotable": "^3.5.13",
     "moment": "^2.29.0",
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",

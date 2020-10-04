@@ -31,6 +31,19 @@ import axios from 'axios';
 
 
 
+
+  render(){
+  return (
+
+    <div>
+     <Suspense fallback={(<div>Loading...</div>)}>
+    <NavBarHome />
+    <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}>
+    <div style = {{ width: '80%', margin: '5rem auto' }}>
+        <h1 style={{backgroundColor: "#e8dfdf", textAlign: 'center'}}><i><b> All Fashion In One (AFIO) </b></i></h1>
+    </div>
+    <center>
+
     render() {
         return (
             <div>
@@ -63,6 +76,7 @@ import axios from 'axios';
                     <CustomSliders />
                     <div >
                     <center>
+
     <button type = "button" className="btn btn-secondary btn-lg" ><Link to={"/user/profile/"+this.props.match.params.email+ "/" +this.props.match.params.password}>User Profile</Link></button></center>
                     </div>
                     <div className="userProfile">
@@ -73,12 +87,46 @@ import axios from 'axios';
       <li><button className="btn btn-secondary btn-lg"><Link to={'/product/'+user._id}>Product</Link></button></li><br></br>
       <li><button className="btn btn-secondary btn-lg"><Link to={'/displayDelivery/'+user._id}>Delivery Details</Link></button></li><br></br>
 
+
+      <li><button><Link to={'/comment/'+user._id}>Add Feedbacks</Link></button></li>
+
+                        </div>
+                     </div>
+                    </div>
+                   
+                    <CustomSliders />
+                    <div >
+                    <center>
+                    <button type = "button" className="btn btn-secondary btn-lg" ><Link to={"/user/profile/"+this.props.match.params.email+ "/" +this.props.match.params.password}>User Profile</Link></button></center>
+                    </div>
+                    <div className="userProfile">
+
       <li><button className="btn btn-secondary btn-lg"><Link to={'/comment/'+user._id}>Add Feedbacks</Link></button></li>
 
 
-    </ul>
+                    {this.state.user.map( user =>
+                    <ul>
+
+                    <li><button className="btn btn-secondary btn-lg"><Link to={'/product/'+user._id}>Product</Link></button></li><br></br>
+                    <li><button className="btn btn-secondary btn-lg"><Link to={'/displayDelivery/'+user._id}>Delivery Details</Link></button></li><br></br>
+                    <li><button className="btn btn-secondary btn-lg"><Link to={'/comment/'+user._id}>Add Feedbacks</Link></button></li>
+
+
+
+                    </ul>
       
+
       )}
+
+    </Suspense>
+    <Footer/>
+    </div>
+    
+  )
+  }
+
+                     )}
+
                     
                     </div>
                     </div>
@@ -100,6 +148,7 @@ import axios from 'axios';
         </div>
          );
     }
+
 }
 export default HomePage;
 
