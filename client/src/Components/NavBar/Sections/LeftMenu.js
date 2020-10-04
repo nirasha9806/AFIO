@@ -31,8 +31,8 @@ function LeftMenu(props) {
         <Menu.Item key="setting:1"><a href = "/category/upload"><i>View Product</i></a></Menu.Item>
     </SubMenu>
     <SubMenu key="sub2" title={<span><span>OTHER</span></span>}>
-        <Menu.Item key="setting:3"><i>Order History</i></Menu.Item>
-        <Menu.Item key="setting:4"><i>Delivery Details</i></Menu.Item>
+        <Menu.Item key="setting:3"><a href = "/deliveryAdmin"><i>Delivery Details</i></a></Menu.Item>
+        <Menu.Item key="setting:4"><a href = "/orderHistory"><i>Delivery History</i></a></Menu.Item>
         <Menu.Item key="setting:4"><i>Loyalty Card Details</i></Menu.Item>
     </SubMenu>
   </Menu>

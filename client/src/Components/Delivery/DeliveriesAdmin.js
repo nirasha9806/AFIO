@@ -68,7 +68,7 @@ class Deliveries extends Component{
         })
 
         //save the pdf
-        doc.save("deliveryDetails.pdf");
+        doc.save("Delivery Details.pdf");
       }
 
     render() {
