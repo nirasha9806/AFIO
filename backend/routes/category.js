@@ -7,7 +7,7 @@ const { auth } = require("../middleware/auth");
 
 var storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'uploads/')
+        cb(null, './uploads/')
     },
     filename: (req, file, cb) => {
         cb(null, `${Date.now()}_${file.originalname}`)
@@ -27,7 +27,7 @@ var upload = multer({ storage: storage }).single("file")
 //             Category
 //---------------------------------
 
-router.post("/uploadImage",auth, (req, res) => {
+router.post("/uploadImage", auth, (req, res) => {
    
     upload(req, res, err => {
         if(err) {
@@ -38,7 +38,7 @@ router.post("/uploadImage",auth, (req, res) => {
     
 });
 
-router.post("/uploadCategory",auth, (req, res) => {
+router.post("/uploadCategory", auth, (req, res) => {
    
    const category = new Category(req.body)
 
@@ -49,18 +49,18 @@ router.post("/uploadCategory",auth, (req, res) => {
     
 });
 
-// router.post("/getCategory", auth, (req, res) => {
+router.post("/getCategory", auth, (req, res) => {
    
-//     Category.find()
-//     .exec((err, categories) => {
-//         if(err) return res.status(400).json({ success: false, err })
-//         res.status(200).json({ success : true, categories})
-//     })
+    Category.find()
+    .exec((err, categories) => {
+        if(err) return res.status(400).json({ success: false, err })
+        res.status(200).json({ success : true, categories})
+    })
      
-//  });
+ });
 
 //  ?id=${categoryId} & type = single
- router.get("/categories_by_id",  (req, res) => {
+ router.get("/categories_by_id", auth, (req, res) => {
    let type = req.query.type
    let categoryIds = req.query.id 
 

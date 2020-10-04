@@ -56,12 +56,12 @@ function CatFileUpload(props) {
                     {...getRootProps()} 
                     >
                         <input {...getInputProps()} />
-                        {/*<Icon type = "plus" style = {{ fontSize: '3rem'}} />*/}
-
+                        <i class="fa fa-plus fa-2x" aria-hidden="true" ></i>
+                        
                 </div>
             )}
         
-            </Dropzone> 
+        </Dropzone>
 
         <div style = {{ display:'flex', width:'300px', height:'310px', overflowX:'scroll' }}>
 

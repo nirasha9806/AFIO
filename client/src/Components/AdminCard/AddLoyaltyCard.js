@@ -81,7 +81,7 @@ render() {
                             
 
                             <center>
-                                <Link className="btn btn-primary" onClick={this.onSubmit}> Request</Link>
+                                <Link className="btn btn-primary" onClick={this.onSubmit}> Add</Link>
                             </center> <br></br>
                             
                         </Form>

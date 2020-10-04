@@ -1,14 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cookieParser = require("cookie-parser");
 const cors = require('cors');
+const path = require("path");
 const app = express();
 
 app.use(cors());
 
+app.use(bodyParser.urlencoded({ extended: true }));
+
 //BodyParser Middleware
 app.use(bodyParser.json());
-
+app.use(cookieParser());
 
 app.use('/api/payment',require('./routes/payment'))
 
@@ -29,19 +33,27 @@ app.use('/api/products', require('./routes/products'));
 //'/api/product' location
 app.use('/api/categories', require('./routes/categories'));
 
-
-app.use('/api/category/', require('./routes/category'));
+const adminRouteCategory = require("./routes/category");
+app.use("/api/category", adminRouteCategory);
 
 app.use('/api/users', require('./routes/users'));
 
 app.use('/api/Cart', require('./routes/Cart'));
 
-
-//use this to show the image you have in node js server to client (react js)
-//https://stackoverflow.com/questions/48914987/send-image-path-from-node-js-express-server-to-react-client
 app.use('/uploads', express.static('uploads'));
 
+// Serve static assets if in production
+if (process.env.NODE_ENV === "production") {
 
+    // Set static folder   
+    // All the javascript and css files will be read and served from this folder
+    app.use(express.static("client/build"));
+  
+    // index.html for all page routes    html or routing and naviagtion
+    app.get("*", (req, res) => {
+      res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
+    });
+  }
 
 //DB config
 const db = require('./config/keys').mongoURI;

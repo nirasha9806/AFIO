@@ -5,8 +5,8 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Form, Input, Checkbox, Menu, Typography } from 'antd';
 import { useDispatch } from "react-redux";
-import '../NavBar/Sections/Navbar.css';
-import NavBar from '../NavBar/NavBar';
+import Navbar from '../layouts/Navbar';
+import Footer from '../layouts/Footer';
 const SubMenu = Menu.SubMenu;
 
 const { Title } = Typography;
@@ -28,7 +28,7 @@ function LoginPage(props) {
 
     <>
     <Suspense fallback={(<div>Loading...</div>)}>
-    <NavBar />
+    <Navbar />
     <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}>
 
     <Formik
@@ -64,10 +64,10 @@ function LoginPage(props) {
 
                 if(response.payload.userType === "User")
                 {
-                  props.history.push("/home/" + values.email +"/"+ values.password );
+                  props.history.push("/homePage/" + values.email +"/"+ values.password );
                 }
                 else{
-                  props.history.push("/");
+                  props.history.push("/adminDashboard");
                 }
                 
               } else {
@@ -120,7 +120,7 @@ function LoginPage(props) {
                 {errors.email && touched.email && (
                   <div className="input-feedback">{errors.email}</div>
                 )} </Form.Item>
-             
+            
 
               {/* color: 'rgba(0,0,0,.25) */}
 
@@ -147,7 +147,7 @@ function LoginPage(props) {
               )}
 
                 <Form.Item>
-                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} >Remember me</Checkbox>
+                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} >Remember me</Checkbox> <br/><br/>
                 {/* <a className="login-form-forgot" href="/reset_user" style={{ float: 'right' }}>
                   forgot your password
                   </a> */}
@@ -168,6 +168,7 @@ function LoginPage(props) {
     </Formik>
     </div>
     </Suspense>
+    <Footer/>
     </>
     
   );

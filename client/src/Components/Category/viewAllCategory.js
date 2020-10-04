@@ -4,6 +4,7 @@ import axios from 'axios';
 import TableRow from './EditCategoryPage';
 import '../NavBar/Sections/Navbar.css';
 import NavBar from '../NavBar/NavBar';
+import Footer from '../layouts/Footer';
 const SubMenu = Menu.SubMenu;
 
 class ViewCategory extends Component {
@@ -74,6 +75,7 @@ class ViewCategory extends Component {
           
             </div>
         </Suspense>
+        <Footer/>
          </>
 
          );
