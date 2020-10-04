@@ -6,6 +6,12 @@ import CustomSlider from '../slider'
 import CustomSliders from '../slider02'
 import Navbar from '../layouts/Navbar';
 import Footer from '../layouts/Footer';
+import men from '../../Images/men.jpg';
+import women from '../../Images/women.jpg';
+import kids from '../../Images/kids.jpg';
+import { Link } from 'react-router-dom';
+
+
  class Home extends Component {
     render() {
         return (
@@ -40,9 +46,13 @@ import Footer from '../layouts/Footer';
                     <div >
                         <h1>Our Products</h1>
                     </div>
-                    <div className="userProfile">
-                        <h6>User Profile</h6>
-                        <button className="btn btn-primary mt-5">Send</button></div>
+
+
+
+                    <div><a href='/product/Men'><img src={men} class="img-fluid" alt="Responsive image"></img></a> </div>
+                    <div><a href='/product/Women'><img src={women} class="img-fluid" alt="Responsive image"/></a> </div>
+                    <div><a href='/product/Kids'><img src={kids} class="img-fluid" alt="Responsive image"/></a> </div>
+
                     </div>
                     <div>
                         <InfoConsumer>

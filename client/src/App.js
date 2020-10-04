@@ -33,6 +33,7 @@ import Viewcategory from './Components/Category/viewAllCategory';
 import EditFormPage from './Components/Category/EditFormPage';
 import DetailsCart from './Components/Cart/Pdetails';
 import Products from './Components/Cart/ProductDisplay';
+
 import CreateVoucher from "./Components/Voucher/create-voucher.component";
 import DisplayDeliveryDetails from './Components/Delivery/DisplayDeliveryDetails'
 import Deliveries from './Components/Delivery/DeliveriesAdmin'
@@ -42,6 +43,10 @@ import OrderHistory from './Components/Delivery/OrderHistory'
 import Admin from "./Components/Feedback/Admin";
 import Comments from './Components/Feedback/Comments';
 
+import Cart from './Components/Cart/CartDisplay';
+import UpdateCartDisplay from './Components/Cart/UpdateCartDIsplay';
+
+
 import Home from "./Components/pages/Home";
  import About from "./Components/pages/About";
  import Contacts from "./Components/pages/Contacts";
@@ -50,9 +55,11 @@ import Home from "./Components/pages/Home";
  import NotFoundPage from "./Components/pages/NotFoundPage";
 
 
+
 function App() {
   return (
     <Router>
+
       
       <Route path="/cardPay" component={CardPay} />
       {/* <Route exact path="/" component={PaymentForm} />
@@ -64,8 +71,15 @@ function App() {
         <Route path="/FinalPage" component={FinalPage} /> */}
       <Route path="/createProduct" component={CreateProduct} />
       <Route path="/productList" component={ProductsList} />
-      <Route path="/product" component={Products}/>
+
+      <Route path="/product/:category" component={Products}/>
       <Route path="/detail/:id" component={DetailsCart}/>
+
+      <Route path="/cart" component={Cart}/> 
+      <Route path="/updateCart/:id" component={UpdateCartDisplay}/> 
+
+    
+
       
       <Route path="/cardReq" component={LoyaltyForm}/>
       <Route path="/cardAdd" component={AddLoyaltyCard}/>
@@ -100,6 +114,7 @@ function App() {
         <Route path="/details" component={Details}/>
         <Route path="/news" component={News}/>
         <Route path="/not-found" component={NotFoundPage}/>
+
 
 
       </Router>
