@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './mystyles.css';
+//import './mystyles.css';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import Footer from '../layouts/Footer';

@@ -5,6 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {InfoProvider} from './Components/context';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from "react-router-dom";
 import Reducer from './_reducers';
@@ -16,6 +17,7 @@ import ReduxThunk from 'redux-thunk';
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware, ReduxThunk)(createStore);
 
 ReactDOM.render(
+    <InfoProvider>
     <Provider
         store={createStoreWithMiddleware(
             Reducer,
@@ -27,6 +29,7 @@ ReactDOM.render(
             <App />
         </BrowserRouter>
         </Provider>
+        </InfoProvider>
     , document.getElementById('root'));
 
 serviceWorker.unregister();
