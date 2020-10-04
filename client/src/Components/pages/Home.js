@@ -6,7 +6,6 @@ import CustomSlider from '../slider'
 import CustomSliders from '../slider02'
 import Navbar from '../layouts/Navbar';
 import Footer from '../layouts/Footer';
-
 import men from '../../Images/men.jpg';
 import women from '../../Images/women.jpg';
 import kids from '../../Images/kids.jpg';
@@ -47,6 +46,7 @@ import { Link } from 'react-router-dom';
                     <div >
                         <h1>Our Products</h1>
                     </div>
+
 
 
                     <div><a href='/product/Men'><img src={men} class="img-fluid" alt="Responsive image"></img></a> </div>
