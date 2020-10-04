@@ -1,13 +1,22 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from '../layouts/Navbar';
 import Footer from '../layouts/Footer';
-import navbarComponent from './navbar.component';
 
-export default class CreateProduct extends Component {
+export default class EditProduct extends Component {
   constructor(props) {
     super(props);
+
+
+    this.state = {
+      productName: '',
+      price: 0,
+      discount: 0,
+      categoryType: '',
+      description: '',
+      categories: []
+    }
 
     //refering this to component
     this.onChangeProductname = this.onChangeProductname.bind(this);
@@ -16,25 +25,28 @@ export default class CreateProduct extends Component {
     this.onChangeCategoryType = this.onChangeCategoryType.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-
-    this.state = {
-      productName: '',
-      price: 0,
-      discount: 0,
-      categoryType: '',
-      description: '',
-      categories: [],
-      image: '',
-    }
   }
 
   componentDidMount() {
+    axios.get('/api/products/'+this.props.match.params.id)
+    .then(response => {
+      this.setState({
+        productName: response.data.productName,
+        price: response.data.price,
+        discount: response.data.discount,
+        categoryType: response.data.categoryType,
+        description: response.data.description,
+      });   
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+
     axios.get('/api/categories/')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
             categories: response.data.map(category => category.categoryType),
-            categoryType: response.data[0].categoryType
           })
         }
       })
@@ -82,60 +94,29 @@ export default class CreateProduct extends Component {
       price: this.state.price,
       discount: this.state.discount,
       categoryType: this.state.categoryType,
-      description: this.state.description, 
-      image: this.state.image       
+      description: this.state.description,      
     }
 
-    console.log(product);       //submitting data to the database
+    console.log(product);
 
-    axios.post('/api/products/add/', product)
+    axios.post('/api/products/update/' + this.props.match.params.id, product)
       .then(res => console.log(res.data));
 
-    window.location = '/productList';      //redirecting back to the homepage(productlist page)
-  }
-
-
-  state = {
-    selectedFile: null
-  }
-
-
-  fileSelectedHandler = event => {
-    this.setState ({
-        selectedFile: event.target.files[0]
-    })
-  }
-
-  fileUploadHandler = () => {
-    const fd = new FormData();
-    fd.append('image', this.state.selectedFile, this.state.selectedFile.name);
-    axios.post('/api/products/add/', fd)
-      .then(res => {
-        console.log(res);
-      });
-  }
+    window.location = '/productList';
+  } 
 
   render() {
     return (
-
     <div>
 
       <Navbar />
       <div className="container">
       <navbarComponent />
 
-      <h3>Add Product</h3>
+      <h3>Edit Product</h3>
       <form onSubmit={this.onSubmit}>
-      <div>
-        <br />
-        <br />
-        <label>Choose Image: </label> <input type="file" onChange={this.fileSelectedHandler} />
-        <br />
-        <br />
-      </div>
       <div className="form-group"> 
           <label>Product Name: </label>
-          <br />
           <input  type="text"
               required
               className="form-control"
@@ -145,7 +126,6 @@ export default class CreateProduct extends Component {
         </div>
         <div className="form-group"> 
           <label>Price: </label>
-          <br />
           <input  type="text"
               required
               className="form-control"
@@ -155,7 +135,6 @@ export default class CreateProduct extends Component {
         </div>
         <div className="form-group"> 
           <label>Discount: </label>
-          <br />
           <input  type="text"
               required
               className="form-control"
@@ -164,42 +143,41 @@ export default class CreateProduct extends Component {
          />
         </div>
         <div className="form-group"> 
-            <label>Category Name: </label>
-            <select ref="categoryInput"
-                required
-                className="form-control"
-                value={this.state.categoryType}
-                onChange={this.onChangeCategoryType}>
-                {
-                  this.state.categories.map(function(category) {
-                    return <option 
-                      key={category}
-                      value={category}>{category}
-                      </option>;
-                  })
-                }
-            </select>
-          </div>
+          <label>Category Name: </label>
+          <select ref="categoryInput"
+              required
+              className="form-control"
+              value={this.state.categoryType}
+              onChange={this.onChangeCategoryType}>
+              {
+                this.state.categories.map(function(category) {
+                  return <option 
+                    key={category}
+                    value={category}>{category}
+                    </option>;
+                })
+              }
+          </select>
+        </div>
         <div className="form-group"> 
           <label>Description: </label>
-          <input  type="textarea"
+          <input  type="text"
               required
               className="form-control"
               value={this.state.description}
               onChange={this.onChangeDescription}
          />
-         <br />
         </div>           
 
         <div className="form-group">
-          <input type="submit" value="Add Product" className="btn btn-primary"  onClick={this.fileUploadHandler}/>
-          <br /><br /><br />
+          <input type="submit" value="Edit Product" className="btn btn-primary" />
         </div>
       </form>
+
       </div>
 
       <Footer />
-
+      
     </div>
     )
   }
