@@ -48,7 +48,7 @@ import EditFormPage from './Components/Category/EditFormPage';
 import DetailsCart from './Components/Cart/Pdetails';
 import Products from './Components/Cart/ProductDisplay';
 
-import CreateVoucher from "./Components/Voucher/create-voucher.component";
+
 import DisplayDeliveryDetails from './Components/Delivery/DisplayDeliveryDetails'
 import Deliveries from './Components/Delivery/DeliveriesAdmin'
 import UpdateStatus from './Components/Delivery/UpdateStatus'
@@ -57,8 +57,10 @@ import OrderHistory from './Components/Delivery/OrderHistory'
 import Admin from "./Components/Feedback/Admin";
 import Comments from './Components/Feedback/Comments';
 
+
 import Cart from './Components/Cart/CartDisplay';
 import UpdateCartDisplay from './Components/Cart/UpdateCartDIsplay';
+
 
 
 import Home from "./Components/pages/Home";
@@ -67,6 +69,11 @@ import Home from "./Components/pages/Home";
  import Details from "./Components/pages/Details";
  import News from "./Components/pages/News";
  import NotFoundPage from "./Components/pages/NotFoundPage";
+
+ import CreateVoucher from "./Components/Voucher/create-voucher.component";
+import ListVoucher from "./Components/Voucher/list-voucher.component";
+import EditVoucher from "./Components/Voucher/edit-voucher.component";
+import Measument from './Components/Measurement/measument';
 
 
 
@@ -117,19 +124,18 @@ function App() {
       <Route exact path="/category/upload" component={Auth(UploadCategoryPage, true)} />
       <Route path="/admin/profile/:id" component={viewDetails} />
       <Route path="/user/profile/:email/:password" component={UserDetails} />
+
       <Route path="/user/table" component={Viewcategory} />
       <Route path="/edit/:id" component={EditFormPage} />
       <Route path="/voucher" component={CreateVoucher} />
+
       <Route path ="/deliveryInsert/:id" component={DeliveryForm}/>
       <Route path ="/displayDelivery/:id" component={DisplayDeliveryDetails}/>
       <Route path="/deliveryAdmin" component={Deliveries}/>
       <Route path="/update/:id" component={UpdateStatus}/>
       <Route path="/checkRequests" component={StatusRequests}/>
       <Route path="/orderHistory" component={OrderHistory}/>
-
-      <Route path="/create" component={CreateVoucher} />
-     {/* <Route path="/EditVoucher/:id" component={EditVoucher} />
-      <Route path="/list" component={ListVoucher} />*/}
+     
       <Route path="/comment/:id" component={Comments} />
       <Route path="/adminFeedback" component={Admin} />
 
@@ -143,6 +149,20 @@ function App() {
 
 
 
+      <Route path="/comment/:id" component={Comments} />
+      <Route path="/adminFeedback" component={Admin} />
+
+      <Route exact path="/home" component={Home}/>
+        <Route path="/about" component={About}/>
+        <Route path="/contacts" component={Contacts}/>
+        <Route path="/details" component={Details}/>
+        <Route path="/news" component={News}/>
+        <Route path="/not-found" component={NotFoundPage}/>
+
+      <Route path="/create" component={CreateVoucher} />
+      <Route path="/EditVoucher/:id" component={EditVoucher} />
+      <Route path="/list" component={ListVoucher} />
+      <Route path="/measument" component={Measument} />
 
       </Router>
 

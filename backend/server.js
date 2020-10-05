@@ -40,7 +40,11 @@ app.use('/api/users', require('./routes/users'));
 
 app.use('/api/Cart', require('./routes/Cart'));
 
+//api/measurement location
+app.use('/api/measurement', require('./routes/measurement'));
+
 app.use('/uploads', express.static('uploads'));
+
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
