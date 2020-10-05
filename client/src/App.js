@@ -29,8 +29,6 @@ import EditProduct from './Components/Product/edit-product.component'
 // import UpdatePayPal from './Components/Payment/UpdatePayPal';
 // import FinalPage from './Components/Payment/FinalPage';
 
-import CreateProduct from './Components/Product/create-product.component'
-import ProductsList from './Components/Product/products-list.component'
 import DeliveryForm from './Components/Delivery/DeliveryDetailsInsert';
 import LoyaltyForm from "./Components/LoyaltyCard/Loyalty_Insert"
 import AddLoyaltyCard from "./Components/AdminCard/AddLoyaltyCard"
@@ -92,10 +90,6 @@ function App() {
       <Route path="/productList" component={ProductsList} />
       <Route path="/editProduct/:id" component={EditProduct} />
 
-
-      <Route path="/product" component={Products}/>
-      <Route path="/detail/:id" component={DetailsCart}/>
-
       {/* <Route exact path="/" component={PaymentForm} />
         <Route path="/Paypal" component={PayPal} />
         <Route path="/creditDisplay/:pin" component={CreditDisplay} />
@@ -103,8 +97,6 @@ function App() {
         <Route path="/PaypalDisplay/:pwd" component={PayPalDisplay} />
         <Route path="/update/:id" component={UpdatePayPal} />
         <Route path="/FinalPage" component={FinalPage} /> */}
-      <Route path="/createProduct" component={CreateProduct} />
-      <Route path="/productList" component={ProductsList} />
 
       <Route path="/product/:category" component={Products}/>
       <Route path="/detail/:id" component={DetailsCart}/>
