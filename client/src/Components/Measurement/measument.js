@@ -4,6 +4,8 @@ import img10 from '../../Images/index.jpg';
 import axios from 'axios';
 import Navbar from '../layouts/Navbar';
 import Footer from '../layouts/Footer';
+import jsPDF from 'jspdf'
+
 
 
 export default class Measument extends Component { //implemented class component
@@ -116,7 +118,35 @@ export default class Measument extends Component { //implemented class component
           color: e.target.value //target is textbox and value is textbox value
         })
     }
-    
+
+    //report genarate
+    unduhPdf(e){
+        e.preventDefault();
+
+        var doc = new jsPDF('p','pt'); //pass two argument
+        
+        doc.setFont('Bold')
+        doc.setTextColor('Red')
+        doc.setFontSize(30)
+        doc.text(20,50,'Entered Measurement Details') //topic
+
+        doc.setFont('courier')
+        doc.setTextColor('Black')
+        doc.setFontSize(20)
+        doc.text(`Entered size: ${this.state.size}`, 40, 100)
+        doc.text(`Entered product: ${this.state.product}`, 40, 120)
+        doc.text(`Entered height: ${this.state.height}`, 40, 140)
+        doc.text(`Entered waist: ${this.state.waist}`, 40, 160)
+        doc.text(`Entered neck: ${this.state.neck}`, 40, 180)
+        doc.text(`Entered color: ${this.state.color}`, 40, 200)
+
+        doc.setFont('Bold')
+        doc.setTextColor('Black')
+        doc.setFontSize(10)
+        doc.text(40,250,'Your measurement details were successfully sent to the admin. We will notify you via email after finished your dress.')
+
+        doc.save('Measurement.pdf')//saved name
+    };
 
     validate(){
         let input = this.state.input;
@@ -255,7 +285,9 @@ export default class Measument extends Component { //implemented class component
                                     <input type="submit" value="Submit" class="btn btn-dark" />
                                 </center>
                             </div>
-                            
+
+                            <div><button type="button" class="btn btn-outline-secondary btn-sm"  onClick={this.unduhPdf.bind(this)}>Download PDF</button></div>
+
                         </b></form>
 
                 </div>
