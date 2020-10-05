@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import image from '../../Images/product.png';
 
-class Details extends Component{
+class DetailsCart extends Component{
 
       constructor(props) {
         super(props)
@@ -106,4 +106,4 @@ class Details extends Component{
           }
 }
 
-export default Details
+export default DetailsCart

@@ -4,6 +4,8 @@ import {Link} from "react-router-dom";
 import ANavbar from '../layouts/AdminNavbar';
 import Footer from '../layouts/Footer';
 import { Button } from 'react-bootstrap';
+import jsPdf from 'jspdf'
+import 'jspdf-autotable'
 
 class OrderHistory extends Component{
 
@@ -23,6 +25,23 @@ class OrderHistory extends Component{
             })
         }
 
+        //pdf generating
+      jsPdfGenerator = () => {
+
+        //new document in jspdf
+        var doc = new jsPdf('p','pt');
+
+        doc.autoTable({  html:'#my-table' })
+
+        doc.autoTable({
+          columnStyles: { europe: { halign: 'center' } }, 
+          margin: { top: 10 },
+        })
+
+        //save the pdf
+        doc.save("Delivery History.pdf");
+      }
+
 
     render() {
         return (
@@ -38,7 +57,7 @@ class OrderHistory extends Component{
 
           <br></br><br></br>
 
-           <table class="table">
+           <table id="my-table" class="table">
             <tr>
               <th scope="col">Customer ID</th>
               <th scope="col">Reciever's name</th>
@@ -61,6 +80,11 @@ class OrderHistory extends Component{
 
             </table>
           </div>
+          <br></br>
+
+          <center>
+              <button className="btn-primary" onClick={this.jsPdfGenerator}>Download as a PDF</button>
+          </center>
 
           <br></br><br></br><br></br>
 

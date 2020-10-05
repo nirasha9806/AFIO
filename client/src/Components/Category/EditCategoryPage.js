@@ -1,22 +1,49 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
+import jsPDF from 'jspdf'
+import 'jspdf-autotable'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class CategoryDetails extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+
+    }
+            
+ }
+            
+    delete(){
+        axios.delete('/api/category/delete/' +this.props.obj._id)
+        .then(console.log('Deleted'))
+        .catch(err => console.log(err));
+        window.location.href = "/user/table";
+    }
+          
        
+    jsPdfGenerator = () => {
+
+        var doc = new jsPDF('p', 'pt');
+        doc.text(220,20,'CATEGORY DETAILS')
+
+        doc.setFont('courier')
+
+        doc.autoTable({
+            head: [['IMAGE', 'ID', 'NAME', 'TYPE', 'DESCRIPTION']],
+            body: [
+            [`${this.props.obj.images[0]}`, `${this.props.obj.categoryID}`, `${this.props.obj.categoryName}`, `${this.props.obj.categoryType}`, `${this.props.obj.description}`],
+        
+        ],
+    })
+
+        doc.save('Category.pdf')
+
 }
 
-delete(){
-    axios.delete('/api/category/delete/' +this.props.obj._id)
-    .then(console.log('Deleted'))
-    .catch(err => console.log(err));
-    window.location.href = "/user/table";
-}
-    
     render() { 
         return ( 
+
             <tr>
                 <td>
                   <div >
@@ -43,11 +70,15 @@ delete(){
                 <i className="fas fa-trash" style={{paddingRight:"10px"}}></i>
                 </p>   
                 </td>
-                
-            </tr>
+                <td>
+                <button onClick = {this.jsPdfGenerator} type="button" class="btn btn-secondary btn-sm">Download</button>
+                </td></tr>
+
          );
+
     }
+
 }
- 
+                
 export default CategoryDetails;
 

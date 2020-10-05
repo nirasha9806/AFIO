@@ -24,6 +24,7 @@ export default class CreateProduct extends Component {
       categoryType: '',
       description: '',
       categories: [],
+      image: '',
     }
   }
 
@@ -81,19 +82,23 @@ export default class CreateProduct extends Component {
       price: this.state.price,
       discount: this.state.discount,
       categoryType: this.state.categoryType,
-      description: this.state.description,      
+      description: this.state.description, 
+      image: this.state.image       
     }
 
     console.log(product);       //submitting data to the database
 
-    axios.post('/api/products/add', product)
+    axios.post('/api/products/add/', product)
       .then(res => console.log(res.data));
 
     window.location = '/productList';      //redirecting back to the homepage(productlist page)
   }
+
+
   state = {
     selectedFile: null
   }
+
 
   fileSelectedHandler = event => {
     this.setState ({
@@ -104,11 +109,7 @@ export default class CreateProduct extends Component {
   fileUploadHandler = () => {
     const fd = new FormData();
     fd.append('image', this.state.selectedFile, this.state.selectedFile.name);
-    axios.post('http://localhost:5000/products/add', fd, {
-      onUploadProgress: ProgressEvent => {
-        console.log('Upload progress: ' + Math.round(ProgressEvent.loaded / ProgressEvent.total * 100) + '%')
-      }
-    })
+    axios.post('/api/products/add/', fd)
       .then(res => {
         console.log(res);
       });
@@ -163,22 +164,22 @@ export default class CreateProduct extends Component {
          />
         </div>
         <div className="form-group"> 
-          <label>Category Name: </label>
-          <select ref="categoryInput"
-              required
-              className="form-control"
-              value={this.state.categoryType}
-              onChange={this.onChangeCategoryType}>
-              {
-                this.state.categories.map(function(category) {
-                  return <option 
-                    key={category}
-                    value={category}>{category}
-                    </option>;
-                })
-              }
-          </select>
-        </div>
+            <label>Category Name: </label>
+            <select ref="categoryInput"
+                required
+                className="form-control"
+                value={this.state.categoryType}
+                onChange={this.onChangeCategoryType}>
+                {
+                  this.state.categories.map(function(category) {
+                    return <option 
+                      key={category}
+                      value={category}>{category}
+                      </option>;
+                  })
+                }
+            </select>
+          </div>
         <div className="form-group"> 
           <label>Description: </label>
           <input  type="textarea"
@@ -191,7 +192,7 @@ export default class CreateProduct extends Component {
         </div>           
 
         <div className="form-group">
-          <input type="submit" value="Add Product" className="btn btn-primary" onClick={this.fileSelectedHandler} />
+          <input type="submit" value="Add Product" className="btn btn-primary"  onClick={this.fileUploadHandler}/>
           <br /><br /><br />
         </div>
       </form>

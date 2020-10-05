@@ -16,12 +16,11 @@ const categorySchema = mongoose.Schema({
     },
     categoryType:{
         type: String,
-        // default: 1
     },
     description:{
         type: String
     },
-subCategoryType:{
+    subCategoryType:{
         type: Array,
         default: { val: [] }
     },
