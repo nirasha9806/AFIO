@@ -1,11 +1,7 @@
 import React from 'react'
-import logo from '../../Images/logo.png';
+import logo from '../../Images/logo.png'
 import { Link } from 'react-router-dom';
-
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
-
-
-
 function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-blue bg-dark">
@@ -30,6 +26,9 @@ function Navbar() {
       <li className="nav-item">
         <Link className="nav-link text-white text-uppercase ml-5" to="/about">About US</Link>
       </li>
+      <li className="nav-item">
+        <Link className="nav-link text-white text-uppercase ml-5" to="/comment">FeedBack</Link>
+      </li>
       
     </ul> 
     
@@ -43,7 +42,7 @@ function Navbar() {
       <span class="sr-only">(current)</span></Link>
        </li>
       <li className="list-inline-item">
-      <Link className="nav-link text-white text-uppercase ml-0" > &nbsp; <i class="far fa-user">
+      <Link className="nav-link text-white text-uppercase ml-0" to="/login"> &nbsp; <i class="far fa-user">
           </i><span class="sr-only">(current)</span></Link>
        </li>
       

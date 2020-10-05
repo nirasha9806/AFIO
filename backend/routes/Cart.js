@@ -1,14 +1,17 @@
 const express = require('express');
 //const { default: Product } = require('../../src/components/Product');
 const router = express.Router();
-const {Product} = require("../models/Product");
+
+let Product = require("../models/product.model");
+
 const {Cart} = require("../models/Cart");
 const { deleteModel } = require('mongoose');
 
 
+
 //get method to fetch data from products
-router.get('/displayProduct', function(req,res){
-  Product.find({})
+router.get('/displayProduct/:category', function(req,res){
+  Product.find({categoryType: req.params.category})
   .exec(function(err, products){
       if(err) {
           console.log('error')
@@ -66,4 +69,30 @@ router.post('/delete/:id',function (req,res){
   });
 });
 
+// Defined edit route
+router.get('/edit/:id', function (req, res) {
+  let id = req.params.id;
+  Cart.findById(id, function (err, cart){
+      res.json(cart);
+  });
+});
+
+  //update method
+  router.post('/update/:id', function (req, res) {
+    Cart.findById(req.params.id, function(err, cart) {
+    if (!cart)
+      res.status(404).send("data is not found");
+    else {
+        cart.size = req.body.size;
+        cart.quantity = req.body.quantity;
+
+        cart.save().then(cart => {
+          res.json('Update complete');
+      })
+      .catch(err => {
+            res.status(400).send("unable to update the database");
+      });
+    }
+  });
+  });
 module.exports = router;
