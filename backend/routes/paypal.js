@@ -17,6 +17,7 @@ router.post("/insertPaypal", (req, res) => {
 });
 
 //get data
+
 router.get('/:password', function(req,res){
     console.log('get requests for all paypal');
     Paypal.find({password: req.params.password})
@@ -48,7 +49,7 @@ router.get('/:password', function(req,res){
            paypal.cname = req.body.cname;
            paypal.email = req.body.email;
            paypal.password = req.body.password;
-           
+           paypal.baddress = req.body.baddress;
 
            paypal.save().then(paypal => {
                res.json('Update Complete');

@@ -1,3 +1,4 @@
+
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import '../../CSS/mystyles.css';
@@ -91,3 +92,4 @@ class PayPal extends Component{
     }
 }
 export default PayPal;
+
