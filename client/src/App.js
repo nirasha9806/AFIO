@@ -26,11 +26,6 @@ import EditFormPage from './Components/Category/EditFormPage';
 import Details from './Components/Cart/Pdetails';
 import Products from './Components/Cart/ProductDisplay';
 
-import CreateVoucher from "./Components/Voucher/create-voucher.component";
-import ListVoucher from "./Components/Voucher/list-voucher.component";
-import EditVoucher from "./Components/Voucher/edit-voucher.component";
-import Measument from './Components/Measurement/measument';
-
 import DisplayDeliveryDetails from './Components/Delivery/DisplayDeliveryDetails'
 import Deliveries from './Components/Delivery/DeliveriesAdmin'
 import UpdateStatus from './Components/Delivery/UpdateStatus'
@@ -75,7 +70,6 @@ function App() {
       <Route path="/user/profile/:email/:password" component={UserDetails} />
       <Route exact path="/user/table" component={Viewcategory} />
       <Route exact path="/edit/:id" component={EditFormPage} />
-      <Route path="/voucher" component={CreateVoucher} />
       <Route path ="/deliveryInsert/:id" component={DeliveryForm}/>
       <Route path ="/displayDelivery/:id" component={DisplayDeliveryDetails}/>
       <Route path="/deliveryAdmin" component={Deliveries}/>
