@@ -5,6 +5,22 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Auth from "./hoc/auth";
 
 import CardPay from './Components/Payment/CardPay.js';
+
+// import PaymentForm from './Components/Payment/PaymentForm';
+// import PayPal from './Components/Payment/Paypal';
+// import CreditDisplay from './Components/Payment/CreditDisplay';
+// import PayPalDisplay from './Components/Payment/PayPalDisplay';
+// import UpdateCredit from './Components/Payment/UpdateCardPay';
+// import UpdatePayPal from './Components/Payment/UpdatePayPal';
+// import FinalPage from './Components/Payment/FinalPage';
+
+
+import CreateProduct from './Components/Product/create-product.component'
+import ProductsList from './Components/Product/products-list.component'
+import EditProduct from './Components/Product/edit-product.component'
+
+
+
 // import PaymentForm from './Components/Payment/PaymentForm';
 // import PayPal from './Components/Payment/Paypal';
 // import CreditDisplay from './Components/Payment/CreditDisplay';
@@ -62,6 +78,24 @@ function App() {
 
       
       <Route path="/cardPay" component={CardPay} />
+
+      {/* <Route exact path="/" component={PaymentForm} />
+        <Route path="/Paypal" component={PayPal} />
+        <Route path="/creditDisplay/:pin" component={CreditDisplay} />
+        <Route path="/update/:id" component={UpdateCredit} />
+        <Route path="/PaypalDisplay/:pwd" component={PayPalDisplay} />
+        <Route path="/update/:id" component={UpdatePayPal} />
+        <Route path="/FinalPage" component={FinalPage} /> */}
+
+
+      <Route path="/createProduct" component={CreateProduct} />
+      <Route path="/productList" component={ProductsList} />
+      <Route path="/editProduct/:id" component={EditProduct} />
+
+
+      <Route path="/product" component={Products}/>
+      <Route path="/detail/:id" component={DetailsCart}/>
+
       {/* <Route exact path="/" component={PaymentForm} />
         <Route path="/Paypal" component={PayPal} />
         <Route path="/creditDisplay/:pin" component={CreditDisplay} />
@@ -78,8 +112,7 @@ function App() {
       <Route path="/cart" component={Cart}/> 
       <Route path="/updateCart/:id" component={UpdateCartDisplay}/> 
 
-    
-
+   
       
       <Route path="/cardReq" component={LoyaltyForm}/>
       <Route path="/cardAdd" component={AddLoyaltyCard}/>
@@ -108,12 +141,14 @@ function App() {
       <Route path="/comment/:id" component={Comments} />
       <Route path="/adminFeedback" component={Admin} />
 
+
       <Route exact path="/home" component={Home}/>
         <Route path="/about" component={About}/>
         <Route path="/contacts" component={Contacts}/>
         <Route path="/details" component={Details}/>
         <Route path="/news" component={News}/>
         <Route path="/not-found" component={NotFoundPage}/>
+
 
 
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from '../layouts/Navbar';
 import Footer from '../layouts/Footer';
-import navbarComponent from './navbar.component';
+import navbar from './navbar.component';
 
 const Product = props => (
   <tr>
@@ -14,7 +14,7 @@ const Product = props => (
     <td>{props.product.description}</td>
     
     <td>
-      <Link to={"/edit/"+props.product._id}>edit</Link> | <a href="#" onClick={() => { props.deleteProduct(props.product._id) }}>delete</a>
+      <Link to={"/editProduct/"+props.product._id}>edit</Link> | <a href="#" onClick={() => { props.deleteProduct(props.product._id) }}>delete</a>
     </td>
   </tr>
 )
@@ -39,7 +39,7 @@ export default class ProductsList extends Component {
   }
 
   deleteProduct(id) {
-    axios.delete('http://localhost:5000/products/'+id)
+    axios.delete('/api/products/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
@@ -59,8 +59,20 @@ export default class ProductsList extends Component {
         <Navbar />
 
         <div className="container">
-        <navbarComponent />
+        <navbar />
+   
+        <div><br /></div>
+        
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;
+
+        <button class="btn btn-outline-primary"><Link to = { '/createProduct' }> Add Product </Link></button>
+
         <h3>Products</h3>
+        <br />
         <table className="table">
           <thead className="thead-light">
             <tr>
