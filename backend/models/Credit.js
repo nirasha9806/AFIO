@@ -1,24 +1,15 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const creditSchema = mongoose.Schema({
+const cardSchema = mongoose.Schema({
     cname: {
         type: String
     },
 
-    email: {
+    cardType: {
         type: String
     },
-
-    month: {
-        type: String
-    },
-
-   year: {
-        type: String
-    },
-
-    pin_number: {
+    bankname: {
         type: String
     },
 
@@ -26,17 +17,19 @@ const creditSchema = mongoose.Schema({
         type: String
     },
 
-    cardName:{
+    expiry: {
+        type: String
+    },
+    pin_number: {
         type: String
     },
 
-    baddress:{
+   
+    cardName:{
         type: String
     }
-
 },{ timesamps: true})
 
-const Credit = mongoose.model('Credit', creditSchema);
+const Card = mongoose.model('Card', cardSchema);
 
-module.exports = {Credit}
-
+module.exports = {Card}

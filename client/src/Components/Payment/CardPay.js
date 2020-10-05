@@ -41,9 +41,10 @@ class CardPay extends Component{
           cname:this.state.cname,
           cardType: this.state.cardType,
           bankname: this.state.bankname,
+
+          CVC: this.state.CVC,
           expiry: this.state.expiry,
           pin_number: this.state.pin_number,
-          CVC: this.state.CVC,
           cardName : this.state.cardName
          
       };
@@ -106,19 +107,20 @@ class CardPay extends Component{
              placeholder="Security code" value={this.state.pin_number} className="form-control"/><br/>
         </div>
   
-              <div className="form-group">
-                  <label>Name of the Card Holder :</label><br/>
-                   <input type="text" onChange={this.cardNameHandler} value={this.state.cardName} className="form-control"/>
-              </div> 
+
+         <div className="form-group">
+            <label>Name of the Card Holder :</label><br/>
+            <input type="text" onChange={this.cardNameHandler} value={this.state.cardName} className="form-control"/>
+        </div> 
               
-              <div className ="form-group">
-                <Link  value="Pay Rs." className="btn btn-primary"  onClick={this.onSubmit}>Pay</Link> 
+        <div className ="form-group">
+         <Link  value="Pay Rs." className="btn btn-primary"  onClick={this.onSubmit}>Pay</Link> 
                   
-              </div>
-             </form>
-             </div>
-          </center>
-             </div>
+        </div>
+     </form>
+         </div>
+         </center>
+        </div>
             
              </div>
              <Footer/>

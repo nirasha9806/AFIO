@@ -17,9 +17,10 @@ router.post("/insertPaypal", (req, res) => {
 });
 
 //get data
-router.get('/:pwd', function(req,res){
+
+router.get('/:password', function(req,res){
     console.log('get requests for all paypal');
-    Paypal.find({password: req.params.pwd})
+    Paypal.find({password: req.params.password})
     .exec(function(err, paypal){
         if(err) {
             console.log('error')
@@ -40,7 +41,7 @@ router.get('/:pwd', function(req,res){
 
 
  //update
- router.post("/update/:id",(req,res) =>{
+ router.post("/updatePayPal/:id",(req,res) =>{
     PayPal.findById(req.params.id,function (err , paypal){
         if(!paypal)
            res.status(404).send("Data is not found");

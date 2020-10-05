@@ -14,7 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.use('/api/payment',require('./routes/payment'))
+app.use('/api/payment',require('./routes/payment'));
+app.use('/api/paypal', require('./routes/paypal'));
 
 app.use('/api/feedback',require('./routes/feedback'))
 
@@ -58,6 +59,7 @@ if (process.env.NODE_ENV === "production") {
       res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
     });
   }
+
 
 //DB config
 const db = require('./config/keys').mongoURI;
