@@ -6,12 +6,15 @@ import CustomSlider from '../slider'
 import CustomSliders from '../slider02'
 import Navbar from '../layouts/Navbar';
 import Footer from '../layouts/Footer';
+<<<<<<< HEAD
 import men from '../../Images/men.jpg';
 import women from '../../Images/women.jpg';
 import kids from '../../Images/kids.jpg';
 import { Link } from 'react-router-dom';
 
 
+=======
+>>>>>>> origin/LoyaltyCard
  class Home extends Component {
     render() {
         return (
@@ -46,6 +49,7 @@ import { Link } from 'react-router-dom';
                     <div >
                         <h1>Our Products</h1>
                     </div>
+<<<<<<< HEAD
 
 
 
@@ -53,6 +57,10 @@ import { Link } from 'react-router-dom';
                     <div><a href='/product/Women'><img src={women} class="img-fluid" alt="Responsive image"/></a> </div>
                     <div><a href='/product/Kids'><img src={kids} class="img-fluid" alt="Responsive image"/></a> </div>
 
+=======
+                    
+                        
+>>>>>>> origin/LoyaltyCard
                     </div>
                     <div>
                         <InfoConsumer>

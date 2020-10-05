@@ -11,9 +11,7 @@ const FooterPagePro = () => {
               AFIO
             </h6>
             <p>
-              Here you can use rows and columns here to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
+            The best thing is that online shopping carts are SEO friendly systems for vendors, retailers and merchants.	
             </p>
             <div className="text-center py-3">
         <ul className="list-unstyled list-inline mb-0">
@@ -53,7 +51,7 @@ const FooterPagePro = () => {
               <a href="#!">Your Account</a>
             </p>
             <p>
-              <a href="#!">Become an Affiliate</a>
+              <a href="CardReq">Loyalty Card</a>
             </p>
             <p>
               <a href="#!">Shipping Rates</a>
