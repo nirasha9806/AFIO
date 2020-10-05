@@ -12,7 +12,12 @@ const paypalSchema = mongoose.Schema({
 
     password: {
         type: String
+    },
+   
+    baddress:{
+        type: String
     }
+
 },{ timesamps: true})
 
 const Paypal = mongoose.model('Paypal', paypalSchema);

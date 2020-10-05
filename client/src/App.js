@@ -75,7 +75,7 @@ function App() {
 
 
     
-       <Route exact path="/" component={PaymentForm} />
+       <Route exact path="/payment/:id" component={PaymentForm} />
         <Route path="/CardPay" component={CardPay} />
         <Route path="/Paypal" component={PayPal} />
         <Route path="/creditDisplay/:pin" component={CreditDisplay} />
@@ -84,7 +84,6 @@ function App() {
         <Route path="/updateCardPay/:id" component={UpdateCardPay} />
         <Route path="/FinalPage" component={FinalPage} />
       
-        <Route exact path ="/" component={DeliveryForm}/>
 
 
       <Route path="/createProduct" component={CreateProduct} />
