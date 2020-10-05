@@ -57,6 +57,7 @@ export default class ListDetails extends Component { //implemented class compone
                   <tr>
                     <td>{ loyaltycardadds.cardType}</td>
                     <td>{loyaltycardadds.discount}</td>
+                    <td><button className="btn btn-warning"><i className="fas fa-edit"></i><Link  to={"/updateLoyalty/"+loyaltycardadds._id }>&nbsp;Update</Link></button></td>
                     <td><button className="btn btn-danger" onClick={() =>this.delete(loyaltycardadds._id)}>Remove</button></td>
 
                   </tr>
