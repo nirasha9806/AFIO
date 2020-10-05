@@ -1,12 +1,9 @@
 import React, { Component, Suspense} from 'react';
 import { Menu } from 'antd';
 import axios from 'axios';
-import jsPDF from 'jspdf'
-import 'jspdf-autotable'
 import TableRow from './EditCategoryPage';
 import '../NavBar/Sections/Navbar.css';
 import NavBar from '../NavBar/NavBar';
-import Footer from '../layouts/Footer';
 const SubMenu = Menu.SubMenu;
 
 class ViewCategory extends Component {
@@ -35,19 +32,6 @@ class ViewCategory extends Component {
         });
     }
 
-    jsPdfGeneratorAll = () => {
-
-        var doc = new jsPDF('p', 'pt');
-        doc.text(210,20,'ALL CATEGORY DETAILS')
-
-        doc.setFont('courier')
-
-        doc.autoTable({ html: 'table' })
-
-        doc.save('CategoryAll.pdf')
-
-}
-
     render() { 
         return ( 
 
@@ -59,7 +43,7 @@ class ViewCategory extends Component {
             <div className="row">
               
                 <div className="container">
-                    <div  className="col-20 mt-5 ml-5 mr-5" >
+                    <div  className="col-10 mt-5 ml-5 mr-5" >
             
                         <h2 align="center"><i>Category List</i></h2>
                         <table class="table border shadow">
@@ -74,7 +58,6 @@ class ViewCategory extends Component {
                             
                                 <th scope="col">Edit Action</th>
                                 <th scope="col">Delete Action</th>
-                                <th scope="col">Generate PDF</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -82,9 +65,6 @@ class ViewCategory extends Component {
                             </tbody>
                         
                         </table>
-
-                        <button onClick = {this.jsPdfGeneratorAll} type="button" class="btn btn-secondary btn-lg btn-block">Genarate PDF</button>
-   
                     </div>
                     
                 </div>
@@ -94,7 +74,6 @@ class ViewCategory extends Component {
           
             </div>
         </Suspense>
-        <Footer/>
          </>
 
          );

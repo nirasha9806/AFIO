@@ -32,7 +32,7 @@ router.post("/addCard", (req, res) => {
 
 //get method to fetch data from deliveries
 router.get('/display', function(req,res){
-    console.log('get requests for all loyaltycards');
+    console.log('get requests for all deliveries');
     LoyaltyCardAdd.find({})
     .exec(function(err, loyaltycardadds){
         if(err) {
@@ -49,34 +49,6 @@ router.post('/delete/:id',function (req, res) {
         if(err) res.json(err);
         else res.json('Successfully removed');
     });
-  });
-
-
-  // Defined edit route
-router.get('/editLoyalty/:id', function (req, res) {
-    let id = req.params.id;
-    LoyaltyCardAdd.findById(id, function (err, loyaltyCardAdd){
-        res.json(loyaltyCardAdd);
-    });
-  });
-  
-  //update method
-  router.post('/update/:id', function (req, res) {
-    LoyaltyCardAdd.findById(req.params.id, function(err, loyaltyCardAdd) {
-    if (!loyaltyCardAdd)
-      res.status(404).send("data is not found");
-    else {
-        loyaltyCardAdd.cardType= req.body.cardType;
-        loyaltyCardAdd.discount=req.body.discount;
-  
-        loyaltyCardAdd.save().then(loyaltyCardAdd => {
-          res.json('Update complete');
-      })
-      .catch(err => {
-            res.status(400).send("unable to update the database");
-      });
-    }
-  });
   });
 
 

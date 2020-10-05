@@ -17,7 +17,7 @@ class Products extends Component{
 
       //retrieve data
       componentDidMount() {
-        axios.get('/api/Cart/displayProduct/'+this.props.match.params.category)
+        axios.get('/api/Cart/displayProduct')
         .then(res => {
             const products = res.data;
             this.setState({ products });
@@ -38,7 +38,7 @@ render(){
    
     
     <div style={{padding:"250px"}} >
-      <div><h1 className="display-4" style={{alignItems:"center"}}>{this.props.match.params.category}</h1></div>
+      <div><h1 className="display-4" style={{alignItems:"center"}}>Products</h1></div>
     
 
       { this.state.products.map(product =>

@@ -2,10 +2,8 @@ import React, { Component, Suspense } from 'react';
 import axios from 'axios';
 import { Menu } from 'antd';
 import TableRow from './viewAdmProfile';
-import afio from '../UserProfilePage/UserImg/afio.png';
 import '../NavBar/Sections/Navbar.css';
 import NavBar from '../NavBar/NavBar';
-import Footer from '../layouts/Footer';
 const SubMenu = Menu.SubMenu;
 
 class viewDetails extends Component {
@@ -42,8 +40,8 @@ class viewDetails extends Component {
             <NavBar />
             
             <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}>
-            <center><div class="card" style={{width: '60rem', height: '38rem'}}>
-            <center><img src={afio} alt ="afio" style ={{width:'350px'}} /> </center>
+
+            <center><div class="card" style={{width: '60rem', height: '20rem'}}>
             <div class="card-body">
             <h5 class="card-title">----------------------MANAGE USER PROFILES----------------------</h5>
                         
@@ -73,7 +71,6 @@ class viewDetails extends Component {
                
             </div>
         </Suspense>
-        <Footer/>
          </>
 
          );

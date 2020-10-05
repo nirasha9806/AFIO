@@ -13,8 +13,6 @@ class DeliveryForm extends Component {
         
         //assign initial values
         this.state = {
-            input: {},
-            errors: {},
             name: '',
             cusId:'',
             email:'',
@@ -34,15 +32,17 @@ class DeliveryForm extends Component {
         })
     }
 
-    handleChange = event => {
-        let input = this.state.input;
-        input[event.target.name] = event.target.value;
-      
+    handleEmailChange = event => {
         this.setState({
-          input
-        });
+            email: event.target.value
+        })
     }
 
+    handlePhoneChange = event => {
+        this.setState({
+            phone: event.target.value
+        })
+    }
 
     handleCityChange = event => {
         this.setState({
@@ -55,7 +55,12 @@ class DeliveryForm extends Component {
             zipcode: event.target.value
         })
     }
-  
+
+    handleAddressChange = event => {
+        this.setState({
+            address: event.target.value
+        })
+    }
 
     
     onSubmit = (event) => {
@@ -64,25 +69,14 @@ class DeliveryForm extends Component {
         const Delivery = {
             name: this.state.name,
             cusId:this.props.match.params.id,
-            email: this.state.input.email,
-            phone: this.state.input.phone,
+            email: this.state.email,
+            phone: this.state.phone,
             city: this.state.city,
             zipcode: this.state.zipcode,
-            address: this.state.input.address,
+            address: this.state.address,
             status: "Pending",
             date:this.state.date
         };
-
-
-        if(this.validate()){
-            console.log(this.state);
-      
-            let input = {};
-            input["email"] = "";
-            input["phone"] = "";
-            input["address"] = "";
-            this.setState({input:input});
-      
 
         axios.post('/api/delivery/insertDelivery/'+this.props.match.params.id, Delivery)
             .then(response => {
@@ -94,49 +88,8 @@ class DeliveryForm extends Component {
                     alert('Failed')
                 }
             })
-        }
+        
     }
-
-
-    //validate method
-    validate(){
-        let input = this.state.input;
-        let errors = {};
-        let isValid = true;
-    
-    
-        if (!input["email"]) {
-          isValid = false;
-           errors["email"] = "Please enter your email Address.";
-        }
-
-        if (!input["phone"]) {
-            isValid = false;
-            errors["phone"] = "Please enter your phone number.";    
-          }
-    
-          if (!input["address"]) {
-            isValid = false;
-            errors["address"] = "Please enter your Address.";
-          }
-    
-        if (typeof input["email"] !== "undefined") {
-            
-          var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-          if (!pattern.test(input["email"])) {
-            isValid = false;
-            errors["email"] = "Please enter valid email address.";
-          }
-        }
-    
-        this.setState({
-          errors: errors
-        });
-    
-        return isValid;
-    }
-
-    
 
     render() {
         return(
@@ -162,36 +115,33 @@ class DeliveryForm extends Component {
                                     <br></br>
 
                                 <div className="form-group">
-                                    <lable>Reciever's Name : </lable><br></br>
-                                    <input name='name' required className="form-control" type='text' value={this.state.name} onChange ={this.handleNameChange}/>
+                                    <lable>Reciever's Name : </lable>
+                                    <input name='name' className="form-control" type='text' value={this.state.name} onChange ={this.handleNameChange}/>
                                 </div>
 
                                 <div className="form-group">
-                                    <label>Email : </label><br></br>
-                                    <input name='email' id="email" className="form-control" type='email' value={this.state.input.email} onChange={this.handleChange}/>
-                                    <div className="text-danger">{this.state.errors.email}</div>
+                                    <label>Email : </label>
+                                    <input name='email' className="form-control" type='email' value={this.state.email} onChange={this.handleEmailChange} />
                                 </div>
 
                                 <div className="form-group">
-                                    <label>Phone : </label><br></br>
-                                    <input name='phone' className="form-control" type='phone' value={this.state.input.phone} onChange={this.handleChange}/>
-                                    <div className="text-danger">{this.state.errors.phone}</div>
+                                    <label>Phone : </label>
+                                    <input name='phone' className="form-control" type='phone' value={this.state.phone} onChange={this.handlePhoneChange}/>
                                 </div>
 
                                 <div className="form-group">
-                                    <label>City : </label><br></br>
+                                    <label>City : </label>
                                     <input name='city' className="form-control" type='text' value={this.state.city} onChange={this.handleCityChange}/>
                                 </div>
 
                                 <div className="form-group">
-                                    <label>Zip code : </label><br></br>
+                                    <label>Zip code : </label>
                                     <input name='zipcode' className="form-control" type='text' value={this.state.zipcode} onChange={this.handleZipCodeChange}/>
                                 </div>
 
                                 <div className="form-group">
-                                    <lable>Address : </lable><br></br>
-                                    <textarea name='address' className="form-control" value={this.state.input.address} onChange={this.handleChange}></textarea>
-                                    <div className="text-danger">{this.state.errors.address}</div>
+                                    <lable>Address : </lable>
+                                    <textarea name='address' className="form-control" value={this.state.address} onChange={this.handleAddressChange}></textarea>
                                 </div>
 
                                 <center>

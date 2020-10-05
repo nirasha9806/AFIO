@@ -44,7 +44,7 @@ class UpdateStatus extends Component {
         axios.post('/api/delivery/update/'+this.props.match.params.id, Delivery)
         .then(response =>
             console.log(response.data));
-            window.location = '/deliveryAdmin';
+            this.props.history.push('/deliveryAdmin');
     }
 
     render() {

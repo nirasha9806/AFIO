@@ -1,7 +1,5 @@
 const router = require('express').Router();
 let Product = require('../models/product.model');
-const multer = require('multer');
-const upload = require('../middleware/upload')
 
 
 //---------Product---------
@@ -13,15 +11,12 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-
-router.route('/add').post(upload.single('image'), (req, res) => {
-
+router.route('/add').post((req, res) => {
     const productName = req.body.productName;
-    const price = req.body.price;
-    const discount = req.body.discount;
+    const price = Number(req.body.price);
+    const discount = Number(req.body.discount);
     const categoryType = req.body.categoryType;
     const description = req.body.description;
-    const image = req.body.image;
 
 
     //creating new product
@@ -31,50 +26,21 @@ router.route('/add').post(upload.single('image'), (req, res) => {
         discount,
         categoryType,
         description,
-        image,
   
     });
-
-    if(req.file){
-        newProduct.image = req.file.path
-    }
 
     newProduct.save()
         .then(() => res.json('Product added!'))
         .catch(err => res.status(400).json('Error: ' + err));
-    });
 
         router.route('/:id').get((req, res) =>{
             Product.findById(req.params.id)
                 .then(product => res.json(product))
                 .catch(err => res.status(400).json('Error: ' + err));
         });
-
-        router.route('/:id').delete((req, res) =>{
-            Product.findByIdAndDelete(req.params.id)
-                .then(() => res.json('Product deleted!'))
-                .catch(err => res.status(400).json('Error: ' + err));
-        });
-    
-        router.route('/update/:id').post((req, res) =>{
-            Product.findById(req.params.id)
-                .then(product => {
-                    product.productName = req.body.productName;
-                    product.price = Number(req.body.price);
-                    product.discount = Number(req.body.discount);
-                    product.categoryType = req.body.categoryType;
-                    product.description = req.body.description;
-    
-                    product.save()
-                        .then(() => res.json('Product updated!'))
-                        .catch(err => res.status(400).json('Error: ' + err));
-    
-                })
-                .catch(err => res.status(400).json('Error: ' + err));
-        });
     
         
-
+});
 
 
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Dropzone from 'react-dropzone';
+//import { Icon } from 'antd';
 import Axios from 'axios';
 
 function CatFileUpload(props) {
@@ -55,12 +56,12 @@ function CatFileUpload(props) {
                     {...getRootProps()} 
                     >
                         <input {...getInputProps()} />
-                        <i class="fa fa-plus fa-2x" aria-hidden="true" ></i>
-                        
+                        {/*<Icon type = "plus" style = {{ fontSize: '3rem'}} />*/}
+
                 </div>
             )}
         
-        </Dropzone>
+            </Dropzone> 
 
         <div style = {{ display:'flex', width:'300px', height:'310px', overflowX:'scroll' }}>
 

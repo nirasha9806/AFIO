@@ -4,8 +4,6 @@ import {Link} from "react-router-dom";
 import ANavbar from '../layouts/AdminNavbar';
 import Footer from '../layouts/Footer';
 import { Button } from 'react-bootstrap';
-import jsPdf from 'jspdf'
-import 'jspdf-autotable'
 
 class Deliveries extends Component{
 
@@ -53,24 +51,6 @@ class Deliveries extends Component{
             })
       }
 
-      //pdf generating
-      jsPdfGenerator = () => {
-
-        //new document in jspdf
-        var doc = new jsPdf('p','pt');
-
-        doc.text(30,30,"Delivery Details")
-        doc.autoTable({  html:'#my-table' })
-
-        doc.autoTable({
-          columnStyles: { europe: { halign: 'center' } }, 
-          margin: { top: 10 },
-        })
-
-        //save the pdf
-        doc.save("Delivery Details.pdf");
-      }
-
     render() {
         return (
 
@@ -100,7 +80,7 @@ class Deliveries extends Component{
 
           <br></br><br></br>
 
-           <table id="my-table" class="table">
+           <table class="table">
             <tr>
               <th scope="col">Name</th>
               <th scope="col">Email</th>
@@ -127,12 +107,11 @@ class Deliveries extends Component{
                   
                 </tr>
               )}
+           
+              
 
             </table>
           </div>
-          <center>
-              <button className="btn-primary" onClick={this.jsPdfGenerator}>Download as a PDF</button>
-          </center>
 
           <br></br><br></br><br></br>
 

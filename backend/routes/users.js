@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { User } = require("../models/User");
+
 const { auth } = require("../middleware/auth");
 
 //=================================
@@ -17,6 +18,7 @@ router.get("/auth", auth, (req, res) => {
         firstName: req.user.firstName,
         lastName: req.user.firstName,
         role: req.user.role,
+        // image: req.user.image,
     });
 });
 

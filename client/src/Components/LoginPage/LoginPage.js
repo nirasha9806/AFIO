@@ -5,8 +5,8 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Form, Input, Checkbox, Menu, Typography } from 'antd';
 import { useDispatch } from "react-redux";
-import Navbar from '../layouts/Navbar';
-import Footer from '../layouts/Footer';
+import '../NavBar/Sections/Navbar.css';
+import NavBar from '../NavBar/NavBar';
 const SubMenu = Menu.SubMenu;
 
 const { Title } = Typography;
@@ -28,11 +28,12 @@ function LoginPage(props) {
 
     <>
     <Suspense fallback={(<div>Loading...</div>)}>
-    <Navbar />
+    <NavBar />
     <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}>
 
     <Formik
       initialValues={{
+        //email: initialEmail,
         email: '',
         password: '',
       }}
@@ -63,10 +64,10 @@ function LoginPage(props) {
 
                 if(response.payload.userType === "User")
                 {
-                  props.history.push("/homePage/" + values.email +"/"+ values.password );
+                  props.history.push("/home/" + values.email +"/"+ values.password );
                 }
                 else{
-                  props.history.push("/adminDashboard");
+                  props.history.push("/");
                 }
                 
               } else {
@@ -108,7 +109,6 @@ function LoginPage(props) {
                 <Input
                   id="email"
                   placeholder="E-mail Address*"
-                  pattern = "[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
                   type="email"
                   value={values.email}
                   onChange={handleChange}
@@ -120,7 +120,11 @@ function LoginPage(props) {
                 {errors.email && touched.email && (
                   <div className="input-feedback">{errors.email}</div>
                 )} </Form.Item>
-          
+             
+
+              {/* color: 'rgba(0,0,0,.25) */}
+
+
               <Form.Item required >
                 <Input
                   id="password"
@@ -143,7 +147,10 @@ function LoginPage(props) {
               )}
 
                 <Form.Item>
-                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} >Remember me</Checkbox> <br/><br/>
+                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} >Remember me</Checkbox>
+                {/* <a className="login-form-forgot" href="/reset_user" style={{ float: 'right' }}>
+                  forgot your password
+                  </a> */}
                 <div>
                   <button onSubmit={handleSubmit} htmlType="submit" className="btn btn-dark" style={{ minWidth: '100%' }} disabled={isSubmitting}>
                     <b>Sign In</b>
@@ -161,7 +168,6 @@ function LoginPage(props) {
     </Formik>
     </div>
     </Suspense>
-    <Footer/>
     </>
     
   );

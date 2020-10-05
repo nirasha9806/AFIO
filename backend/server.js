@@ -1,18 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const cookieParser = require("cookie-parser");
 const cors = require('cors');
-const path = require("path");
 const app = express();
 
 app.use(cors());
 
-app.use(bodyParser.urlencoded({ extended: true }));
-
 //BodyParser Middleware
 app.use(bodyParser.json());
-app.use(cookieParser());
+
 
 app.use('/api/payment',require('./routes/payment'))
 
@@ -33,18 +29,24 @@ app.use('/api/products', require('./routes/products'));
 //'/api/product' location
 app.use('/api/categories', require('./routes/categories'));
 
-const adminRouteCategory = require("./routes/category");
-app.use("/api/category", adminRouteCategory);
+
+app.use('/api/category/', require('./routes/category'));
 
 app.use('/api/users', require('./routes/users'));
 
 app.use('/api/Cart', require('./routes/Cart'));
 
+
 //api/measurement location
 app.use('/api/measurement', require('./routes/measurement'));
 
+
+//use this to show the image you have in node js server to client (react js)
+//https://stackoverflow.com/questions/48914987/send-image-path-from-node-js-express-server-to-react-client
 app.use('/uploads', express.static('uploads'));
 
+//api/measurement location
+app.use('/api/measurement', require('./routes/measurement'));
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {

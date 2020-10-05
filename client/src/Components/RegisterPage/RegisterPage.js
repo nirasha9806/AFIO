@@ -1,11 +1,12 @@
 import React, { Suspense } from "react";
+//import { Button,Form } from 'react-bootstrap';
 import { registerUser } from "../../_actions/user_actions";
 import { Formik, validateYupSchema} from 'formik';
 import * as Yup from 'yup';
 import { Form, Input, Checkbox, Typography, Menu} from 'antd';
 import { useDispatch } from "react-redux";
-import Navbar from '../layouts/Navbar';
-import Footer from '../layouts/Footer';
+import '../NavBar/Sections/Navbar.css';
+import NavBar from '../NavBar/NavBar';
 const SubMenu = Menu.SubMenu;
 
 const { Title } = Typography;
@@ -17,7 +18,7 @@ function RegisterPage(props) {
 
     <>
     <Suspense fallback={(<div>Loading...</div>)}>
-    <Navbar />
+    <NavBar />
     <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}>
 
     <Formik
@@ -95,17 +96,18 @@ function RegisterPage(props) {
             <div className = "w-50 mx-auto shadow p-5">
             <center><Title level={2}>CREATE ACCOUNT</Title></center>
             <form onSubmit={handleSubmit} style={{ width: '430px' }}>
+            {/* <Form style={{ minWidth: '375px' }} {...formItemLayout} onSubmit={handleSubmit} > */}
 
               <Form.Item required>
                 <Input
                   id="firstName"
                   placeholder="First name*"
-                  type="name"
+                  type="text"
                   value={values.firstName}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={
-                    errors.firstName && touched.firstName ? 'name-input error' : 'name-input'
+                    errors.firstName && touched.firstName ? 'text-input error' : 'text-input'
                   }
                 />
                 {errors.firstName && touched.firstName && (
@@ -117,12 +119,12 @@ function RegisterPage(props) {
                 <Input
                   id="lastName"
                   placeholder="Last name*"
-                  type="name"
+                  type="text"
                   value={values.lastName}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={
-                    errors.lastName && touched.lastName ? 'name-input error' : 'name-input'
+                    errors.lastName && touched.lastName ? 'text-input error' : 'text-input'
                   }
                 />
                 {errors.lastName && touched.lastName && (
@@ -237,7 +239,6 @@ function RegisterPage(props) {
 
     </div>
     </Suspense>
-    <Footer/>
     </>
 
   );

@@ -4,7 +4,6 @@ import CatFileUpload from '../utils/CatFileUpload'
 import Axios from 'axios';
 import '../NavBar/Sections/Navbar.css';
 import NavBar from '../NavBar/NavBar';
-import Footer from '../layouts/Footer';
 const SubMenu = Menu.SubMenu;
 
  //Add category
@@ -133,32 +132,34 @@ function UploadCategoryPage(props) {
         <Form.Item
           name="ID"
           rules={[{ required: true }]}
-          style={{ display: 'inline-block', width: 'calc(50% - 8px)' }}
+          style={{ display: 'inline-block', width: 'calc(200% - 8px)' }}
         >
-          <Input placeholder="Category ID"  type = "name" onChange = {onIdChange}
+          <Input placeholder="Category ID"  onChange = {onIdChange}
           value = {IdValue}/>
         </Form.Item>
 
         <Form.Item
           name="Name"
           rules={[{ required: true }]}
-          style={{ display: 'inline-block', width: 'calc(50% - 8px)', margin: '0 8px' }}
+          style={{ display: 'inline-block', width: 'calc(200% - 8px)', margin: '0 5px' }}
         >
-          <Input placeholder="Category Name"  type = "name" onChange = {onCatNameChange}
+          <Input placeholder="Category Name" onChange = {onCatNameChange}
           value = {CatNameValue}/>
-         </Form.Item>
         </Form.Item>
-    
-      <Form.Item>
+        </Form.Item>
+     
+      <div class="input-field col s12">
         <label> Category Type </label><br />
-        <select style={{ width: 500 , height: 32}} onChange = {onContinentsSelectChange}>
+        <select style={{ width: 475 , height: 32}} onChange = {onContinentsSelectChange}>
               {Continents.map(item => (
                 <option key = {item.key} key = {item.value}> {item.value}
                 </option>
         ))}
         </select>
-        </Form.Item>
-        
+        </div>
+        <br />
+        <br />
+
         <label> Description </label>
         <TextArea
           onChange = {onDescriptionChange}
@@ -171,10 +172,12 @@ function UploadCategoryPage(props) {
         <div style = {{ textAlign: 'left'}}>
             {/* <label> SubCategory Types </label> */}
         </div>
-      
+
+
         <form onSubmit={handleSubmit}>
           {createInputs()}
           <input type='primary' value='Add Sub Category' class="btn btn-secondary" style={{ minWidth: '100%', height: 34}} onClick={addClick} />
+          {/* <input type="submit" value="Submit" /> */}
       </form >
 
       </div>
@@ -195,7 +198,6 @@ function UploadCategoryPage(props) {
 
 </div>
     </Suspense>
-    <Footer/>
     </>
 
 
