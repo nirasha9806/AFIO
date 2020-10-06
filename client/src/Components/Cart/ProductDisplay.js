@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from "react-router-dom";
-
+import Navbar from '../layouts/Navbar';
+import Footer from '../layouts/Footer';
 import image from '../../Images/product.png';
 
 class Products extends Component{
@@ -27,18 +28,20 @@ class Products extends Component{
 render(){
   return(
 
-    
+    <div>
+        <Navbar />
 
-    // <table>
-    //   <tr>
-    //     <th>Product Name</th>
-    //     <th>Price</th>
-    //     <th>Discount</th>
-    //   </tr>
+    <br></br>
+
+    <div class="float-md-right">
+
+        <Link to={"/cart/"+this.props.match.params.uid}> &nbsp; <i class="fas fa-cart-plus fa-2x"  style={{color:"black"}}>
+        </i></Link>
+    </div>
    
     
-    <div style={{padding:"250px"}} >
-      <div><h1 className="display-4" style={{alignItems:"center"}}>{this.props.match.params.category}</h1></div>
+    <div>
+    <center><div><h1 className="display-4" style={{alignItems:"center"}}>{this.props.match.params.category}</h1></div></center>
     
 
       { this.state.products.map(product =>
@@ -62,11 +65,15 @@ render(){
       </div>
       </div>
       )}
-
         
+   </div>
+
+   <Footer />
    </div>
    
   )
+
+  
 }
 }
 

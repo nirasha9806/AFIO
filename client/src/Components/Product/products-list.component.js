@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Navbar from '../layouts/Navbar';
+import NavBar from '../NavBar/NavBar';
 import Footer from '../layouts/Footer';
 import navbar from './navbar.component';
 
@@ -56,8 +56,9 @@ export default class ProductsList extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <NavBar /> <br></br><br></br><br></br><br></br>
 
+        <br></br>
         <div className="container">
         <navbar />
    

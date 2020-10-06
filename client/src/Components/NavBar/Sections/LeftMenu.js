@@ -24,17 +24,23 @@ function LeftMenu(props) {
 
         <Menu.Item key="dash"><a href = "/adminDashboard">DASHBOARD</a></Menu.Item>
 
-    <SubMenu key="sub1" title={<span><span>CATEGORIES & PRODUCTS</span></span>}>
+    <SubMenu key="sub1" title={<span><span>CATEGORIES</span></span>}>
         <Menu.Item key="setting:1"><a href = "/category/upload"><i>Add Category</i></a></Menu.Item>
         <Menu.Item key="setting:1"><a href = "/user/table"><i>View Category</i></a></Menu.Item>
-        <Menu.Item key="setting:2"><a href = "/product/upload1"><i>Add Product</i></a></Menu.Item>
-        <Menu.Item key="setting:1"><a href = "/category/upload"><i>View Product</i></a></Menu.Item>
     </SubMenu>
-    <SubMenu key="sub2" title={<span><span>OTHER</span></span>}>
-        <Menu.Item key="setting:3"><a href = "/deliveryAdmin"><i>Delivery Details</i></a></Menu.Item>
-        <Menu.Item key="setting:4"><a href = "/orderHistory"><i>Delivery History</i></a></Menu.Item>
-        <Menu.Item key="setting:4"><i>Loyalty Card Details</i></Menu.Item>
+    <SubMenu key="sub2" title={<span><span>PRODUCTS</span></span>}>
+        <Menu.Item key="setting:1"><a href = "/createProduct"><i>Add Product</i></a></Menu.Item>
+        <Menu.Item key="setting:1"><a href = "/productList"><i>View Product</i></a></Menu.Item>
     </SubMenu>
+    <SubMenu key="sub3" title={<span><span>DELIVERY DETAILS</span></span>}>
+        <Menu.Item key="setting:1"><a href = "/deliveryAdmin"><i>Delivery Details</i></a></Menu.Item>
+        <Menu.Item key="setting:1"><a href = "/orderHistory"><i>Delivery History</i></a></Menu.Item>
+    </SubMenu>
+    <SubMenu key="sub4" title={<span><span>LOYALTY CARDS</span></span>}>
+        <Menu.Item key="setting:1"><a href = "/cardAdd"><i>Add Loyalty card</i></a></Menu.Item>
+        <Menu.Item key="setting:1"><a href = "/ListDetails"><i>View loyalty card</i></a></Menu.Item>
+    </SubMenu>
+    <Menu.Item key="sub5"><a href = "/adminFeedback">FEEDBACKS</a></Menu.Item>
   </Menu>
 
   )

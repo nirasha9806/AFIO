@@ -37,14 +37,6 @@ function RightMenu(props) {
 
       <Menu mode={props.mode}>
 
-        <Menu.Item key="upload">
-          <a href = "/category/upload">ADD CATEGORY</a>
-        </Menu.Item>
-
-        <Menu.Item key="table">
-          <a href = "/user/table">VIEW CATEGORY</a>
-        </Menu.Item>
-
       <SubMenu title={<span>ADMIN</span>}>
         <Menu.Item key="setting:1"><a href = "/admin/profile/:id">Profile</a></Menu.Item>
         <Menu.Item key="logout"><a onClick={logoutHandler}>Logout</a></Menu.Item>

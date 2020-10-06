@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from "react-router-dom";
-import ANavbar from '../layouts/AdminNavbar';
+import NavBar from '../NavBar/NavBar';
 import Footer from '../layouts/Footer';
 import { Button } from 'react-bootstrap';
 
@@ -37,7 +37,7 @@ class StatusRequest extends Component {
                  
                 <div>
 
-                   <ANavbar />  
+                   <NavBar />  <br></br><br></br><br></br><br></br>
                 <div className="container">
 
                   <br></br>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import ANavbar from '../layouts/AdminNavbar';
+import NavBar from '../NavBar/NavBar';
 import Footer from '../layouts/Footer';
 
 export default class ListDetails extends Component { //implemented class component
@@ -40,7 +40,7 @@ export default class ListDetails extends Component { //implemented class compone
     render() {
         return(
             <div>
-               <ANavbar />
+               <NavBar /> <br></br><br></br><br></br><br></br>
                 <h3 className = 'header2'>
                     <center>
                         <b>CHECKOUT !</b>

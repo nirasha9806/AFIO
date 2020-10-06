@@ -87,7 +87,6 @@ class DeliveryForm extends Component {
         axios.post('/api/delivery/insertDelivery/'+this.props.match.params.id, Delivery)
             .then(response => {
                 if(response.data.success){
-                    alert('succeful')
                     
                 this.props.history.push('/payment/'+this.props.match.params.id);
                 } else {

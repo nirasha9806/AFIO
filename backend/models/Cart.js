@@ -24,7 +24,11 @@ const cartSchema = mongoose.Schema({
 
     quantity:{
       type:String
-    }
+    },
+
+    cusId:{
+      type: String
+  }
 
 },{ timesamps: true})
 

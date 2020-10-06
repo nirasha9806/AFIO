@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from "react-router-dom";
+import Navbar from '../layouts/Navbar';
+import Footer from '../layouts/Footer';
 import jsPdf from 'jspdf'
 import 'jspdf-autotable'
 
@@ -21,7 +23,7 @@ class Cart extends Component{
 
       //retrieve data
       componentDidMount() {
-        axios.get('/api/Cart')
+        axios.get('/api/Cart/'+this.props.match.params.uid)
         .then(res => {
             const carts = res.data;
             this.setState({ carts });
@@ -60,6 +62,7 @@ class Cart extends Component{
           render(){
             return(
               <div>
+                 <Navbar />
               <div className="container py-5 ">
               <table id="my-table" class="table table-hover">
                 <thead className="table-active">
@@ -86,9 +89,12 @@ class Cart extends Component{
                 )}
               </table>
 
-              <button class="btn btn-outline-success">Add Delivary Details</button>
+              <button class="btn btn-outline-success"><Link to={"/deliveryInsert/"+this.props.match.params.uid}>Add Delivary Details</Link></button>
               </div>
-              <button className="btn-primary" onClick={this.jsPdfGenerator}>Download as a PDF</button>
+              <center>
+                <button className="btn-primary" onClick={this.jsPdfGenerator}>Download as a PDF</button>
+              </center>
+              <Footer />
               </div>
 
                   

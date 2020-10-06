@@ -34,7 +34,7 @@ router.get('/display/:id', function(req,res){
 });
 
 //post method to save data in cart
-router.post("/insertCart", (req, res) => {
+router.post("/insertCart/:uid", (req, res) => {
 
   //save data got from the client into the carts collection in the DB
   const cart = new Cart(req.body)
@@ -47,14 +47,14 @@ router.post("/insertCart", (req, res) => {
 
 
 //get method to fetch data from cart
-router.get('/', function(req,res){
-  console.log('Get cart details')
-  Cart.find({})
-  .exec(function(err, products){
+router.get('/:uid', function(req,res){
+  console.log('get requests for all cart');
+  Cart.find({cusId: req.params.uid})
+  .exec(function(err, carts){
       if(err) {
           console.log('error')
       }else {
-          res.json(products);
+          res.json(carts);
       }
   });
 });

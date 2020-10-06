@@ -40,7 +40,7 @@ import axios from 'axios';
     render() {
         return (
             <div>
-                <Navbar />  
+                <Navbar />
 
             <div className ="container">
                 <div className="row justify-content-center">

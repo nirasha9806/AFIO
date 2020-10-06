@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import image from '../../Images/product.png';
+import {Link} from "react-router-dom";
+import Navbar from '../layouts/Navbar';
+import Footer from '../layouts/Footer';
 
 class DetailsCart extends Component{
 
@@ -9,7 +12,8 @@ class DetailsCart extends Component{
                this.state = {
                 products: [],
                 size:'',
-                quantity:''
+                quantity:'',
+                cusId:'',
               }
             }
 
@@ -50,10 +54,11 @@ class DetailsCart extends Component{
         discount:discount,
         category:category,
         size:size,
-        quantity:qty
+        quantity:qty,
+        cusId:this.props.match.params.uid,
       };
 
-      axios.post('/api/Cart/insertCart', Cart)
+      axios.post('/api/Cart/insertCart/'+this.props.match.params.uid, Cart)
           .then(response => {
               if(response.data.success){
                   alert('Successful')
@@ -67,6 +72,18 @@ class DetailsCart extends Component{
     
           render(){
             return(
+
+              <div>
+              <Navbar />
+      
+          <br></br>
+      
+          <div class="float-md-right">
+      
+              <Link to={"/cart/"+this.props.match.params.uid}> &nbsp; <i class="fas fa-cart-plus fa-2x"  style={{color:"black"}}>
+              </i></Link>
+          </div>
+
               <card>
               <div className="container py-5">
             {/* <div className= "card" style ={{width:'100%', paddingLeft:'20px', paddingTop:'20px', fontSize:'16px', paddingBottom:'20px', marginTop:'10px'}}> */}
@@ -94,13 +111,16 @@ class DetailsCart extends Component{
                     </li>
                     <li class="list-group-item">
                     <button className="btn btn-outline-warning"  onClick={() =>this.onSubmit(product.productName,product.price,product.discount,product.categoryType,this.state.size,this.state.quantity)}>Add to Cart</button>
-                    <button style={{marginLeft:"100px"}} className="btn btn-outline-info">New Mesurements</button>
+                    <button style={{marginLeft:"100px"}} className="btn btn-outline-info"><Link to='/measument'>New Mesurements</Link></button>
                      </li>                
                     </ul>        
                   )}
                 
              </div>
              </card>
+
+             <Footer />
+              </div>
              
             )
           }

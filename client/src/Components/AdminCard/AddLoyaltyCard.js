@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button,Form } from 'react-bootstrap';
-import ANavbar from '../layouts/AdminNavbar';
+import NavBar from '../NavBar/NavBar';
 import Footer from '../layouts/Footer';
 import axios from 'axios';
 import {Link} from 'react-router-dom'
@@ -57,7 +57,7 @@ render() {
     return(
 
         <div>
-        <ANavbar />
+        <NavBar /> <br></br><br></br><br></br><br></br>
 
     <div className="container">  <br></br>
 

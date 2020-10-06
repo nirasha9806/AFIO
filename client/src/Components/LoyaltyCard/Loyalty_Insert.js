@@ -144,7 +144,7 @@ class LoyaltyForm extends  Component {
                                         <Link className="btn btn-outline-dark text-uppercase mt-2" onClick={this.onSubmit}>
                                           &nbsp;Send
                                             </Link>
-                                            <Link to ="/home" className ="btn btn-outline-dark text-uppercase mt-2">
+                                            <Link to ="/" className ="btn btn-outline-dark text-uppercase mt-2">
                                            <i className="fas fa-home"/>&nbsp;Back To home
                         </Link>
                                      </form>

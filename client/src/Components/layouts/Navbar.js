@@ -6,7 +6,7 @@ function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-blue bg-dark">
   <Link className="navbar-brand ml-5" href="#">
-    <img src={logo} alt ="logo" style ={{width:'35px'}}/></Link>
+    <img src={logo} alt ="logo" style ={{width:'45px'}}/></Link>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span> <i className="fa fa-bars" aria-hidden="true" style={{ color: '#fff'}}/></span>
   </button>
@@ -31,11 +31,7 @@ function Navbar() {
       
     </ul> 
     
-    <li className="list-inline-item">
     
-      <Link className="nav-link text-white text-uppercase ml-0" > &nbsp; <i class="fas fa-cart-plus">
-          </i><span class="sr-only">(current)</span></Link>
-       </li>
        <li className="list-inline-item">
       <Link className="nav-link text-white text-uppercase ml-0" > &nbsp; <i class="far fa-heart"></i>
       <span class="sr-only">(current)</span></Link>

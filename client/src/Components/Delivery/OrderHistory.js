@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from "react-router-dom";
-import ANavbar from '../layouts/AdminNavbar';
+import NavBar from '../NavBar/NavBar';
 import Footer from '../layouts/Footer';
 import { Button } from 'react-bootstrap';
 import jsPdf from 'jspdf'
@@ -47,7 +47,7 @@ class OrderHistory extends Component{
         return (
 
           <div>
-            <ANavbar />
+            <NavBar /><br></br><br></br><br></br><br></br>
 
         <div className="container">  <br></br>
 
