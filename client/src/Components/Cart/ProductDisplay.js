@@ -55,7 +55,7 @@ render(){
         <h6 className="text-blue"><strong>{product.price}.00</strong></h6>
         <h6 className="text-title text-uppercase text-muted mt-3 mb-2">Category: {product.categoryType}</h6>
         <p className="text-muted lead"><strong>Discount:{product.discount}<span>%</span></strong></p>
-        <button class="btn btn-outline-success"><Link to={'/detail/'+product._id}>More Details</Link></button>
+        <button class="btn btn-outline-success"><Link to={'/detail/'+product._id+'/'+this.props.match.params.uid}>More Details</Link></button>
       </div>
     
       </div>

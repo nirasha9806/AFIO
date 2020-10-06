@@ -92,14 +92,6 @@ render() {
                             
 
                             <center>
-<<<<<<< Updated upstream
-                                <Link className="btn btn-primary" onClick={this.onSubmit}> Request</Link>
-                            </center> <br></br>
-                            
-                        </Form>
-
-                        </div>
-=======
                                 <Link className="btn btn-primary" onClick={this.onSubmit}> Add</Link>
                             </center> <br></br></table>
                             </center>
@@ -107,7 +99,6 @@ render() {
                        
                         </div> 
                         
->>>>>>> Stashed changes
                        
                 
          

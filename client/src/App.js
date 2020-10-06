@@ -92,8 +92,8 @@ function App() {
 
 
 
-      <Route path="/product/:category" component={Products}/>
-      <Route path="/detail/:id" component={DetailsCart}/>
+      <Route path="/product/:category/:uid" component={Products}/>
+      <Route path="/detail/:id/:uid" component={DetailsCart}/>
 
       <Route path="/cart" component={Cart}/> 
       <Route path="/updateCart/:id" component={UpdateCartDisplay}/> 

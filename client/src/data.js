@@ -5,13 +5,6 @@ export const placeInfo = [
     headerTitle: 'MEN',
     headerSubTitle: 'soluta numquam',
     headerText:
-<<<<<<< HEAD
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit laboriosam cum recusandae quas? Natus, alias architecto error, sunt quae non placeat a eius minus maiores libero laborum perferendis, nobis qui?',
-=======
-      'Held on the theme ‘A Prismatic World’, the high-street inspired fashion show took place at the Stables at Park Street Mews and unveiled the Company’s bottom-wear and athleisure collections of vibrant, chic, simple and stylish bottom-wear for men and women.',
->>>>>>> origin/LoyaltyCard
-    title: 'Molestias officia excepturi',
-    description:
     'There are so many terms for women’s clothing, they boggle the mind–dolmen sleeves, pencil skirt, choker, colorblock. The best conjure up colorful images that share with a few words a glorious picture that sticks in your mind as the character walks through the scene',
     img: '.././images/p8.jpeg',
     maps:
@@ -22,11 +15,7 @@ export const placeInfo = [
     headerTitle: 'WOMEN',
     headerSubTitle: 'Get your lovely items',
     headerText:
-<<<<<<< HEAD
-      'ipsum dolor sit, amet consectetur adipisicing elit. Dicta minus nulla nesciunt ex magni, fuga magnam accusantium sed nihil, eius similique? Dolores, ullam! Nisi magni, esse beatae ea suscipit asperiores!',
-=======
       'Held on the theme ‘A Prismatic World’, the high-street inspired fashion show took place at the Stables at Park Street Mews and unveiled the Company’s bottom-wear and athleisure collections of vibrant, chic, simple and stylish bottom-wear for men and women.',
->>>>>>> origin/LoyaltyCard
     title: 'Lorem unitye',
     description:
       ' There are so many terms for women’s clothing, they boggle the mind–dolmen sleeves, pencil skirt, choker, colorblock.',
@@ -39,11 +28,7 @@ export const placeInfo = [
     headerTitle: 'BABIES',
     headerSubTitle: 'injoyguru',
     headerText:
-<<<<<<< HEAD
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis quas voluptatum quisquam nemo ratione neque aspernatur! Modi veniam distinctio velit quidem? Asperiores ut, atque odio porro debitis unde obcaecati esse!',
-=======
       'Held on the theme ‘A Prismatic World’, the high-street inspired fashion show took place at the Stables at Park Street Mews and unveiled the Company’s bottom-wear and athleisure collections of vibrant, chic, simple and stylish bottom-wear for men and women.',
->>>>>>> origin/LoyaltyCard
     title:
       'elit. Fugit, provident corrupti repudiandae nihil harum vel? Ducimus quos inventore suscipit sed laudantium eum quae, ex obcaecati quisquam? Pariatur omnis in reiciendis!',
     description:
@@ -56,11 +41,7 @@ export const placeInfo = [
     id: 4,
     headerTitle: 'TEENAGERS',
     headerSubTitle: 'Voluptas similique',
-<<<<<<< HEAD
-    headerText: 'Dolor sit amet, consectetur adipisicing elit. Illo, iste',
-=======
     headerText: 'Held on the theme ‘A Prismatic World’, the high-street inspired fashion show took place at the Stables at Park Street Mews and unveiled the Company’s bottom-wear and athleisure collections of vibrant, chic, simple and stylish bottom-wear for men and women.',
->>>>>>> origin/LoyaltyCard
     title: 'Perspiciatis illum',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quibusdam nostrum dicta vitae, illo numquam autem excepturi rem unde eos exercitationem perferendis expedita, blanditiis eaque facilis explicabo aliquid doloribus rerum?',
@@ -72,11 +53,7 @@ export const placeInfo = [
     id: 5,
     headerTitle: 'KIDS',
     headerSubTitle: 'Fugiat',
-<<<<<<< HEAD
-    headerText: 'Illo mollitia',
-=======
     headerText: 'The best baby care products at the lowest prices. Diapers, cots, strollers (go cart, prams), walkers, rockers, playpens, baby safety. Islandwide Delivery. Discounted Prices. Cash on Delivery. Pay via Visa / Mastercard.',
->>>>>>> origin/LoyaltyCard
     title: 'Consequuntur quo',
     description:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda illo numquam commodi nihil nam odit, minima perferendis delectus, quibusdam modi recusandae suscipit nobis cumque, veniam similique voluptas totam quasi mollitia.',
@@ -87,15 +64,9 @@ export const placeInfo = [
   {
     id: 6,
     headerTitle: 'ADULT',
-<<<<<<< HEAD
-    headerSubTitle: 'Excepturi sequi',
-    headerText:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi a voluptatem nostrum dolore necessitatibus, nisi provident placeat officia rerum saepe laudantium quod sunt animi cum porro eligendi molestias, ut quisquam.',
-=======
     headerSubTitle: 'The best baby care products at the lowest prices. Diapers, cots, strollers (go cart, prams), walkers, rockers, playpens, baby safety. Islandwide Delivery. Discounted Prices. Cash on Delivery. Pay via Visa / Mastercard.',
     headerText:
       'The best baby care products at the lowest prices. Diapers, cots, strollers (go cart, prams), walkers, rockers, playpens, baby safety. Islandwide Delivery. Discounted Prices. Cash on Delivery. Pay via Visa / Mastercard.',
->>>>>>> origin/LoyaltyCard
     title: 'Animi nobis',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, nostrum. Non, cupiditate facere quidem quibusdam atque aliquam corrupti minus esse dolor doloremque, vel aut. Quae eos quo consequuntur id commodi?',

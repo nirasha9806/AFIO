@@ -12,29 +12,11 @@ export default class CustomSliders extends Component {
       <div>
         <Slider { ...settings }>
           <div>
-<<<<<<< HEAD
-            <img src = "../../../img/home.jpg"></img>
-          </div>
-          <div>
-          <img src = "../../../img/home.jpg"></img>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-=======
-            <img src = "../../../img/girl.jpg"></img>
+            <img src = "../../../images/p77.jpeg"></img>
             
           </div>
           <div>
-          <img src = "../../../img/girl2.jpg"></img>
+          <img src = "../../../images/p9.jpeg"></img>
           </div>
           <div>
           <img src = "../../../img/boy.jpg"></img>
@@ -47,7 +29,6 @@ export default class CustomSliders extends Component {
           </div>
           <div>
           <img src = "../../../img/girl3.jpg"></img>
->>>>>>> origin/LoyaltyCard
           </div>
           <div>
             <h3>7</h3>

@@ -14,8 +14,7 @@ function Navbar() {
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav mr-auto">
       <li className="nav-item active">
-        <Link className="nav-link text-white text-uppercase ml-5" to="/">Home &nbsp; <i class="fas fa-home">
-          </i><span class="sr-only">(current)</span></Link>
+        <Link className="nav-link text-white text-uppercase ml-5" to="/">Home <span class="sr-only">(current)</span></Link>
       </li>
       <li className="nav-item">
         <Link className="nav-link text-white text-uppercase ml-5" to="/news">News</Link>

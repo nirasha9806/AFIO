@@ -6,15 +6,15 @@ import CustomSlider from '../slider'
 import CustomSliders from '../slider02'
 import Navbar from '../layouts/Navbar';
 import Footer from '../layouts/Footer';
-<<<<<<< HEAD
 import men from '../../Images/men.jpg';
 import women from '../../Images/women.jpg';
 import kids from '../../Images/kids.jpg';
+import bags from '../../Images/bags.jpg';
+import jewellery from '../../Images/jewellery.png';
+import gift from '../../gift.jpg'
 import { Link } from 'react-router-dom';
 
 
-=======
->>>>>>> origin/LoyaltyCard
  class Home extends Component {
     render() {
         return (
@@ -25,43 +25,37 @@ import { Link } from 'react-router-dom';
                 <div className="row justify-content-center">
                     <div className="col-6">
                         <div className="">
+                            <br></br>
                         <CustomSlider />
                         </div>
-                        < br/>
                   
-                    
-                        <div className="banner my-3 p-5">
-                        <div className="align-item-end justify-content-center mb-5">
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                        <button className="btn btn-primary mt-5">Send</button>
-                
-                        <div className="gift">
-
-                        </div>
-                     </div>
-                    </div>
+                    <br></br><br></br><br></br>             
                    
                     <CustomSliders />
-                    <div >
-                        <h1>Our Products</h1>
+
+                    <br></br><br></br><br></br>
+                    <center>
+                        <h1>Shop now</h1>
+                    </center>
+
+                    <br></br>
+
+                    <div><a href='/login'><img src={men} class="img-fluid" alt="Responsive image"></img></a> </div> <br/><br/>
+                    <div><a href='/login'><img src={women} class="img-fluid" alt="Responsive image"/></a> </div> <br/><br/>
+                    <div><a href='/login'><img src={kids} class="img-fluid" alt="Responsive image"/></a> </div> <br/><br/>
+                    <div><a href='/login'><img src={bags} class="img-fluid" alt="Responsive image"/></a> </div> <br/><br/>
+                    <div><a href='/login'><img src={jewellery} class="img-fluid" alt="Responsive image"/></a> </div> <br/><br/>
+
+                    <br></br><br></br><br></br>
+
+                    <div className="align-item-end justify-content-center mb-5">
+                        <a href='/create'><img src={gift} class="img-fluid" alt="Responsive image"/></a>
                     </div>
-<<<<<<< HEAD
 
 
+                    </div>
 
-                    <div><a href='/product/Men'><img src={men} class="img-fluid" alt="Responsive image"></img></a> </div>
-                    <div><a href='/product/Women'><img src={women} class="img-fluid" alt="Responsive image"/></a> </div>
-                    <div><a href='/product/Kids'><img src={kids} class="img-fluid" alt="Responsive image"/></a> </div>
-
-=======
                     
-                        
->>>>>>> origin/LoyaltyCard
-                    </div>
                     <div>
                         <InfoConsumer>
                         {value => {
@@ -71,8 +65,6 @@ import { Link } from 'react-router-dom';
                         } }
                     </InfoConsumer></div>
                 </div>
-                
-                
                 
                  </div>   
                  <Footer />    
