@@ -119,10 +119,13 @@ export default class EditVoucher extends Component {
     render() {
         return(
             <div>
-                <Navbar/>
+
+            <Navbar/>
+
+            <div className="container">
       
-                <div className="card " style= {{width:'100%', paddingLeft:'20px', paddingTop: '20px', fontSize:'16px', paddingBottom:'20px', marginTop:'10px'}}>
-                <V_Navbar/>
+                <div className="shadow p-5" style= {{width:'75rem', marginLeft:'0px'}}>
+                <V_Navbar/><br/>
                     <center>
                     <h3 className='h3'>
                         <b> UPDATE YOUR VOUCHER DETAILS </b>
@@ -168,7 +171,7 @@ export default class EditVoucher extends Component {
                     <div className="col-sm-10">
                         <input type="text" 
                         className="form-control" 
-                        placeholder="Search Amount"
+                        placeholder="Enter Amount"
                         style ={{maxWidth:'865px' }}
                         value = {this.state.searchField} 
                         onChange = {this.onChangeSearch}
@@ -259,13 +262,16 @@ export default class EditVoucher extends Component {
 
                     <div className="form-group">
                         <center>
-                            <button type="submit" onclick={this.onSubmit} className="btn btn-dark btn-lg" >Update</button>
+                            <button type="submit" onclick={this.onSubmit} className="btn btn-dark" >Update</button>
                         </center>
                     </div>
 
                     </form>
+                    </div>
+                    </div>
                     <Footer/>
-                </div>
+                
+           
                 </div>
 
            

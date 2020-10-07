@@ -184,13 +184,14 @@ export default class Measument extends Component { //implemented class component
                 <Navbar/>
 
 
+<br/><br/>
                 <center>
                         <h2 className = 'header2'>New Measurements</h2>
                         <p className ='p1'> Enter your measurement details here !!</p>
                 </center>
                 
 
-                <div className="card " style= {{width:'40rem', marginLeft:'245px'}}>
+                <div className="shadow p-5" style= {{width:'45rem', marginLeft:'325px'}}>
 
                        
                         <div className="card-body">
@@ -212,19 +213,20 @@ export default class Measument extends Component { //implemented class component
                             <div class="form-group">
                                 
                                 &nbsp; &nbsp; &nbsp;<label for="email" required>Email address *</label>
-                                <div style ={{maxWidth:'600px', paddingLeft:'20px'}}>
+                                <div>
                                 <input type="text" class="form-control" name="email" placeholder="enter email"
                                 value={this.state.email}
                                 onChange={this.onChangeEmail}
                                 id="email"/></div>
-                                <small id="emailHelp" class="form-text text-muted">&nbsp; &nbsp; &nbsp; &nbsp; We'll never share your email with anyone else.</small>
+                                <small id="emailHelp" class="form-text text-muted"> We'll never share your email with anyone else.</small>
                             
                                 <div className="text-danger">{this.state.errors.email}</div>
                             </div>
+                            
 
                             <div class="form-group">
                                 &nbsp; &nbsp; &nbsp;<label for="">Size *</label>
-                                <div style ={{maxWidth:'600px', paddingLeft:'20px'}}>
+                                <div style ={{maxWidth:'470px', paddingLeft:'150px'}}>
                                 <select className="form-control" value={this.state.size} onChange={this.onChangeSize} required>
                                     <option value = "XS">xs</option>
                                     <option value = "S">s</option>
@@ -237,7 +239,7 @@ export default class Measument extends Component { //implemented class component
                            
                             <div class="form-group">
                                  &nbsp; &nbsp; &nbsp;<label for="" required>Product *</label>
-                                <div style ={{maxWidth:'600px', paddingLeft:'20px'}}>
+                                <div>
                                 <input type="text" class="form-control"
                                      value={this.state.product}
                                      onChange={this.onChangeProduct} placeholder="enter product"/></div>
@@ -245,8 +247,8 @@ export default class Measument extends Component { //implemented class component
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    &nbsp; &nbsp; &nbsp;<label for="">Height (INCH)</label>
-                                    <div style ={{ paddingLeft:'20px', paddingRight:'20px'}}>
+                                    <label for="">Height (INCH)</label>
+                                    <div>
                                     <input type="text" class="form-control" 
                                          value={this.state.height}
                                          onChange={this.onChangeHeight}
@@ -254,8 +256,8 @@ export default class Measument extends Component { //implemented class component
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    &nbsp; <label for="">Waist (INCH)</label>
-                                    <div style ={{ paddingRight:'40px'}}>
+                                    <label for="">Waist (INCH)</label>
+                                    <div>
                                     <input type="text" class="form-control"
                                          value={this.state.waist}
                                          onChange={this.onChangeWaist} placeholder="enter waist"/></div>
@@ -264,16 +266,16 @@ export default class Measument extends Component { //implemented class component
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    &nbsp; &nbsp; &nbsp;<label for="">Neck (INCH)</label>
-                                    <div style ={{paddingLeft:'20px', paddingRight:'20px'}}>
+                                    <label for="">Neck (INCH)</label>
+                                    <div>
                                     <input type="text" class="form-control" 
                                          value={this.state.neck}
                                          onChange={this.onChangeNeck} placeholder="enter neck"/></div>
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    &nbsp; <label for="" >Color</label>
-                                    <div style ={{ paddingRight:'40px'}}>
+                                   <label for="" >Color</label>
+                                    <div>
                                     <input type="text" class="form-control" 
                                          value={this.state.color}
                                          onChange={this.onChangeColor} placeholder="enter color"/></div>

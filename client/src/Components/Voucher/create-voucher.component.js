@@ -12,9 +12,7 @@ import img5 from '../../Images/5.png';
 import img6 from '../../Images/6.png';
 import img7 from '../../Images/7.png';
 import img8 from '../../Images/8.png';
-import img9 from '../../Images/v1.png';
 import img10 from '../../Images/v2.png';
-import img11 from '../../Images/v3.png';
 import V_Navbar from '../layouts/navbar.component';
 
 export default class CreateVoucher extends Component {
@@ -99,71 +97,21 @@ export default class CreateVoucher extends Component {
 
             <Navbar/>
 
-            <div className="App">
+            <div className="container">
 
                 
-            <div className="card " style= {{width:'100%', paddingLeft:'20px', paddingTop: '20px', fontSize:'16px', paddingBottom:'20px', marginTop:'10px'}}>
-<br/><V_Navbar/>
+            <div className="shadow p-5" style= {{width:'75rem'}}>
+                <V_Navbar/><br/>
                     <center>
                         <h2 className = 'header2'>GIFT VOUCHERS</h2>
                         <p className ='p1'> An ideal option for that gift which is needs to be 'that extra little bit special'. </p>
                     </center>
 
-
-                    <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-                        <ol className="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
-
-                        <div className="carousel-inner">
-                            <div className="carousel-item">
-                            <center>
-                                <img        
-                                    width={300} height={200}
-                                    src={img9}
-                                    alt="First slide"
-                                />
-                            </center>
-                            </div>
-
-                            <div className="carousel-item active">
-                            <center>
-                                <img
-                                    width={300} height={200}
-                                    src={img10}
-                                    alt="Second slide"
-                                    />
-                            </center>
-                            </div>
-
-                            <div className="carousel-item">
-                            <center>
-                                <img
-                                    width={300} height={200}
-                                    src={img11}
-                                    alt="Third slide"
-                                    />
-                            </center>
-                            </div>
-
-                            <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span className="sr-only">Previous</span>
-                            </a>
-                            <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span className="sr-only">Next</span>
-                            </a>
-
-                        </div>
-    
-                    
-
-                </div> 
-
-
+                    <div>
+                        <center>
+                                <img src={img10} alt ="delivery" style={{ width:'300px',height:'200px'}}/>
+                        </center>
+                    </div>
                   
                 <br></br>
                     
@@ -206,8 +154,8 @@ export default class CreateVoucher extends Component {
                     <div className="col-sm-10">
                         <input type="text" 
                         className="form-control" 
-                        style ={{maxWidth:'865px'}}
-                        placeholder="Search Amount"
+                        style ={{maxWidth:'1000px'}}
+                        placeholder="Enter Amount"
                         value = {this.state.searchField} 
                         onChange = {this.onChangeSearch}
                         required/>
@@ -308,8 +256,9 @@ export default class CreateVoucher extends Component {
 
                     </form>
                 </div>  
+                </div>
                 <Footer/>
-            </div>
+            
             </div>
         )
     }

@@ -54,11 +54,15 @@ export default class ListVoucher extends Component { //implemented class compone
 
     render() {
         return(
-            <div>
-              <Navbar/>
-              <br/>
-              <V_Navbar/>
-              <br/>
+          <div>
+
+          <Navbar/>
+
+          <div className="container">
+
+              
+          <div>
+              <V_Navbar/><br/>
                 <h3 className = 'header2'>
                     <center>
                         <b>CHECKOUT !</b>
@@ -101,13 +105,13 @@ export default class ListVoucher extends Component { //implemented class compone
                     <td>{voucher.note}</td>
 
                     <td>
-                      <button className="btn btn-success"><i className="fas fa-edit"></i><Link to={"/EditVoucher/"+voucher._id}> Edit</Link>
+                      <button className="btn btn-warning btn-sm"><i className="fas fa-edit"></i><Link to={"/EditVoucher/"+voucher._id}> Update</Link>
                       
                       </button>
                     </td>
 
                     <td>
-                     <button className="btn btn-danger" 
+                     <button className="btn btn-danger btn-sm" 
                      onClick={ event => window.confirm("Are you sure you want to delete this voucher details?")
                       && this.delete(voucher._id)}><i className="fas fa-trash"></i> 
                      Remove 
@@ -122,7 +126,7 @@ export default class ListVoucher extends Component { //implemented class compone
                 <br/><br/>
 
                 <button type="button" value="Add Deliver Details" className="btn btn-dark" 
-                 onClick={event =>  window.location.href='/'}
+                 onClick={event =>  window.location.href='/deliveryInsert/:id'}
                  style ={{marginLeft:"873px"}}>
                  Add Deliver Details              
                 </button>
@@ -136,6 +140,8 @@ export default class ListVoucher extends Component { //implemented class compone
                 </button>
 
               <br/><br/>
+              </div>
+              </div>
 <Footer/>
             </div>
 
