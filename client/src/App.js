@@ -13,7 +13,7 @@ import PayPal from './Components/Payment/PayPal.js';
 import PayPalDisplay from './Components/Payment/PayPalDisplay.js';
 import UpdateCardPay from './Components/Payment/UpdateCardPay.js';
 import UpdatePayPal from './Components/Payment/UpdatePayPal.js';
-
+import FinalPagePayPal from './Components/Payment/FinalPagePayPal.js';
 
 
 import CreateProduct from './Components/Product/create-product.component'
@@ -75,15 +75,15 @@ function App() {
 
 
     
-       <Route exact path="/payment/:id" component={PaymentForm} />
-        <Route path="/CardPay" component={CardPay} />
-        <Route path="/Paypal" component={PayPal} />
-        <Route path="/creditDisplay/:pin" component={CreditDisplay} />
-        <Route path="/PaypalDisplay/:password" component={PayPalDisplay} />
+       <Route exact path="/payment/:id/:tot" component={PaymentForm} />
+        <Route path="/CardPay/:tot" component={CardPay} />
+        <Route path="/Paypal/:tot" component={PayPal} />
+        <Route path="/creditDisplay/:pin/:tot" component={CreditDisplay} />
+        <Route path="/PaypalDisplay/:password/:tot" component={PayPalDisplay} />
         <Route path="/updatePayPal/:id" component={UpdatePayPal} />
         <Route path="/updateCardPay/:id" component={UpdateCardPay} />
-        <Route path="/FinalPage" component={FinalPage} />
-      
+        <Route path="/FinalPage/:tot" component={FinalPage} />
+        <Route path="/FinalPagePayPal/:tot" component={FinalPagePayPal} />
 
 
       <Route path="/createProduct" component={CreateProduct} />
@@ -116,7 +116,7 @@ function App() {
       <Route path="/edit/:id" component={EditFormPage} />
       <Route path="/voucher" component={CreateVoucher} />
 
-      <Route path ="/deliveryInsert/:id" component={DeliveryForm}/>
+      <Route path ="/deliveryInsert/:id/:tot" component={DeliveryForm}/>
       <Route path ="/displayDelivery/:id" component={DisplayDeliveryDetails}/>
       <Route path="/deliveryAdmin" component={Deliveries}/>
       <Route path="/update/:id" component={UpdateStatus}/>

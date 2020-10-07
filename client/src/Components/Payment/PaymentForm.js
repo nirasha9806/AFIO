@@ -60,10 +60,10 @@ class PaymentForm extends Component{
          <h4 style={{textAlign:'center'}}>Select Payment option:</h4>
               <br/><br/>
               <div className="form-group">
-              <Link to="/CardPay" style={{textAlign:'center'}} className="btn btn-primary btn-lg" role="button" ><span>Card Payments</span></Link>
+              <Link to={"/CardPay/"+this.props.match.params.tot} style={{textAlign:'center'}} className="btn btn-primary btn-lg" role="button" ><span>Card Payments</span></Link>
               </div><br/><br/>
               <div className="form-group">
-              <Link to="/Paypal" style={{textAlign:'center'}} className="btn btn-primary btn-lg" role="button" ><span>PayPal</span></Link>
+              <Link to={"/Paypal/"+this.props.match.params.tot} style={{textAlign:'center'}} className="btn btn-primary btn-lg" role="button" ><span>PayPal</span></Link>
               </div><br/><br/>
               
               <br/> 

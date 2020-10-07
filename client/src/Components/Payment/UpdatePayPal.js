@@ -57,7 +57,7 @@ class UpdatePayPal extends Component {
         axios.post('/api/paypal/edit/'+this.props.match.params.id, PayPal)
         .then(response =>
             console.log(response.data));
-            this.props.history.push('/PaypalDisplay/'+this.state.password)
+            this.props.history.push('/PaypalDisplay/'+this.state.password+'/'+this.props.match.params.tot)
     }
 
 
@@ -82,7 +82,7 @@ class UpdatePayPal extends Component {
             </div>
             
              <div className ="form-group">
-               <Link  value="Pay Rs." className="btn btn-primary"  onClick={this.onSubmit}>Update</Link> 
+               <Link  value="Pay Rs." className="btn btn-warning"  onClick={this.onSubmit}>Update</Link> 
              </div>
             </form>
             </div>

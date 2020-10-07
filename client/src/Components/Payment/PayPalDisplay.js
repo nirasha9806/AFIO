@@ -59,15 +59,15 @@ export default class PayPalDisplay extends Component{
                         <td>{paypal.email}</td>
                         <td>{paypal.password}</td>
                         
-                        <button className="btn btn-primary" onclick={() =>this.delete(paypal._id)}>Remove</button>
-                        <button><Link to={"/updatePayPal/"+paypal._id } style={{color:'white'}} className="btn btn-primary" >Update</Link></button>   
+                        <button className="btn btn-danger" onclick={() =>this.delete(paypal._id)}>Remove</button>
+                        <button><Link to={"/updatePayPal/"+paypal._id+'/'+this.props.match.params.tot} style={{color:'white'}} className="btn btn-warning" >Update</Link></button>   
                     </tr>
                     )}
                     </tbody>
                 </table>
 
                 
-                <Link to="/FinalPage"  value="Pay Rs." className="btn btn-primary"  onClick={this.onSubmit}>Pay</Link> 
+                <Link to={"/FinalPagePayPal/"+this.props.match.params.tot}   value="Pay Rs." className="btn btn-primary"  onClick={this.onSubmit}>Pay</Link> 
                 <br/>
                     <br/><br/>
 

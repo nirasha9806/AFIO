@@ -62,8 +62,12 @@ router.get('/edit/:id', function (req, res) {
 //delete method
 router.post('/delete/:id',function (req, res) {
   Card.findByIdAndRemove({_id: req.params.id}, function(err, card){
-      if(err) res.json(err);
-      else res.json('Successfully removed');
+      if(err){
+         res.json(err);
+      }
+      else {
+        res.json('Successfully removed');
+      }
   });
 });
 

@@ -23,8 +23,6 @@ const cardSchema = mongoose.Schema({
     pin_number: {
         type: String
     },
-
-   
     cardName:{
         type: String
     }

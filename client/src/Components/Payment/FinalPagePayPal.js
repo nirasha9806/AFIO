@@ -22,7 +22,7 @@ import men7 from '../../Images/men7.jpeg';
 
 import jsPDF from 'jspdf';
 
-class FinalPage extends Component{
+class FinalPagePayPal extends Component{
    constructor(props){
       super(props)
 
@@ -31,18 +31,20 @@ class FinalPage extends Component{
       }
 
    }
+  //retrieve the data
   // componentDidMount(){
-    //  axios.get('/api/payment/')
-    //  .then( res =>{
-     //     const card = res.data;
-       //   this.setState({card });
-      //})
-      //.catch(function(error){
-       //   console.log(error);
-      //})
-  //}
+      
+  //  axios.get('/api/paypal/')
+    //.then( res =>{
+      //  const paypal= res.data;
+        //this.setState({paypal});
+    //})
+    //.catch(function(error){
+      //  console.log(error);
 
-  
+   // })
+//}
+
    //jsPDf function
    jsPdfGenerator = () =>{
       //new document in jsPDF
@@ -52,6 +54,7 @@ class FinalPage extends Component{
       doc.autoTable({  html:'#my-table' })
 
       doc.text(40,40,'Total Amount Paid : ')
+     
       doc.text(50,50,this.props.match.params.tot)
 
 
@@ -100,10 +103,8 @@ class FinalPage extends Component{
                     <center><h3 style={{textAlign:'center'}}>THANK YOU! </h3></center>
 
                     <center><h2 style={{textAlign:'center'}} >You invoice here....</h2></center>
-          <br/><br/>
-         
-
-                <br/>    <br/>
+          <br></br>
+          
                    <button className="btn btn-primary btn-lg" onClick={this.jsPdfGenerator}>Invoice</button>
                     <br/><br/>  <br/><br/>  <br/><br/>
                     <div className = "gallery">  
@@ -138,5 +139,5 @@ class FinalPage extends Component{
         );
     } 
 }
-export default FinalPage;
+export default FinalPagePayPal;
 

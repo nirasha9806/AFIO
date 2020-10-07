@@ -33,7 +33,7 @@ class UpdateCardPay extends Component {
     }
     componentDidMount() {
 
-        axios.get('http://localhost:5000/api/payment/edit/'+this.props.match.params.id)
+        axios.get('/api/payment/edit/'+this.props.match.params.id)
           .then(res => {
             this.setState({
               cname: res.data.cname,
@@ -66,6 +66,7 @@ class UpdateCardPay extends Component {
         const Credit = {
             cname:this.state.cname,
             cardType:this.state.cardType,
+            bankname:this.state.bankname,
             CVC: this.state.CVC,
             expiry: this.state.expiry,
             pin_number: this.state.pin_number,
@@ -73,10 +74,10 @@ class UpdateCardPay extends Component {
         
         };
 
-        axios.post('http://localhost:5000/api/payment/update/'+this.props.match.params.id, Credit)
+        axios.post('/api/payment/update/'+this.props.match.params.id, Credit)
         .then(response =>
             console.log(response.data));
-            this.props.history.push('/creditDisplay/'+this.state.pin_number)
+            this.props.history.push('/creditDisplay/'+this.state.pin_number+'/'+this.props.match.params.tot)
             
     }
 
@@ -129,7 +130,7 @@ class UpdateCardPay extends Component {
               </div> 
               
               <div className ="form-group">
-               <Link  value="Pay Rs." className="btn btn-primary"  onClick={this.onSubmit}>Update</Link> 
+               <Link  value="Pay Rs." className="btn btn-warning"  onClick={this.onSubmit}>Update</Link> 
              </div>
              </form>
             </div>

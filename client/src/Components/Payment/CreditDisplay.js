@@ -65,8 +65,8 @@ export default class CreditDisplay extends Component{
                         <td> {card.expiry}</td>
                         <td>{card.pin_number}</td>
                         <td>{card.cardName}</td>
-                        <button className="btn btn-primary" onclick={() =>this.delete(card._id)}>Remove</button>
-                        <button><Link to={"/updateCardPay/"+card._id } style={{color:'white'}} className="btn btn-primary">Update</Link></button>   
+                        <button className="btn btn-danger" onclick={() =>this.delete(card._id)}>Remove</button>
+                        <button><Link to={"/updateCardPay/"+card._id+'/'+this.props.match.params.tot } style={{color:'white'}} className="btn btn-warning">Update</Link></button>   
                     </tr>
                     
                     )}
@@ -75,7 +75,7 @@ export default class CreditDisplay extends Component{
                    
                 </table>
 
-                <Link to="/FinalPage"  value="Pay Rs." className="btn btn-primary"  onClick={this.onSubmit}>Pay</Link> 
+                <Link to={"/FinalPage/"+this.props.match.params.tot}  value="Pay Rs." className="btn btn-primary"  onClick={this.onSubmit}>Pay</Link> 
                 <br/>
                     <br/><br/>
                <Footer/>

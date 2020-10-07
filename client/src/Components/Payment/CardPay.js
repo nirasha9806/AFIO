@@ -53,7 +53,7 @@ class CardPay extends Component{
           .then(response => {
               if(response.data.success){
                   alert('successful')
-                  this.props.history.push('/creditDisplay/'+ this.state.pin_number);
+                  this.props.history.push('/creditDisplay/'+ this.state.pin_number+'/'+this.props.match.params.tot);
   
               } else {
                   alert('Failed')

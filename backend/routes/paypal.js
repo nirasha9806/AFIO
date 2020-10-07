@@ -62,4 +62,16 @@ router.get('/:password', function(req,res){
     });
 });
 
+//delete method
+router.post('/delete/:id',function (req, res) {
+    Paypal.findByIdAndRemove({_id: req.params.id}, function(err, paypal){
+        if(err){
+           res.json(err);
+        }
+        else {
+          res.json('Successfully removed');
+        }
+    });
+  });
+
 module.exports = router;

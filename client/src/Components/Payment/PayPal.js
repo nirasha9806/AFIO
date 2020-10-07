@@ -37,7 +37,7 @@ class PayPal extends Component{
     .then(response => {
         if(response.data.success){
             alert('successful')
-            this.props.history.push('/PaypalDisplay/'+ this.state.password);
+            this.props.history.push('/PaypalDisplay/'+ this.state.password+'/'+this.props.match.params.tot);
 
         } else {
             alert('Failed')

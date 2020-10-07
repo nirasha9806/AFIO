@@ -39,6 +39,14 @@ class Cart extends Component{
         });
 }
 
+calculateTot(){
+  let total=0;
+  this.state.carts.map(Cart =>
+    total = total + (Cart.quantity * Cart.price)
+  );
+  return total
+}
+
  //pdf generating
  jsPdfGenerator = () => {
 
@@ -77,7 +85,7 @@ class Cart extends Component{
                 </thead>
 
                 { this.state.carts.map(Cart =>
-
+                 
                 <tr>
                   <td >{Cart.productName}</td>
                   <td>{Cart.size}</td>
@@ -87,9 +95,16 @@ class Cart extends Component{
                   <td><button className="btn btn-danger" onClick={() => this.delete(Cart._id)}>REMOVE</button></td>
                 </tr>
                 )}
-              </table>
 
-              <button class="btn btn-outline-success"><Link to={"/deliveryInsert/"+this.props.match.params.uid}>Add Delivary Details</Link></button>
+                <tr>
+                  <td>total</td>
+                <td>{this.calculateTot()}</td>
+                </tr>
+              </table>
+              
+              <center>
+              <button class="btn btn-outline-success"><Link to={"/deliveryInsert/"+this.props.match.params.uid+'/'+this.calculateTot()}>Add Delivary Details</Link></button>
+              </center>
               </div>
               <center>
                 <button className="btn-primary" onClick={this.jsPdfGenerator}>Download as a PDF</button>
