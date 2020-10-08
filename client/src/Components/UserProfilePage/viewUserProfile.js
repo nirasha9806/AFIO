@@ -45,9 +45,7 @@ delete(){
                 </td>
                 
                 <td>
-                <p className="delete" onClick={event => window.confirm("Are you sure you want to delete this Account?") && this.delete()}>
-                <i className="fas fa-trash" style={{paddingRight:"10px"}}></i>
-                </p>   
+                <button className="btn btn-danger" onClick={event => window.confirm("Are you sure you want to delete this Account?") && this.delete()}>Delete</button>
                 </td>
                 
             </tr>

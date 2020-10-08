@@ -5,6 +5,9 @@ import ImageSlideShow from '../utils/ImageSlideShow';
 import '../NavBar/Sections/Navbar.css';
 import NavBar from '../NavBar/NavBar';
 import Footer from '../layouts/Footer';
+import ooo from '../UserProfilePage/UserImg/ooo.jpg';
+import kk from '../UserProfilePage/UserImg/kk.jpg';
+import ff from '../UserProfilePage/UserImg/ff.PNG';
 
 const SubMenu = Menu.SubMenu;
 const { Meta } = Card;
@@ -56,7 +59,11 @@ function LandingPage() {
 
         <h1 style={{backgroundColor: "#e8dfdf", textAlign: 'center'}}> <i><b>ADMIN DASHBOARD </b></i></h1>
 
-            <h6><i>Category Items</i></h6><br />
+        <center><img src={ooo} alt ="ooo" style ={{width:'1205px'}} />
+        <img src={kk} alt ="kk" style ={{width:'500px', position: 'absolute', top: '400px', right: '300px'}} />
+        <img src={ff} alt ="ff" style ={{width:'400px', position: 'absolute', top: '523px', right: '300px'}} /> </center>
+
+            <br /><h6><i>Category Items</i></h6><br />
 
             {categories.length === 0 ?
             <div style = {{display: 'flex', height: '300px', justifyContent: 'center', alignItems: 'center'}}>   

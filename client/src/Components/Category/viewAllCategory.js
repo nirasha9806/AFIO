@@ -74,7 +74,7 @@ class ViewCategory extends Component {
                             
                                 <th scope="col">Edit Action</th>
                                 <th scope="col">Delete Action</th>
-                                <th scope="col">Generate PDF</th>
+                                <th scope="col">Download PDF</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -83,7 +83,7 @@ class ViewCategory extends Component {
                         
                         </table>
 
-                        <button onClick = {this.jsPdfGeneratorAll} type="button" class="btn btn-secondary btn-lg btn-block">Genarate PDF</button>
+                        <button onClick = {this.jsPdfGeneratorAll} type="button" class="btn btn-secondary btn-lg btn-block">Download PDF</button>
    
                     </div>
                     

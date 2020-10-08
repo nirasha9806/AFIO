@@ -183,7 +183,7 @@ function UploadCategoryPage(props) {
 
         <button type="primary" class="btn btn-dark" style={{ minWidth: '100%', height: 34}} onClick = {onSubmit}
         >
-           <b>Submit</b>
+           <b>Add Category</b>
            
         </button>
 
