@@ -71,7 +71,7 @@ class CategoryDetails extends Component {
                 </p>   
                 </td>
                 <td>
-                <button onClick = {this.jsPdfGenerator} type="button" class="btn btn-secondary btn-sm">Download</button>
+                <button onClick = {this.jsPdfGenerator} type="button" class="btn btn-outline-primary">Download</button>
                 </td></tr>
 
          );

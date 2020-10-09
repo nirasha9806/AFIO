@@ -5,6 +5,7 @@ import Axios from 'axios';
 import '../NavBar/Sections/Navbar.css';
 import NavBar from '../NavBar/NavBar';
 import Footer from '../layouts/Footer';
+import ccc from '../UserProfilePage/UserImg/ccc.png';
 const SubMenu = Menu.SubMenu;
 
  //Add category
@@ -122,6 +123,7 @@ function UploadCategoryPage(props) {
     <div style = {{ maxWidth: '500px' , margin: '2rem auto' }}>
         <div style = {{ textAlign: 'center' , marginBottom: '2rem'}}>
             <h2><i> CREATE CATEGORY</i></h2>
+            <img src={ccc} alt ="ccc" style ={{width:'300px', position: 'absolute', top: '80px', right: '5px'}} />
         </div>
       
         <Form onSubmit = {onSubmit}>

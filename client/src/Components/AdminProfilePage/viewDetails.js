@@ -34,6 +34,24 @@ class viewDetails extends Component {
         });
     }
 
+    filterContent(user, searchTerm){
+        const result= user.filter((users)=> users.email.includes(searchTerm));
+        this.setState({ user: result });
+      }
+
+     handleTextSearch=(e)=>{
+
+      console.log(e.currentTarget.value);
+      const searchTerm = e.currentTarget.value;
+      axios.get("/api/users")
+      .then(response =>{
+        const user = response.data;
+        this.setState({ user });
+        this.filterContent(user, searchTerm)
+        
+      })
+    }
+
     render() { 
         return ( 
 
@@ -44,6 +62,17 @@ class viewDetails extends Component {
             <div style={{ paddingTop: '69px', minHeight: 'calc(100vh - 80px)' }}>
             <center><div class="card" style={{width: '60rem', height: '38rem'}}>
             <center><img src={afio} alt ="afio" style ={{width:'350px'}} /> </center>
+
+            <form class="form-inline d-flex justify-content-center md-form form-sm mt-0"style ={{ position: 'absolute', top: '23px', right: '15px'}}>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <input class="form-control form-control-sm ml-3 w-80" 
+            type="text" 
+            placeholder="Search User Details"
+            name="searchTerm"
+            onChange={this.handleTextSearch}
+            aria-label="Search"></input>
+            </form>
+
             <div class="card-body">
             <h5 class="card-title">----------------------MANAGE USER PROFILES----------------------</h5>
                         

@@ -7,6 +7,7 @@ import TableRow from './EditCategoryPage';
 import '../NavBar/Sections/Navbar.css';
 import NavBar from '../NavBar/NavBar';
 import Footer from '../layouts/Footer';
+import category from '../UserProfilePage/UserImg/category.png';
 const SubMenu = Menu.SubMenu;
 
 class ViewCategory extends Component {
@@ -48,6 +49,24 @@ class ViewCategory extends Component {
 
 }
 
+        filterContent(category, searchTerm){
+        const result= category.filter((category)=> category.categoryID.includes(searchTerm));
+        this.setState({ category: result });
+    }
+
+        handleTextSearch=(e)=>{
+
+        console.log(e.currentTarget.value);
+        const searchTerm = e.currentTarget.value;
+        axios.get("/api/category")
+        .then(response =>{
+        const category = response.data;
+        this.setState({ category });
+        this.filterContent(category, searchTerm)
+    
+    })
+}
+
     render() { 
         return ( 
 
@@ -62,6 +81,19 @@ class ViewCategory extends Component {
                     <div  className="col-20 mt-5 ml-5 mr-5" >
             
                         <h2 align="center"><i>Category List</i></h2>
+
+                        <img src={category} alt ="category" style ={{width:'150px', position: 'absolute', top: '80px', right: '5px'}} />
+
+                        <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input class="form-control form-control-sm ml-3 w-50" 
+                        type="text" 
+                        placeholder="Search Category Details"
+                        name="searchTerm"
+                        onChange={this.handleTextSearch}
+                        aria-label="Search"></input>
+                        </form><br />
+
                         <table class="table border shadow">
                         
                         <thead class="thead-dark">
@@ -83,7 +115,7 @@ class ViewCategory extends Component {
                         
                         </table>
 
-                        <button onClick = {this.jsPdfGeneratorAll} type="button" class="btn btn-secondary btn-lg btn-block">Download PDF</button>
+                        <button onClick = {this.jsPdfGeneratorAll} type="button" class="btn btn-primary btn-lg btn-block">Download PDF</button>
    
                     </div>
                     
