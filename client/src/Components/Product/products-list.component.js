@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import NavBar from '../NavBar/NavBar';
+import Navbar from '../layouts/Navbar';
 import Footer from '../layouts/Footer';
-import navbar from './navbar.component';
+import jsPdf from 'jspdf'
+import 'jspdf-autotable'
 
 const Product = props => (
   <tr>
@@ -53,12 +54,28 @@ export default class ProductsList extends Component {
     })
   }
 
+
+  //generating PDF
+  jsPdfGenerator = () => {
+
+    var doc = new jsPdf('p','pt');    //new document in jspdf
+    
+    doc.autoTable({  html:'#productList-table' })  
+
+    doc.autoTable({
+      columnStyles: { europe: { halign: 'center' } }, 
+      margin: { top: 10 },
+    })
+    
+    doc.save("Product list.pdf");    //saving PDF
+  }
+
+
   render() {
     return (
       <div>
-        <NavBar /> <br></br><br></br><br></br><br></br>
+        <Navbar />
 
-        <br></br>
         <div className="container">
         <navbar />
    
@@ -68,13 +85,13 @@ export default class ProductsList extends Component {
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        &emsp;&emsp;&emsp;
+        &emsp;&emsp;
 
-        <button class="btn btn-outline-primary"><Link to = { '/createProduct' }> Add Product </Link></button>
+        <button className="btn-primary" onClick={this.jsPdfGenerator}>Download PDF</button>
 
         <h3>Products</h3>
         <br />
-        <table className="table">
+        <table id="productList-table" className="table">
           <thead className="thead-light">
             <tr>
               <th>Product Name</th>

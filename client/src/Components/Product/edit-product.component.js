@@ -111,7 +111,8 @@ export default class EditProduct extends Component {
 
       <Navbar />
       <div className="container">
-      <navbarComponent />
+ 
+      <br />
 
       <h3>Edit Product</h3>
       <form onSubmit={this.onSubmit}>
@@ -124,6 +125,7 @@ export default class EditProduct extends Component {
               onChange={this.onChangeProductname}
          />
         </div>
+
         <div className="form-group"> 
           <label>Price: </label>
           <input  type="text"
@@ -133,6 +135,7 @@ export default class EditProduct extends Component {
               onChange={this.onChangePrice}
          />
         </div>
+
         <div className="form-group"> 
           <label>Discount: </label>
           <input  type="text"
@@ -142,6 +145,7 @@ export default class EditProduct extends Component {
               onChange={this.onChangeDiscount}
          />
         </div>
+
         <div className="form-group"> 
           <label>Category Name: </label>
           <select ref="categoryInput"
@@ -159,6 +163,7 @@ export default class EditProduct extends Component {
               }
           </select>
         </div>
+
         <div className="form-group"> 
           <label>Description: </label>
           <input  type="text"
@@ -167,7 +172,8 @@ export default class EditProduct extends Component {
               value={this.state.description}
               onChange={this.onChangeDescription}
          />
-        </div>           
+        </div>   
+  
 
         <div className="form-group">
           <input type="submit" value="Edit Product" className="btn btn-primary" />
