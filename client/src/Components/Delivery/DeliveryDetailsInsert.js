@@ -136,6 +136,27 @@ class DeliveryForm extends Component {
     }
 
     
+    //demo button
+    demo =() => { 
+        //setState
+        this.setState( {
+                name: "Nirasha Chamudini"
+            })
+
+        this.setState( {
+            city: "Colombo"
+        })
+
+        this.setState( {
+            zipcode: "1111"
+        }) 
+
+        let input = {};
+            input["email"] = "nirasha@gmail.com";
+            input["phone"] = "0774015879";
+            input["address"] = "No.74/D, Kandy road, Colombo";
+            this.setState({input:input});
+        }
 
     render() {
         return(
@@ -195,6 +216,7 @@ class DeliveryForm extends Component {
 
                                 <center>
                                     <Button variant="dark" onClick={this.onSubmit}><i class="fas fa-check-circle"></i>&nbsp; Proceed to Payment </Button>
+                                     <Button variant="primary" onClick={this.demo}>Demo</Button>
                                 </center> <br></br>
                                 
                             </Form>

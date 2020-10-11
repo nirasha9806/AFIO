@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from '../layouts/Navbar';
+import NavBar from '../NavBar/NavBar';
 import Footer from '../layouts/Footer';
 
 export default class EditProduct extends Component {
@@ -109,7 +109,7 @@ export default class EditProduct extends Component {
     return (
     <div>
 
-      <Navbar />
+      <NavBar />
       <div className="container">
  
       <br />

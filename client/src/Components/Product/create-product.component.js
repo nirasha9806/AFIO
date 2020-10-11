@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react';
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from '../layouts/Navbar';
+import NavBar from '../NavBar/NavBar';
 import Footer from '../layouts/Footer';
 import { number } from 'yup';
 import { useForm } from 'antd/lib/form/Form';
@@ -188,7 +188,7 @@ export default class CreateProduct extends Component {
 
     <div>
 
-      <Navbar />
+      <NavBar /> <br></br><br></br><br></br><br></br>
       <div className="container">
 
         <br />

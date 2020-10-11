@@ -59,7 +59,7 @@ class Deliveries extends Component{
         //new document in jspdf
         var doc = new jsPdf('p','pt');
 
-        doc.text(30,30,"Delivery Details")
+        doc.text(210,30,"Delivery Details")
         doc.autoTable({  html:'#my-table' })
 
         doc.autoTable({

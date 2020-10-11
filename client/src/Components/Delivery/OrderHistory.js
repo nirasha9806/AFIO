@@ -31,6 +31,7 @@ class OrderHistory extends Component{
         //new document in jspdf
         var doc = new jsPdf('p','pt');
 
+        doc.text(210,30,"Delivery History")
         doc.autoTable({  html:'#my-table' })
 
         doc.autoTable({
