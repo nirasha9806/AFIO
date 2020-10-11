@@ -112,12 +112,17 @@ export default class EditProduct extends Component {
       <NavBar />
       <div className="container">
  
-      <br />
+      <br /><br /><br /><br /><br />
 
       <h3>Edit Product</h3>
+
+      <br /><br />
+
       <form onSubmit={this.onSubmit}>
-      <div className="form-group"> 
+
+        <div className="form-group"> 
           <label>Product Name: </label>
+          <br />
           <input  type="text"
               required
               className="form-control"
@@ -127,7 +132,8 @@ export default class EditProduct extends Component {
         </div>
 
         <div className="form-group"> 
-          <label>Price: </label>
+          <label>Price: (Rs.) </label>
+          <br />
           <input  type="text"
               required
               className="form-control"
@@ -138,6 +144,7 @@ export default class EditProduct extends Component {
 
         <div className="form-group"> 
           <label>Discount: </label>
+          <br />
           <input  type="text"
               required
               className="form-control"
@@ -166,6 +173,7 @@ export default class EditProduct extends Component {
 
         <div className="form-group"> 
           <label>Description: </label>
+          <br />
           <input  type="text"
               required
               className="form-control"
@@ -173,7 +181,8 @@ export default class EditProduct extends Component {
               onChange={this.onChangeDescription}
          />
         </div>   
-  
+
+        <br /><br />
 
         <div className="form-group">
           <input type="submit" value="Edit Product" className="btn btn-primary" />
@@ -181,6 +190,8 @@ export default class EditProduct extends Component {
       </form>
 
       </div>
+
+      <br />
 
       <Footer />
       

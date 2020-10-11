@@ -22,7 +22,11 @@ const Product = props => (
 
 export default class ProductsList extends Component {
   constructor(props) {
-    super(props);
+    super(props)
+
+    this.state = {
+      products: [],
+    }
 
     this.deleteProduct = this.deleteProduct.bind(this)
 
@@ -52,6 +56,26 @@ export default class ProductsList extends Component {
     return this.state.products.map(currentproduct => {
       return <Product product={currentproduct} deleteProduct={this.deleteProduct} key={currentproduct._id}/>;
     })
+  }
+
+
+  //Search filterContent() method
+  filterContent(products, searchProduct){
+    const result = products.filter((product) => product._id.includes(searchProduct));
+    this.setState({products:result});
+  } 
+
+  //Search handleSearch()
+  handleSearch = (e) =>{
+    console.log(e.currentTarget.value);
+    const searchProduct = e.currentTarget.value;
+
+    axios.get('/api/products')
+      .then(res => {
+          const products = res.data;
+          this.setState({ products });
+          this.filterContent(products, searchProduct)
+        })
   }
 
 
@@ -89,8 +113,21 @@ export default class ProductsList extends Component {
 
         <button className="btn-primary" onClick={this.jsPdfGenerator}>Download PDF</button>
 
+        <br /><br />
         <h3>Products</h3>
         <br />
+          
+        <div className="col-md-5 active-cyan-4 mb-4">
+          <input
+            type="search"
+            placeholder="Search"
+            name="searchProduct"
+            className="form-control ml-2"
+            onChange={this.handleSearch}
+          ></input>
+        </div>
+
+
         <table id="productList-table" className="table">
           <thead className="thead-light">
             <tr>

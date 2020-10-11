@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react';
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Button,Form } from 'react-bootstrap';
 import NavBar from '../NavBar/NavBar';
 import Footer from '../layouts/Footer';
 import { number } from 'yup';
@@ -153,34 +154,40 @@ export default class CreateProduct extends Component {
   }
 
 
-  /*
+  //demo button method
+  demo =() => { 
 
-  //------demo button---------
+    //setState
+    this.setState ({
+        productName: "Reversible Sherpa-Lined Hooded Zip Jacket"
+    })
 
-  preLoadedValues = {
-    productName: "Shirt",
-    price: 2000,
-    discount: 2,
-    description: "Color-red, body-fit"
+    this.setState ({
+        price: "8500"
+    })
+
+    this.setState ({
+        discount: "5"
+    }) 
+
+    this.setState ({
+      description: "Built-in hood, Long sleeves, Full-length zipper from hem to chin"
+    }) 
+
   }
-
-  onClickDemo = () => {
-    defaultValue: this.preLoadedValues
-  }
-  */
   
 
-
+  //image handling part
   state = {
     selectedFile: null
   }
-
 
   fileSelectedHandler = event => {
     this.setState ({
         selectedFile: event.target.files[0]
     })
   }
+
 
 
   render() {
@@ -192,7 +199,16 @@ export default class CreateProduct extends Component {
       <div className="container">
 
         <br />
-        <h3>Add Product</h3>
+
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+        <Button variant="primary" onClick={this.demo}>Demo</Button>
+
+        <h3>Add Product</h3>        
 
         <form onSubmit={this.onSubmit}>
 
@@ -276,7 +292,9 @@ export default class CreateProduct extends Component {
           </div>           
 
           <div className="form-group">
+
             <input type="submit" value="Add Product" className="btn btn-primary"  onClick={this.onSubmit}/>
+
             <br /><br /><br />
           </div>
         </form>
