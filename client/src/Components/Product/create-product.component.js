@@ -86,6 +86,7 @@ export default class CreateProduct extends Component {
   }
 
 
+  //validation
   validate = () => {
     let isError = false;
     const errors = {
@@ -116,6 +117,7 @@ export default class CreateProduct extends Component {
   }
 
 
+  //submitting data to db
   onSubmit(e) {
     e.preventDefault();
 
@@ -128,21 +130,22 @@ export default class CreateProduct extends Component {
         discount: this.state.discount,
         categoryType: this.state.categoryType,
         description: this.state.description, 
-        image: this.state.image       
+        image: this.state.image
       }
 
-      console.log(product);       //submitting data to the database
-
-      //image data
+      //appending data 
       const fd = new FormData();
+      fd.append('productName', this.state.productName);
+      fd.append('price', this.state.price);
+      fd.append('discount', this.state.discount);
+      fd.append('categoryType', this.state.categoryType);
+      fd.append('description', this.state.description);
       fd.append('image', this.state.selectedFile, this.state.selectedFile.name);
       axios.post('/api/products/add/', fd)
         .then(res => {
-          console.log(res);
-        });
+          console.log(res.data);      //submitting data to the database
+      });
 
-      axios.post('/api/products/add/', product)
-        .then(res => console.log(res.data));
 
       window.location = '/productList';      //redirecting back to the homepage(productlist page)
     }
@@ -179,14 +182,6 @@ export default class CreateProduct extends Component {
     })
   }
 
-  /*fileUploadHandler = () => {
-    const fd = new FormData();
-    fd.append('image', this.state.selectedFile, this.state.selectedFile.name);
-    axios.post('/api/products/add/', fd)
-      .then(res => {
-        console.log(res);
-      });
-  }*/
 
   render() {
     return (
