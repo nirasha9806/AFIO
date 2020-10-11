@@ -112,6 +112,17 @@ function UploadCategoryPage(props) {
 
   }
 
+  //demo function
+  const demo = () => { 
+     
+    setIdValue ("1199")
+    setCatNameValue ("CAT1199")
+    setDescriptionValue ("men shirt sub category uploaded")
+    setContinentValue ("Men")
+    setValues ({ val: ["SHORT SLEEVE LINEN SHIRT","LONG SLEEVE PRINTED SHIRT"]})
+
+    }
+
   return (
 
     <>
@@ -129,27 +140,29 @@ function UploadCategoryPage(props) {
         <Form onSubmit = {onSubmit}>
         
         {/* DropZone */}
-        <CatFileUpload refreshFunction = {updateImages}/><br />
+        <CatFileUpload refreshFunction = {updateImages}/>
 
-        <Form.Item style={{ marginBottom: 0 }}>
+        <form>
         <Form.Item
           name="ID"
           rules={[{ required: true }]}
           style={{ display: 'inline-block', width: 'calc(50% - 8px)' }}
         >
+           </Form.Item>
           <Input placeholder="Category ID"  type = "name" onChange = {onIdChange}
           value = {IdValue}/>
-        </Form.Item>
+       
 
         <Form.Item
           name="Name"
           rules={[{ required: true }]}
           style={{ display: 'inline-block', width: 'calc(50% - 8px)', margin: '0 8px' }}
         >
+           </Form.Item>
           <Input placeholder="Category Name"  type = "name" onChange = {onCatNameChange}
           value = {CatNameValue}/>
-         </Form.Item>
-        </Form.Item>
+        
+        </form><br />
     
       <Form.Item>
         <label> Category Type </label><br />
@@ -188,6 +201,8 @@ function UploadCategoryPage(props) {
            <b>Add Category</b>
            
         </button>
+
+        <button type="button" class="btn btn-primary" onClick= {demo}  style ={{width:'100px', position: 'absolute', top: '910px', right: '50px'}} >Demo</button>
 
         </Form>
 
