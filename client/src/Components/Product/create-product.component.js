@@ -40,6 +40,7 @@ export default class CreateProduct extends Component {
     }
   }
 
+  //retrieving all categories uploaded
   componentDidMount() {
     axios.get('/api/categories/')
       .then(response => {
@@ -56,6 +57,9 @@ export default class CreateProduct extends Component {
 
   }
 
+
+
+  
   onChangeProductname(e) {
     this.setState({
       productName: e.target.value
@@ -122,6 +126,7 @@ export default class CreateProduct extends Component {
   onSubmit(e) {
     e.preventDefault();
 
+    //validate data before submitting to the db 
     const err = this.validate();
     if(!err){
 
@@ -199,14 +204,6 @@ export default class CreateProduct extends Component {
       <div className="container">
 
         <br />
-
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-
-        <Button variant="primary" onClick={this.demo}>Demo</Button>
 
         <h3>Add Product</h3>        
 
@@ -293,7 +290,9 @@ export default class CreateProduct extends Component {
 
           <div className="form-group">
 
-            <input type="submit" value="Add Product" className="btn btn-primary"  onClick={this.onSubmit}/>
+            <input type="submit" value="Add Product" className="btn btn-dark"  onClick={this.onSubmit}/>
+            &emsp;
+            <Button variant="primary" onClick={this.demo}>Demo</Button>
 
             <br /><br /><br />
           </div>

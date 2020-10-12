@@ -39,7 +39,7 @@ export default class ListDetails extends Component { //implemented class compone
     }
   //filterContent() method for search 
   filterContent(loyaltycardadds, searchLoyalty){
-    const result = loyaltycardadds.filter((loyaltycardadds) => loyaltycardadds._id.includes(searchLoyalty));
+    const result = loyaltycardadds.filter((loyaltycardadds) => loyaltycardadds.cardType.includes(searchLoyalty));
     this.setState({loyaltycardadds:result});
   } 
 

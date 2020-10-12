@@ -15,7 +15,8 @@ export default class EditProduct extends Component {
       discount: 0,
       categoryType: '',
       description: '',
-      categories: []
+      categories: [],
+      image: '',
     }
 
     //refering this to component
@@ -27,6 +28,7 @@ export default class EditProduct extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  //retrieving all products and categories uploaded
   componentDidMount() {
     axios.get('/api/products/'+this.props.match.params.id)
     .then(response => {
@@ -36,6 +38,7 @@ export default class EditProduct extends Component {
         discount: response.data.discount,
         categoryType: response.data.categoryType,
         description: response.data.description,
+        image: response.data.image,
       });   
     })
     .catch(function (error) {
@@ -55,6 +58,8 @@ export default class EditProduct extends Component {
       })
 
   }
+
+
 
   onChangeProductname(e) {
     this.setState({
@@ -86,6 +91,20 @@ export default class EditProduct extends Component {
     })
   }
 
+    //image handling part
+    state = {
+      selectedFile: null
+    }
+  
+    fileSelectedHandler = event => {
+      this.setState ({
+          selectedFile: event.target.files[0]
+      })
+    }
+  
+
+
+  //submitting data to db
   onSubmit(e) {
     e.preventDefault();
 
@@ -94,16 +113,21 @@ export default class EditProduct extends Component {
       price: this.state.price,
       discount: this.state.discount,
       categoryType: this.state.categoryType,
-      description: this.state.description,      
+      description: this.state.description,   
+      image: this.state.image,   
     }
 
-    console.log(product);
 
     axios.post('/api/products/update/' + this.props.match.params.id, product)
-      .then(res => console.log(res.data));
+      .then(res => {
+        console.log(res.data);    //submitting edited data to the database
+      });
 
-    window.location = '/productList';
+    window.location = '/productList';   //redirecting back to the homepage(productlist page)
   } 
+
+
+  
 
   render() {
     return (
@@ -119,6 +143,14 @@ export default class EditProduct extends Component {
       <br /><br />
 
       <form onSubmit={this.onSubmit}>
+
+        <div>
+          <br />
+          <br />
+          <label>Choose Image: </label> <input type="file" onChange={this.fileSelectedHandler} />
+          <br />
+          <br />
+        </div>
 
         <div className="form-group"> 
           <label>Product Name: </label>
@@ -185,7 +217,7 @@ export default class EditProduct extends Component {
         <br /><br />
 
         <div className="form-group">
-          <input type="submit" value="Edit Product" className="btn btn-primary" />
+          <input type="submit" value="Edit Product" className="btn btn-dark"  />
         </div>
       </form>
 

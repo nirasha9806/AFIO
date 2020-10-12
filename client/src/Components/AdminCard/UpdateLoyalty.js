@@ -62,15 +62,15 @@ class UpdateLoyalty extends Component {
     render() {
         return(
     
-            <div>  
-    
-                <br></br><br></br><br></br>
+            <div className=" border border-secondary col-md-5 mt-3 mx-auto ">
+                    <br></br>
+                <br></br>
     
                             <div class="col-lg-6 col-md-6">
     
                             <Form className="needs-validation" onSubmit={this.onSubmit}>
     
-                                    <br></br>
+                                    <br></br><center>
                                     <h1 className="h3 mb-3 font-weight-body">Update details!!</h1>
                                     <br></br>
     
@@ -83,7 +83,7 @@ class UpdateLoyalty extends Component {
                                     <label>Discount : </label>
                                     <input name='discount' className="form-control" type='text' value={this.state.discount} onChange={this.handleDiscountChange}/>
                                 </div>
-    
+                                </center>
                                 
     
                                 <center>

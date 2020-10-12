@@ -6,14 +6,17 @@ import Footer from '../layouts/Footer';
 import jsPdf from 'jspdf'
 import 'jspdf-autotable'
 
+
+//Stating each product details 
 const Product = props => (
   <tr>
+    <td><img style = {{ minWidth: '50px' , width: '50px' , height: '60px'}} src={`http://localhost:5000/${props.product.image}`} /></td>
     <td>{props.product.productName}</td>
     <td>{props.product.price}</td>
     <td>{props.product.discount}</td>
     <td>{props.product.categoryType}</td>
     <td>{props.product.description}</td>
-    
+
     <td>
       <Link to={"/editProduct/"+props.product._id}>edit</Link> | <a href="#" onClick={() => { props.deleteProduct(props.product._id) }}>delete</a>
     </td>
@@ -21,6 +24,8 @@ const Product = props => (
 )
 
 export default class ProductsList extends Component {
+
+  //initializing the states
   constructor(props) {
     super(props)
 
@@ -33,6 +38,8 @@ export default class ProductsList extends Component {
     this.state = {products: []};
   }
 
+
+  //retrieving all products
   componentDidMount() {
     axios.get('/api/products/')
       .then(response => {
@@ -43,6 +50,8 @@ export default class ProductsList extends Component {
       })
   }
 
+
+  //delete function
   deleteProduct(id) {
     axios.delete('/api/products/'+id)
       .then(response => { console.log(response.data)});
@@ -52,6 +61,8 @@ export default class ProductsList extends Component {
     })
   }
 
+
+  //Retrieve products in a loop
   productList() {
     return this.state.products.map(currentproduct => {
       return <Product product={currentproduct} deleteProduct={this.deleteProduct} key={currentproduct._id}/>;
@@ -59,23 +70,24 @@ export default class ProductsList extends Component {
   }
 
 
-  //Search filterContent() method
-  filterContent(products, searchProduct){
-    const result = products.filter((product) => product._id.includes(searchProduct));
-    this.setState({products:result});
-  } 
+  // ---- Search function ----
 
-  //Search handleSearch()
-  handleSearch = (e) =>{
+  filterContent(product, searchTerm){
+    const result= product.filter((products)=> products.productName.includes(searchTerm));
+    this.setState({ products: result });
+  }
+
+  handleSearch=(e)=>{
+
     console.log(e.currentTarget.value);
-    const searchProduct = e.currentTarget.value;
+    const searchTerm = e.currentTarget.value;
+    axios.get("/api/products")
+    .then(response =>{
+    const product = response.data;
+    this.setState({ product });
+    this.filterContent(product, searchTerm)
 
-    axios.get('/api/products')
-      .then(res => {
-          const products = res.data;
-          this.setState({ products });
-          this.filterContent(products, searchProduct)
-        })
+    })
   }
 
 
@@ -84,6 +96,8 @@ export default class ProductsList extends Component {
 
     var doc = new jsPdf('p','pt');    //new document in jspdf
     
+
+    doc.text(210,30,"All products details")
     doc.autoTable({  html:'#productList-table' })  
 
     doc.autoTable({
@@ -131,11 +145,12 @@ export default class ProductsList extends Component {
         <table id="productList-table" className="table">
           <thead className="thead-light">
             <tr>
+              <th>Image</th>
               <th>Product Name</th>
               <th>Price</th>
               <th>Discount</th>
               <th>Category Name</th>
-              <th>Description</th>
+              <th>Description</th>            
             </tr>
           </thead>
           <tbody>
