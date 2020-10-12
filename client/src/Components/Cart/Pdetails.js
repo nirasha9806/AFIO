@@ -90,7 +90,9 @@ class DetailsCart extends Component{
               
                     { this.state.products.map(product => 
                     <ul>
-                    <li className="list-group-item"><div style={{paddingLeft:"400px"}}><img src={image}/> </div></li>
+                    <li className="list-group-item">
+                      <div ><img src={`http://localhost:5000/${product.image}`} style ={{width:'35%', marginLeft: '350px'}} /></div>
+                    </li>
                     <li className="list-group-item">{product.productName}</li>
                     <li className="list-group-item"><p><strong>Price: {product.price}.00</strong></p></li>
                     <li className="list-group-item"><p>Discount: {product.discount}%</p></li>

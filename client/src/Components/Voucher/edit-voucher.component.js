@@ -111,8 +111,7 @@ export default class EditVoucher extends Component {
         axios.post('/api/voucher/update/'+this.props.match.params.id, Voucher)
         .then(response =>
             console.log(response.data));
-            this.props.history.push('/list')
-            
+            window.location = '/list';
             
     }
 

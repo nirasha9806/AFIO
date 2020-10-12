@@ -54,7 +54,7 @@ import { Link } from 'react-router-dom';
 
                     <div>
                     
-                    <h1 className="color:primary">HERE TOU CAN GET YOUR MASK FROM US !!!.</h1>
+                    <h1 className="color:primary">HERE YOU CAN GET YOUR MASK FROM US !!!.</h1>
                         
                         <div className="align-item-end justify-content-center mb-8">
                             <img src="img/mask2.jpg"  class="img-fluid" alt="Responsive image" />

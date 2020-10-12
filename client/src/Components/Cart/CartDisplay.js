@@ -66,11 +66,15 @@ calculateTot(){
 }
 
 
+ 
+
 /*edit*/ 
           render(){
             return(
               <div>
                  <Navbar />
+
+                 
               <div className="container py-5 ">
               <table id="my-table" class="table table-hover">
                 <thead className="table-active">
@@ -91,7 +95,7 @@ calculateTot(){
                   <td>{Cart.size}</td>
                   <td>{Cart.quantity}</td>
                   <td>{Cart.price}</td>
-                  <td><button className="btn btn-warning"><Link  to={"/updateCart/"+Cart._id }>EDIT</Link></button></td>
+                  <td><button className="btn btn-warning"><Link  to={"/updateCart/"+Cart._id+'/'+this.props.match.params.uid}>EDIT</Link></button></td>
                   <td><button className="btn btn-danger" onClick={() => this.delete(Cart._id)}>REMOVE</button></td>
                 </tr>
                 )}

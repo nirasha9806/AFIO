@@ -65,7 +65,7 @@ export default class UpdateCartDisplay extends Component{
         axios.post('/api/Cart/update/'+this.props.match.params.id, Cart)
         .then(response =>
             console.log(response.data));
-            window.location = '/Cart';
+            window.location = "/cart/"+this.props.match.params.uid;
     }    
       
     render(){
@@ -81,13 +81,22 @@ export default class UpdateCartDisplay extends Component{
         <form className="needs-validation" onSubmit={this.onSubmit}>
 
             <div className="form-group">
-                <lable>Size : </lable> <br></br>
-                <input className="form-control" type='text' value={this.state.size} onChange ={this.onChangeSize}/>
+                {/* <lable>Size : </lable> <br></br>
+                <input className="form-control" type='text' value={this.state.size} onChange ={this.onChangeSize}/> */}
+                  <li class="list-group-item">
+                    <label>Size</label><br></br>
+                      <input type="radio" name = "size" value={this.state.size} required checked={this.state.size==="S"} onChange={this.onChangeSize}/>&nbsp;<strong>S</strong> 
+                      &nbsp; &nbsp; &nbsp;&nbsp;<input type="radio" name = "size" value="M" required checked={this.state.size==="M"} onChange={this.onChangeSize}/>&nbsp; <strong>M</strong> 
+                      &nbsp; &nbsp; &nbsp;&nbsp;<input type="radio" name = "size" value="L" required checked={this.state.size==="L"} onChange={this.onChangeSize}/> &nbsp;<strong>L</strong> 
+                      &nbsp; &nbsp; &nbsp;&nbsp;<input type="radio" name = "size" value="XL" required checked={this.state.size==="XL"} onChange={this.onChangeSize}/> &nbsp;<strong>XL</strong> 
+                      &nbsp; &nbsp; &nbsp;&nbsp;<input type="radio" name = "size" value="XXL" required checked={this.state.size==="XXL"} onChange={this.onChangeSize}/> <strong>XXL</strong> 
+
+                    </li>
             </div>
 
-            <div className="form-group">
+            <div className="list-group-item">
                 <lable>Quantity : </lable> <br></br>
-                <input className="form-control" type='text' value={this.state.quantity} onChange ={this.onChangeQyantity}/>
+                <input className="list-group-item" type='text' value={this.state.quantity} onChange ={this.onChangeQyantity}/>
             </div>
 
             <center>

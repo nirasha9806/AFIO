@@ -95,4 +95,18 @@ router.get('/edit/:id', function (req, res) {
     }
   });
   });
+
+
+  //get method to search
+router.get('/', function(req,res){
+  console.log('get requests for all products');
+  Product.find({})
+  .exec(function(err, products){
+      if(err) {
+          console.log('error')
+      }else {
+          res.json(products);
+      }
+  });
+});
 module.exports = router;
