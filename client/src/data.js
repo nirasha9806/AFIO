@@ -82,35 +82,35 @@ export const reviews = [
     name: 'John',
     avatar: '.././avatars/avatar-1.png',
     comment:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, quaerat repellendus. Ad at sit laboriosam sint ea mollitia incidunt voluptatibus inventore libero dolorem velit dolor nobis odit tempora, ex consequuntur.'
+      'Great...!!'
   },
   {
     id: 2,
     name: 'Mike',
     avatar: '.././avatars/avatar-2.png',
     comment:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, quaerat repellendus. Ad at sit laboriosam sint ea mollitia incidunt voluptatibus inventore libero dolorem velit dolor nobis odit tempora, ex consequuntur.'
+      'Can give 5 stars!!'
   },
   {
     id: 3,
     name: 'Sofia',
     avatar: '.././avatars/avatar-3.png',
     comment:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, quaerat repellendus. Ad at sit laboriosam sint ea mollitia incidunt voluptatibus inventore libero dolorem velit dolor nobis odit tempora, ex consequuntur.'
+      'WOW!!! What a grate site to shopping'
   },
   {
     id: 4,
     name: 'Joseph',
     avatar: '.././avatars/avatar-4.png',
     comment:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, quaerat repellendus. Ad at sit laboriosam sint ea mollitia incidunt voluptatibus inventore libero dolorem velit dolor nobis odit tempora, ex consequuntur.'
+      'Superb!! Execelent site I have ever seen.'
   },
   {
     id: 5,
     name: 'Natasha',
     avatar: '.././avatars/avatar-5.png',
     comment:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, quaerat repellendus. Ad at sit laboriosam sint ea mollitia incidunt voluptatibus inventore libero dolorem velit dolor nobis odit tempora, ex consequuntur.'
+      'Thank you very much for giving us like these site'
   }
 ];
 

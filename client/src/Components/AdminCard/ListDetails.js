@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import NavBar from '../NavBar/NavBar';
 import Footer from '../layouts/Footer';
+import jsPDF from 'jspdf';
+import { Button } from 'react-bootstrap';
+import 'jspdf-autotable'
 
 export default class ListDetails extends Component { //implemented class component
 
@@ -34,7 +37,42 @@ export default class ListDetails extends Component { //implemented class compone
           this.componentDidMount();
         });
     }
-    
+  //filterContent() method for search 
+  filterContent(loyaltycardadds, searchLoyalty){
+    const result = loyaltycardadds.filter((loyaltycardadds) => loyaltycardadds._id.includes(searchLoyalty));
+    this.setState({loyaltycardadds:result});
+  } 
+
+  //handleSearch() for search
+  handleSearch = (e) =>{
+    console.log(e.currentTarget.value);
+   const searchLoyalty = e.currentTarget.value;
+
+   axios.get('/api/LoyaltyCard')
+      .then(res => {
+          const loyaltycardadds = res.data;
+          this.setState({ loyaltycardadds });
+          this.filterContent(loyaltycardadds, searchLoyalty)
+        })
+  }
+//pdf generating
+jsPdfGenerator = () => {
+
+  //new document in jspdf
+  var doc = new jsPDF('p','pt');
+
+  doc.text(30,30,"Loyalty Card Details")
+  doc.autoTable({  html:'table' })
+
+  doc.autoTable({
+    columnStyles: { europe: { halign: 'center' } }, 
+    margin: { top: 10 },
+  })
+
+  //save the pdf
+  doc.save("Loyalty Card Details.pdf");
+}
+  
     
 
     render() {
@@ -46,7 +84,16 @@ export default class ListDetails extends Component { //implemented class compone
                         <b>CHECKOUT !</b>
                     </center>
                 </h3>
-
+                <div className="col-md-5 mt-3 mx-auto">
+            <input
+              type="search"
+              placeholder="Search"
+              name="searchLoyalty"
+              className="form-control ml-2"
+              onChange={this.handleSearch}
+              ></input>
+              <br></br>
+          </div>
                 <table className="table table-striped">
                 <thead className="table-active">
                     <tr>
@@ -67,7 +114,9 @@ export default class ListDetails extends Component { //implemented class compone
 
                 )}
                 </table>
-
+                <center>
+                <button className="btn-dark" onClick={this.jsPdfGenerator}>Download PDF</button>
+                </center>
 
               <br/><br/>
                     <Footer/>

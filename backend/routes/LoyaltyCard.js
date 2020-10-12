@@ -8,7 +8,7 @@ const {LoyaltyCardAdd} = require("../models/LoyaltyCardAdd");
 //post method to save data
 router.post("/insertCard", (req, res) => {
 
-    //save data got from the client into the deliveries collection in the DB
+    //save data got from the client into the loyalty collection in the DB
     const loyaltyCardReq = new LoyaltyCardReq(req.body)
 
         loyaltyCardReq.save((err) => {
@@ -20,7 +20,7 @@ router.post("/insertCard", (req, res) => {
 //post method to save data
 router.post("/addCard", (req, res) => {
 
-    //save data got from the client into the deliveries collection in the DB
+    //save data got from the client into the loyalty collection in the DB
     const loyaltyCardAdd = new LoyaltyCardAdd(req.body)
 
         loyaltyCardAdd.save((err) => {
@@ -30,7 +30,7 @@ router.post("/addCard", (req, res) => {
 });
 
 
-//get method to fetch data from deliveries
+//get method to fetch data from loyalty
 router.get('/display', function(req,res){
     console.log('get requests for all loyaltycards');
     LoyaltyCardAdd.find({})
@@ -42,6 +42,19 @@ router.get('/display', function(req,res){
         }
     });
   });
+
+    //get method to search
+router.get('/', function(req,res){
+  console.log('get requests for all deliveries');
+  LoyaltyCardAdd.find({})
+  .exec(function(err, loyaltycardadds){
+      if(err) {
+          console.log('error')
+      }else {
+          res.json(loyaltycardadds);
+      }
+  });
+});
 
   //delete method
 router.post('/delete/:id',function (req, res) {

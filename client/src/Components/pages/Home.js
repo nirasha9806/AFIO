@@ -52,7 +52,24 @@ import { Link } from 'react-router-dom';
                         <a href='/create'><img src={gift} class="img-fluid" alt="Responsive image"/></a>
                     </div>
 
-
+                    <div>
+                    
+                    <h1 className="color:primary">HERE TOU CAN GET YOUR MASK FROM US !!!.</h1>
+                        
+                        <div className="align-item-end justify-content-center mb-8">
+                            <img src="img/mask2.jpg"  class="img-fluid" alt="Responsive image" />
+                            <h4>Price 250/=</h4>
+                        </div>
+                        <div className="align-item-end justify-content-center mb-8">
+                            <img src="img/mask3.jpg"  class="img-fluid" alt="Responsive image"/>
+                            <h4>Price 110/=</h4>
+                        </div>
+                        <div className="align-item-end justify-content-center mb-8">
+                            <img src="img/mask4.jpg"  class="img-fluid" alt="Responsive image"/>
+                            <h4>Price 300/=</h4>
+                        </div>
+    
+                    </div>
                     </div>
 
                     
