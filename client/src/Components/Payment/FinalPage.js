@@ -31,16 +31,7 @@ class FinalPage extends Component{
       }
 
    }
-  // componentDidMount(){
-    //  axios.get('/api/payment/')
-    //  .then( res =>{
-     //     const card = res.data;
-       //   this.setState({card });
-      //})
-      //.catch(function(error){
-       //   console.log(error);
-      //})
-  //}
+
 
   
    //jsPDf function
@@ -48,10 +39,17 @@ class FinalPage extends Component{
       //new document in jsPDF
       var doc = new jsPDF('p', 'pt');
 
-      
-      doc.autoTable({  html:'#my-table' })
+      //topic
+      doc.setFont('Bold')
+      doc.setTextColor('Black')
+      doc.setFontSize(30)
+      doc.text(210,30,'HAPPY SHOPPING WITH AFIO!') 
 
+      doc.setFont('courier')
+      doc.setTextColor('Black')
+      doc.setFontSize(20)
       doc.text(40,40,'Total Amount Paid : ')
+
       doc.text(50,50,this.props.match.params.tot)
 
 
